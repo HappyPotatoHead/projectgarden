@@ -5,7 +5,25 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.ConditionalRender({
+      component: Component.Comments({
+        provider: 'giscus',
+        options: {
+          // from data-repo
+          repo: 'HappyPotatoHead/project-garden',
+          // from data-repo-id
+          repoId: 'R_kgDOOYwR8g',
+          // from data-category
+          category: 'Announcements',
+          // from data-category-id
+          categoryId: 'DIC_kwDOOYwR8s4CpDaN',
+        }
+      }),
+      condition: (page) => page.fileData.slug === "index"
+    })
+
+  ],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/jackyzha0/quartz",
@@ -22,7 +40,10 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.ArticleTitle(),
-    Component.ContentMeta(),
+    Component.ConditionalRender({
+      component: Component.ContentMeta({showReadingTime: false}), 
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.TagList(),
   ],
   left: [
@@ -31,18 +52,25 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Flex({
       components: [
         {
-          Component: Component.Search(),
-          grow: true,
+          Component: Component.Search({}),
+          // grow: true,
         },
-        { Component: Component.Darkmode() },
+        { 
+          Component: Component.Darkmode()
+        },
       ],
+      gap:"0.2rem"
     }),
-    Component.Explorer(),
+    Component.DesktopOnly(Component.TableOfContents()),
+    Component.ConditionalRender({
+      component: Component.Explorer(),
+      condition: (page) => page.fileData.slug === "index"
+    })
   ],
   right: [
     Component.Graph(),
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
+    // Component.DesktopOnly(Component.TableOfContents()),
+    // Component.Backlinks(),
   ],
 }
 

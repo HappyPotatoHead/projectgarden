@@ -135,7 +135,7 @@ button.desktop-explorer {
   .folder-outer {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows 0.3s ease-in-out;
+    transition: grid-template-rows .3s ease-in-out;
   }
 
   .folder-outer.open {
@@ -242,8 +242,8 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
       width: 100%;
       transform: translateX(-100vw);
       transition:
-        transform 200ms ease,
-        visibility 200ms ease;
+        transform 500ms ease-in-out,
+        visibility 500ms ease-in-out;
       overflow: hidden;
       padding: 4rem 0 2rem 0;
       height: 100dvh;
