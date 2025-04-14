@@ -17,8 +17,22 @@ There’s so much I want to add, but I’ll take it one step at a time.
 - [ ] Add analytics
 - [ ] And so much more!
 
+```telescopic
+* lately I am
+* reading not a lot of [[book club/|books]],
+	* going to functions,
+	    * going on short runs,
+	    * building [[semiconductors and chips/]],
+            * thinking about the type of person I want to become,
+	* eating cheese.
+		* listening to music
+```
+
 >[!QUOTE] 
->Knowledge is not a reservoir to be hoarded but a river to be shred. 
+>```telescopic
+>* Knowledge is not a reservoir to be hoarded but a river to be shred. 
+>	* Hello
+>```
 
 If you don't know where to look for sources, maybe [[Sources|this]] can help!
 

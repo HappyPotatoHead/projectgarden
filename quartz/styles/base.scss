@@ -191,6 +191,7 @@ a {
 
     @media all and not ($desktop) {
       padding: 0 1rem;
+      margin-right: 10px;
     }
     @media all and ($mobile) {
       margin: 0 auto;
@@ -204,6 +205,10 @@ a {
       display: flex;
       height: 100vh;
       position: sticky;
+
+      @media all and not ($desktop){
+        margin-right: 10px;
+      }
     }
 
     & .sidebar.left {
