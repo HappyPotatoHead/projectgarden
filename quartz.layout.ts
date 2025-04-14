@@ -63,7 +63,7 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.ConditionalRender({
-      component: Component.Explorer(),
+      component: Component.Explorer({folderDefaultState: "open"}),
       condition: (page) => page.fileData.slug === "index"
     })
   ],
