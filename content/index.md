@@ -17,21 +17,13 @@ There’s so much I want to add, but I’ll take it one step at a time.
 - [ ] Add analytics
 - [ ] And so much more!
 
-```telescopic
-* lately I am
-* reading not a lot of [[book club/|books]],
-	* going to functions,
-	    * going on short runs,
-	    * building [[semiconductors and chips/]],
-            * thinking about the type of person I want to become,
-	* eating cheese.
-		* listening to music
-```
-
 >[!QUOTE] 
 >```telescopic
->* Knowledge is not a reservoir to be hoarded but a river to be shred. 
->	* Hello
+>* Knowledge is not a reservoir to be hoarded but a river to be shred
+>	* He who has a Why to live for can bear almost any How
+>		* There are things which must cause you to lose your reason or you have none to lose
+>			* The truth - that love is the ultimate and the highest goal to which man can aspire. The salvation of man is through love and in love
+>				* Set me like a seal upon thy heart, love is as strong as death
 >```
 
 If you don't know where to look for sources, maybe [[Sources|this]] can help!
