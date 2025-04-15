@@ -6,6 +6,10 @@ I’m [HappyPotatoHead](https://github.com/HappyPotatoHead). This used to be a  
 
 There’s so much I want to add, but I’ll take it one step at a time.
 
+Check out [[Garden Core]]!
+
+If you don't know where to look for sources, maybe [[Sources|this]] can help!
+
 *To-do list:*
 - [ ] Personalise the garden
 - [ ] Add more completed projects
@@ -25,8 +29,6 @@ There’s so much I want to add, but I’ll take it one step at a time.
 >			* The truth - that love is the ultimate and the highest goal to which man can aspire. The salvation of man is through love and in love
 >				* Set me like a seal upon thy heart, love is as strong as death
 >```
-
-If you don't know where to look for sources, maybe [[Sources|this]] can help!
 
 Play this game, please. 
 ![[wallpaper-2.png]]
