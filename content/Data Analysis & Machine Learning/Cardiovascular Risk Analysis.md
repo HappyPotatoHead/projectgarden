@@ -16,16 +16,27 @@ Cardiovascular diseases are one of the most significant health challenges worldw
 
 The dataset includes patient information such as age, gender, lifestyle factors, health metrics, and demographic profile.
 
-<!-- QueryToSerialize:  TABLE WITHOUT ID Gender, Age, Height, Weight, Family_history, Alcohol, Junk_food, Vege_day, Meals_day, Snack, Smoking, Water_intake, Transportation, Exercise, TV, Income, Discipline, Cardiovascular_risk FROM csv("dataset.csv") LIMIT 10 --> 
+| Gender | Age | Height(cm) | Weight(kg) | Family_history | Alcohol | Junk_food | Vege_day | Meals_day | Snack     | Smoking | Water_intake(L) | Transportation | Exercise | TV       | Income | Discipline | Cardiovascular_risk |
+| ------ | --- | ---------- | ---------- | -------------- | ------- | --------- | -------- | --------- | --------- | ------- | --------------- | -------------- | -------- | -------- | ------ | ---------- | ------------------- |
+| Female | 42  | 172.2      | 82.9       | no             | low     | yes       | 3        | 3         | Sometimes | no      | 2.72            | car            | 3        | rare     | 2081   | no         | medium              |
+| Female | 19  | 175.3      | 80         | yes            | none    | yes       | 2        | 1         | Sometimes | no      | 2.65            | bus            | 3        | moderate | 5551   | no         | medium              |
+| Female | 43  | 158.3      | 81.9       | yes            | none    | yes       | 3        | 1         | Sometimes | no      | 1.89            | car            | 1        | rare     | 14046  | no         | high                |
+| Female | 23  | 165        | 70         | yes            | low     | no        | 2        | 1         | Sometimes | no      | 2               | bus            | 0        | rare     | 9451   | no         | medium              |
+| Male   | 23  | 169        | 75         | yes            | low     | yes       | 3        | 3         | Sometimes | no      | 2.82            | bus            | 1        | often    | 17857  | no         | medium              |
+| Male   | 23  | 172        | 82         | yes            | low     | yes       | 2        | 1         | Sometimes | no      | 1               | bus            | 1        | moderate | 3114   | no         | medium              |
+| Female | 21  | 172        | 133.9      | yes            | low     | yes       | 3        | 3         | Sometimes | no      | 2.42            | bus            | 2        | moderate | 8011   | no         | high                |
+| Male   | 21  | 172.5      | 82.3       | yes            | low     | yes       | 2        | 2         | Sometimes | no      | 2               | bus            | 2        | moderate | 5838   | no         | medium              |
+| Female | 19  | 165        | 82         | yes            | none    | yes       | 3        | 3         | Sometimes | no      | 1               | bus            | 0        | moderate | 10029  | no         | high                |
 
+%% 
 ```dataview
 TABLE WITHOUT ID 
 Gender, Age, Height, Weight, Family_history, Alcohol, Junk_food, Vege_day, Meals_day, Snack, Smoking, Water_intake, Transportation, Exercise, TV, Income, Discipline, Cardiovascular_risk
 FROM csv("dataset.csv")
 LIMIT 10
-```
+``` 
+%%
 
-Click here: [[content/Data Analysis & Machine Learning/dataset.csv]]
 # Exploratory Data Analysis
 
 >[!WARNING]
