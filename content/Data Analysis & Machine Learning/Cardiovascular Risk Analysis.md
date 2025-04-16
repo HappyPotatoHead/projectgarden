@@ -14,7 +14,16 @@ Cardiovascular diseases are one of the most significant health challenges worldw
 
 # Data Source
 
-The dataset includes patient information such as age, gender, lifestyle factors, health metrics, and demographic profile
+The dataset includes patient information such as age, gender, lifestyle factors, health metrics, and demographic profile.
+
+<!-- QueryToSerialize:  TABLE WITHOUT ID Gender, Age, Height, Weight, Family_history, Alcohol, Junk_food, Vege_day, Meals_day, Snack, Smoking, Water_intake, Transportation, Exercise, TV, Income, Discipline, Cardiovascular_risk FROM csv("dataset.csv") LIMIT 10 --> 
+
+```dataview
+TABLE WITHOUT ID 
+Gender, Age, Height, Weight, Family_history, Alcohol, Junk_food, Vege_day, Meals_day, Snack, Smoking, Water_intake, Transportation, Exercise, TV, Income, Discipline, Cardiovascular_risk
+FROM csv("dataset.csv")
+LIMIT 10
+```
 
 Click here: [[content/Data Analysis & Machine Learning/dataset.csv]]
 # Exploratory Data Analysis

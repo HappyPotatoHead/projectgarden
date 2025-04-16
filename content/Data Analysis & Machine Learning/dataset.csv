@@ -1,4 +1,4 @@
-Gender,Age,Height(cm),Weight(kg),Family_history,Alcohol,Junk_food,Vege_day,Meals_day,Snack,Smoking,Water_intake(L),Transportation,Exercise,TV,Income,Discipline,Cardiovascular_risk(y)
+Gender,Age,Height,Weight,Family_history,Alcohol,Junk_food,Vege_day,Meals_day,Snack,Smoking,Water_intake,Transportation,Exercise,TV,Income,Discipline,Cardiovascular_risk
 Female,42,172.2,82.9,no,low,yes,3,3,Sometimes,no,2.72,car,3,rare,2081,no,medium
 Female,19,175.3,80,yes,none,yes,2,1,Sometimes,no,2.65,bus,3,moderate,5551,no,medium
 Female,43,158.3,81.9,yes,none,yes,3,1,Sometimes,no,1.89,car,1,rare,14046,no,high
