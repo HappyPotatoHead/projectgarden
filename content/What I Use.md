@@ -36,7 +36,14 @@ description:
 - [Eclipse IDE](https://eclipseide.org/)
 - [Docker](https://www.docker.com/)
 ## Creative
-- [ShotCut](https://www.shotcut.org/)
+### Images 
 - [Krita](https://krita.org/en/)
 - [Gimp](https://www.gimp.org/)
+- [InkScape](https://inkscape.org/)
+### Videos
+- [ShotCut](https://www.shotcut.org/)
+- [OBS](https://obsproject.com/)
+### Audio
+- [Audacity](https://www.audacityteam.org/)
+
 

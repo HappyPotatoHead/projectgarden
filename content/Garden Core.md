@@ -19,15 +19,10 @@ description:
 
 # Project for Fun
 
-
 | Description              | Link                                    |
 | ------------------------ | --------------------------------------- |
 | Bongo Animals            | [[Bongo Animal\|Click me!]]             |
 | Malaysia Cuisine Website | [[Malaysia Cuisine Website\|Click me!]] |
-
-# Hobbies
-
-1. 
 
 # Social Science
 
@@ -35,4 +30,5 @@ description:
 >I'm a computer science student. I read these for fun!
 
 1. [[Zeigarnik Effect, Feature Positive Effects, & Default Effect]]
+2. [[The Anchor Bias, Hasty Generalisation, & Loss Aversion]]
 

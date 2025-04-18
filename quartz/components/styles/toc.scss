@@ -42,8 +42,9 @@ ul.toc-content.overflow {
   position: relative;
   margin: 0.5rem 0;
   padding: 0;
-  height: 500px;
-  max-height: calc(100% - 2rem);
+  // height: 500px;
+  min-height: calc(100% - 2rem);
+  // max-height: calc(100% - 2rem);
   overscroll-behavior: contain;
   list-style: none;
   & > li > a {
@@ -61,5 +62,18 @@ ul.toc-content.overflow {
     & .depth-#{$i} {
       padding-left: calc(1rem * #{$i});
     }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .toc-content {
+    display: block;
+  }
+  button.toc-header {
+    display: flex;
+  }
+  .toc-content.collapsed {
+    display: none;
   }
 }
