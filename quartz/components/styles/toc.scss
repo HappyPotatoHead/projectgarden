@@ -43,7 +43,7 @@ ul.toc-content.overflow {
   margin: 0.5rem 0;
   padding: 0;
   // height: 500px;
-  min-height: calc(100% - 2rem);
+  max-height: calc(100% - 10rem);
   // max-height: calc(100% - 2rem);
   overscroll-behavior: contain;
   list-style: none;
@@ -75,5 +75,9 @@ ul.toc-content.overflow {
   }
   .toc-content.collapsed {
     display: none;
+  }
+  ul.toc-content.overflow{
+    max-height: 300px;
+    // max-height: calc(100% - rem);
   }
 }
