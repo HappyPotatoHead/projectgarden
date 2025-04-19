@@ -16,8 +16,7 @@ If you don't know where to look for sources, maybe [[Sources|this]] can help!
 	- [ ] Signature Verification Project
 	- [ ] Bongo Animals
 	- [ ] Malaysia Cuisine Website
-- [ ] Create a map for the site
-- [ ] Add my social science notes
+- [x] Create a map for the site
 - [ ] Add analytics
 - [ ] And so much more!
 
@@ -30,11 +29,11 @@ If you don't know where to look for sources, maybe [[Sources|this]] can help!
 >				* Set me like a seal upon thy heart, love is as strong as death
 >```
 
-Play this game, please. 
-![[wallpaper-2.png]]
-*Gris*
+Watch this anime, please.  
+![[frieren.png]]
+*Frieren: Beyond Journey's End*
 
-I'll always be updating this site, though the frequency might vary. 
+> I'll always be updating this site, though the frequency might vary. 
 
 Gardens that I shamelessly copy from:
 - [# Eilleen's (online!) Everything Notebook](https://quartz.eilleeenz.com/)

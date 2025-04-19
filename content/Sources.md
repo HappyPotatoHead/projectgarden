@@ -23,6 +23,7 @@ description:
 | Name         | Link                                 | Description                                                                                                               |
 | ------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
 | MDN Web Docs | https://developer.mozilla.org/en-US/ | Details on Open Web technologies, encompassing HTML, CSS, and APIs, applicable to both websites and progressive web apps. |
+## JavaScript
 
 | Name                           | Link                     | Description                                 |
 | ------------------------------ | ------------------------ | ------------------------------------------- |
