@@ -1,5 +1,5 @@
 ---
-title: 
+title: Garden Core
 draft: false
 tags: 
 description:
@@ -13,16 +13,16 @@ description:
 
 # AI & Deep Learning
 
-| Description                           | Link                                         |
-| ------------------------------------- | -------------------------------------------- |
-| Offline signature verification system | [[Signature Verification System\|Click me!]] |
+| Description                           | Link                                                 |
+| ------------------------------------- | ---------------------------------------------------- |
+| Offline signature verification system | [[Offline Signature Verification System\|Click me!]] |
 
 # Project for Fun
 
-| Description              | Link                                    |
-| ------------------------ | --------------------------------------- |
-| Bongo Animals            | [[Bongo Animal\|Click me!]]             |
-| Malaysia Cuisine Website | [[Malaysia Cuisine Website\|Click me!]] |
+| Description               | Link                                     |
+| ------------------------- | ---------------------------------------- |
+| Bongo Animals             | [[Bongo Animals\|Click me!]]             |
+| Malaysian Cuisine Website | [[Malaysian Cuisine Website\|Click me!]] |
 
 # Social Science
 
