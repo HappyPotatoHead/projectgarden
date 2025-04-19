@@ -26,7 +26,8 @@ export const sharedPageComponents: SharedLayout = {
   ],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
+      Portfolio: "https://hairypotato.netlify.app/",
+      GitHub: "https://github.com/HappyPotatoHead",
       "Discord Community": "https://discord.gg/cRFFHYye7t",
     },
   }),

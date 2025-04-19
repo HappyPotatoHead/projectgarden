@@ -199,7 +199,7 @@ function setupFloatingButtons() {
         // }
         break
       case 'graph':
-        toggleGraph()
+        toggleGraph();
         break
       // case 'shortcuts':
       //   showShortcutSheet()

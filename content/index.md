@@ -1,14 +1,29 @@
 ---
 title: Being Chronically Online
+draft: false
+tags: 
+description:
 ---
 
-I’m [HappyPotatoHead](https://github.com/HappyPotatoHead). This used to be a  **digital garden** meant to record my academic journey throughout my Computer Science Degree, but I've decided to rebrand it to store my projects instead. *Maybe notes will make a comeback?*   
+
+I’m [HappyPotatoHead](https://github.com/HappyPotatoHead). This used to be a **digital garden** meant to record my academic journey throughout my Computer Science Degree, but I've decided to rebrand it to store my projects instead. *Maybe notes will make a comeback?*   
 
 There’s so much I want to add, but I’ll take it one step at a time.
 
 Check out [[Garden Core]]!
 
 If you don't know where to look for sources, maybe [[Sources|this]] can help!
+
+>[!QUOTE] 
+>```telescopic
+>* Knowledge is not a reservoir to be hoarded but a river to be shred
+>	* He who has a Why to live for can bear almost any How
+>		* There are things which must cause you to lose your reason or you have none to lose
+>			* The truth - that love is the ultimate and the highest goal to which man can aspire. The salvation of man is through love and in love
+>				* Set me like a seal upon thy heart, love is as strong as death
+>```
+
+---
 
 *To-do list:*
 - [ ] Personalise the garden
@@ -20,14 +35,7 @@ If you don't know where to look for sources, maybe [[Sources|this]] can help!
 - [ ] Add analytics
 - [ ] And so much more!
 
->[!QUOTE] 
->```telescopic
->* Knowledge is not a reservoir to be hoarded but a river to be shred
->	* He who has a Why to live for can bear almost any How
->		* There are things which must cause you to lose your reason or you have none to lose
->			* The truth - that love is the ultimate and the highest goal to which man can aspire. The salvation of man is through love and in love
->				* Set me like a seal upon thy heart, love is as strong as death
->```
+---
 
 Watch this anime, please.  
 ![[frieren.png]]
