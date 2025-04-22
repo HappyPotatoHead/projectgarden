@@ -284,11 +284,39 @@ Beyond quantitative metrics, I also validated the model's performance qualitativ
 With the signature bounding box successfully identified by the fine-tuned YOLO NAS model and a some simple python code, I was able to isolate the signatures from the documents. This extraction process was essential to prepare the data for the subsequent signature verification stage.
 
 However, for training the signature verification model, I had decided to use the CEDAR dataset[^4], because it is a widely used benchmark dataset in signature verification research. It provides a balance of genuine and forged signatures from multiple individuals, making it highly suitable for training and evaluating a verification model.
-## Feature Extraction
-### Processing Images
+## Processing Images[^5]
+
+In this stage, my aim is to reduce as much noise as possible and ensure that the crucial features extracted for the verification model are confined to the strokes of the signatures. 
+
+After obtaining the signature images, I notice that the while the images are grayscale and generally clear, variations in stroke intensity and potential residual 
+noise could still impact the accuracy of the features extracted to capture the precise shape and structure of each stroke of the signatures. 
+
+I had implemented **Otsu's thresholding**. This technique automatically determines the optimal global threshold to convert the grayscale image into a binary image. 
+
+| Class    | Before                            | After                           |
+| -------- | --------------------------------- | ------------------------------- |
+| Original | ![[unprocessed_original_1_1.png]] | ![[processed_original_1_1.png]] |
+
+By applying this technique, I was able to effectively isolate the signature strokes from the background, creating a cleaner representation of the signature's strokes. The clear distinction of the foreground from the background is important for the subsequent feature extraction that rely on analysing the shape, contours, and topology of the signature. Now that every stroke has the same intensity in colour, the verification model can focus on the most relevant visual information for distinguishing genuine signatures from forgeries.
+
+>[!NOTE]- The Difference In Image Size
+>Most pre-trained models available on `PyTorch` are built to accept $224\times 224$ sizes. 
+
+## Signature Verification
+
+*Buckle up, this section is long!*
+
+Now that I've applied **Otsu's thresholding** to both sets of forgeries and original images, it's time to build the dataset; however, before I went ahead with that, I had to determine how the model would learn and verify signature images - this required the model to learn the subtle visual characteristics that distinguish genuine signatures from different individuals' signatures and forgeries.. 
+
+After thorough research into deep metric learning techniques commonly applied in image recognition tasks such as face recognition, I determined that an **embedding-based** approach would fit perfectly with this problem. I decided that I would train a **convolutional neural network (CNN)** to map each signature image into an embedding in a high-dimensional space; the embeddings of the genuine signatures from the same author would be close to each other, while embeddings signatures from other authors or forgeries should be far apart.  
+
+I chose to develop a  **triplet loss network**, because of the mechanisms in which it works;  there are three data points - anchor (*a genuine signature*), positive (*another genuine signature from the same author*), and negative (*a forged signature or signature from another author*) - used in each instance. The model learns to widen the distance between the negative data point and the anchor, while minimising the distance between the anchor and the positive data point. 
+
+This embedding-based approach directly supports the verification task; if I want to verify a signature, I would compare its embedding to known genuine embeddings; if the distance is below a threshold, it's more likely to be genuine. 
 
 
 [^1]: [Check Forgeries: Leveraging AI and Machine Learning for Signature Verification](https://orbograph.com/check-forgeries-leveraging-ai-and-machine-learning-for-signature-verification/) 
 [^2]: [How AI Works in Signature Verification Tools](https://sqnbankingsystems.com/blog/how-ai-works-in-signature-verification-tools/)
 [^3]: [How AI and ML can Revolutionize Banks Signature Verification Process](https://www.forbes.com/councils/forbestechcouncil/2023/08/09/how-ai-and-ml-can-revolutionize-banks-signature-verification-process/)
 [^4]:[CEDAR signature](https://paperswithcode.com/dataset/cedar-signature)
+[^5]:[Otsu's Method](https://en.wikipedia.org/wiki/Otsu%27s_method)

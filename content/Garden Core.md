@@ -4,7 +4,7 @@ draft: false
 tags: 
 description:
 ---
-*Sources:* [[Sources|Check me out!]]
+ *Sources:* [[Sources|Check me out!]]
 # Data Analysis & Machine Learning
 
 | Description                             | Link                                        |
