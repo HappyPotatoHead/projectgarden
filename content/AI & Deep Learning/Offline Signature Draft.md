@@ -304,8 +304,6 @@ By applying this technique, I was able to effectively isolate the signature stro
 
 ## Signature Verification
 
-*Buckle up, this section is long!*
-
 Now that I've applied **Otsu's thresholding** to both sets of forgeries and original images, it's time to build the dataset; however, before I went ahead with that, I had to determine how the model would learn and verify signature images - this required the model to learn the subtle visual characteristics that distinguish genuine signatures from different individuals' signatures and forgeries.. 
 
 After thorough research into deep metric learning techniques commonly applied in image recognition tasks such as face recognition, I determined that an **embedding-based** approach would fit perfectly with this problem. I decided that I would train a **convolutional neural network (CNN)** to map each signature image into an embedding in a high-dimensional space; the embeddings of the genuine signatures from the same author would be close to each other, while embeddings signatures from other authors or forgeries should be far apart.  
@@ -314,6 +312,31 @@ I chose to develop a  **triplet loss network**, because of the mechanisms in whi
 
 This embedding-based approach directly supports the verification task; if I want to verify a signature, I would compare its embedding to known genuine embeddings; if the distance is below a threshold, it's more likely to be genuine. 
 
+### Triplet Loss
+
+Within the framework of Triplet Loss, the strategy for selecting informative and useful triplets during training - **triplet mining** - is crucial to produce a robust model. Instead of using an offline mining strategy, I decided to implement an online batch mining approach where triplets are generated directly from the embeddings within each training batch, allowing me to dynamically control the difficulty of the triplets used. Offline triplet mining, on the other hand, would select triplets only once, which might become outdated quickly as the model learns
+
+I implemented a custom `BatchTripletLoss` class to facilitate experimentation and finding the most effective training signals; this class supports both **batch hard** and **batch semi-hard** mining strategies. Batch hard mining focuses on selecting triplets with the hardest negative sample for each anchor-positive pair in a batch while batch semi hard selects triplets that violate the margin but are not so hard that they cause training instability. This class also allowed for the use of either **Euclidean** or **Cosine** distance metrics to measure similarity in the embedding space, providing further flexibility in defining how distances are calculated. 
+
+Developing this flexible loss module was key to iterating on the training process and optimizing the network's ability to learn a highly discriminative embedding space for signature verification.
+#### Configurable Parameters 
+##### Margin
+
+A key hyperparameter in Triplet Loss is the **margin**. I had set the margin to 0.5 by default which defines the minimum required difference between the Anchor-Negative distance and the Anchor-Positive distance. 
+
+$$(\text{distance}(A,P)+\text{margin}<\text{distance}(A,N))$$
+
+Choosing the right margin was important to balance the compactness of same-author signatures and the separation of different-author signatures in the embedding space. I also included the option to use a **soft margin**, which introduces flexibility by allowing the margin to adapt dynamically. This is useful in scenarios where the difficulty of triplets varies significantly.
+
+I've experiment with different margin values - 0.2, 0.5. 1.0 - and I found that the starting value, 0.5, gave the best result (With **batch hard** and **Euclidean** distance metrics). 
+
+##### Distance Metric and Mining strategy
+
+The loss calculation can be configured to use either **Euclidean** or **Cosine** distance metrics to measure similarity in the embedding space. Amongst these two, **Euclidean** distance is the more common choice, while **Cosine** distance, which measures the angle between vectors, can be more robust to variations in embedding magnitude. However, the choice of the distance metrics also depends on the choice of mining strategy; the **Euclidean** distance metric is better suited to the **batch hard** mining strategy, while **Cosine** distance is more flexible, being compatible with both **batch hard** and **batch semi hard** strategies.
+
+I experimented with multiple combinations and found that the combination of  **Euclidean** distance metric and **batch hard** strategy gave me the best result. Batch hard mining was chosen to ensure that the model was constantly learning form the hardest triplets within each batch, maximising the discriminative power of the embedding space. Euclidean distance measured the straight-line distance in the embedding space, aligning well with the goal of making similar signature close and dissimilar ones distanced from one another. 
+### Feature Extraction Model
+### `Transform` 
 
 [^1]: [Check Forgeries: Leveraging AI and Machine Learning for Signature Verification](https://orbograph.com/check-forgeries-leveraging-ai-and-machine-learning-for-signature-verification/) 
 [^2]: [How AI Works in Signature Verification Tools](https://sqnbankingsystems.com/blog/how-ai-works-in-signature-verification-tools/)
