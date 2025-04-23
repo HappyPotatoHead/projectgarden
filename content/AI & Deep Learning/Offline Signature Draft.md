@@ -302,13 +302,13 @@ By applying this technique, I was able to effectively isolate the signature stro
 >[!NOTE]- The Difference In Image Size
 >Most pre-trained models available on `PyTorch` are built to accept $224\times 224$ sizes. 
 
-## Signature Verification
+## Signature Verification Model Components
 
 Now that I've applied **Otsu's thresholding** to both sets of forgeries and original images, it's time to build the dataset; however, before I went ahead with that, I had to determine how the model would learn and verify signature images - this required the model to learn the subtle visual characteristics that distinguish genuine signatures from different individuals' signatures and forgeries.. 
 
 After thorough research into deep metric learning techniques commonly applied in image recognition tasks such as face recognition, I determined that an **embedding-based** approach would fit perfectly with this problem. I decided that I would train a **convolutional neural network (CNN)** to map each signature image into an embedding in a high-dimensional space; the embeddings of the genuine signatures from the same author would be close to each other, while embeddings signatures from other authors or forgeries should be far apart.  
 
-I chose to develop a  **triplet loss network**, because of the mechanisms in which it works;  there are three data points - anchor (*a genuine signature*), positive (*another genuine signature from the same author*), and negative (*a forged signature or signature from another author*) - used in each instance. The model learns to widen the distance between the negative data point and the anchor, while minimising the distance between the anchor and the positive data point. 
+I chose to develop a  **triplet loss function**, because of the mechanisms in which it works;  there are three data points - anchor (*a genuine signature*), positive (*another genuine signature from the same author*), and negative (*a forged signature or signature from another author*) - used in each instance. The model learns to widen the distance between the negative data point and the anchor, while minimising the distance between the anchor and the positive data point. 
 
 This embedding-based approach directly supports the verification task; if I want to verify a signature, I would compare its embedding to known genuine embeddings; if the distance is below a threshold, it's more likely to be genuine. 
 
@@ -336,7 +336,86 @@ The loss calculation can be configured to use either **Euclidean** or **Cosine**
 
 I experimented with multiple combinations and found that the combination of  **Euclidean** distance metric and **batch hard** strategy gave me the best result. Batch hard mining was chosen to ensure that the model was constantly learning form the hardest triplets within each batch, maximising the discriminative power of the embedding space. Euclidean distance measured the straight-line distance in the embedding space, aligning well with the goal of making similar signature close and dissimilar ones distanced from one another. 
 ### Feature Extraction Model
-### `Transform` 
+
+The core of the signature verification system is the **Convolutional Neural Network (CNN)** responsible for extracting features and generating the embedding vector for each signature image. This is paired with the Triplet Loss function to learn discriminative embedding space. 
+
+The model I had chosen to work with is the pre-trained `ResNet18` model from `PyTorch`. Compared to larger models in the `ResNet` family - `ResNet34`, `ResNet50`, `ResNet101`, and `ResNet152` - `ResNet18` architecturally simpler with significantly fewer parameters. Given the nature of extracting features from pre-processed binary signature images for a similarity task, `ResNet18` provided satisfactory performance without requiring excessive computational resources. 
+
+Utilising a pre-trained model was a deliberate decision to leverage the powerful transfer learning capabilities of CNNs. By using weights learned on a vast dataset like ImageNet, the model already possessed a strong foundation in recognizing visual patterns, which accelerated the training process on the more specialized signature data.
+
+#### First Layer Modification
+
+I replaced the network's first convolutional layer, which is designed for 3-channel (RGB) input, with a new layer configured for 1-channel (grayscale/binary) input.  I also initialised this new layer by averaging the weights from the original 3-channel filters to leverage the pre-trained weights.
+
+#### Custom Feature Processing Layer
+
+I removed the standard final classification layer of `ResNet18` since the model's main purpose is to provide embedding vector for each signature image.  Following the main `ResNet` backbone, I added a custom stack of convolutional layers, batch normalisation, and `ReLU` activations. These layers are important to further process the features extracted by the backbone; this block served to further process and refine the feature maps from the `ResNet` backbone, performing crucial channel reductions (from 512 channels down to 
+the desired dimension size), and spatially aggregate the features using adaptive pooling to a fixed size of $1\times1$. This was essential for preparing the features into the precise dimensionality and format required before the final projection into the embedding space. 
+
+#### Embedding Projection Head
+
+After these custom feature processing layers, I added a final sequence of layers - flattening, batch normalization, `ReLU`, and dropout - culminating in a linear layer to project the features down to the desired embedding dimension (256) and produce the final embedding vector.
+
+#### Forward Pass
+
+Furthermore, in the network's forward pass, I applied **L2 normalization** to the final embedding vector. This standard practice in metric learning projects embeddings onto the unit sphere, improving training stability and ensuring that similarity is primarily determined by the direction of the embedding. This adapted `ResNet18` architecture served as the core network trained by the Triplet Loss to generate the discriminative signature embeddings.
+
+### Data Augmentation
+
+Before feeding the signature images to the loss function to form triplets and begin training, I applied data augmentation via `transforms`. This pre-processing step was designed to artificially increase the diversity of the training dataset by applying random but realistic transformations  to the images, representing the naturally occurring variability seen in signatures, such as differences in scale, orientation, and alignment.
+
+My implementation included applying:
+* **Random rotation**
+* **Random scaling**
+* **Random displacements**
+* **Random cropping**
+
+By training the network on these augmented images, I introduced more variability into the dataset. This significantly helped in minimizing overfitting to the specific examples in the original dataset and encouraged the network to learn more robust and generalisable features that are less sensitive to minor variations in how a signature is presented. The augmented images were then used to construct the triplets for training the embedding network.
+
+## Model Training
+
+To manage the end-to-end training and testing process for the signature embedding network, I implemented a dedicated `SignatureVerification` class. This class served as the primary training orchestrator, encapsulating the core loop and incorporating essential practices for robust deep learning training. 
+
+Within this class, I implemented key features such as:
+
+* **Early Stopping** 
+	* Monitored validation loss and automatically halted training if no significant improvement was observed over a set number of epochs to prevent overfitting.
+* **Learning Rate Scheduling** 
+	* Managed the adjustment of the learning rate throughout training to optimise convergence. 
+	* I implemented a `OneCycleLR` learning rate schedule with the `Adam` optimizer. This schedule dynamically adjusts the learning rate over the course of training following a specific cyclical pattern, speeding up training convergence.
+* **Checkpointing**
+	* Automatically saved model snapshots - weights, and optimizer state - at key points - when a new best validation loss was achieved - to ensure progress could be restored and the best model recovered.
+* **Device Management:** 
+	* Handled moving data and the model to the GPU for accelerated computation.
+
+The class includes methods for executing individual training and validation epochs. The `train_epoch` method iterates through batches of augmented signature image triplets, computes the Triplet Loss using my custom `BatchTripletLoss` module, performs backpropagation, and updates the network's weights using the configured optimizer. The `validate` method performs a similar forward pass on the validation data to monitor performance without weight updates.
+
+This structured implementation provided a reliable and organized pipeline for training the signature embedding network effectively.
+
+## Verification
+
+>[!INFO] Configurations
+>Model: `ResNet18`
+>Loss function: Triplet Loss
+>Learning rate: `OneCycleLR`
+>Optimiser: `Adam`
+
+## Training
+
+![[__results___30_0.png]]
+EER: 0.2492 at threshold: -0.1905
+
+![[__results___33_0.png]]
+
+
+# Implementation and Deployment
+
+To make the system accessible, I developed a backend API using Flask to handle verification requests. This API integrated the trained `ResNet18` model. I had also developed a simple frontend via React that could interact with the backend. To store the signature images, I had decided to use a vector database developed with PostgreSQL's open source plugin - [`pgvector`](https://github.com/pgvector/pgvector). Finally, the entire system was containerized using Docker for easy deployment and testing. 
+
+The simple webpage would allow the user to insert a signature image along with the author's details and upon verification, the similarity score, confidence score, Euclidean distance, and the distance score will be displayed. 
+
+![[metrics.png]]
+*Example*
 
 [^1]: [Check Forgeries: Leveraging AI and Machine Learning for Signature Verification](https://orbograph.com/check-forgeries-leveraging-ai-and-machine-learning-for-signature-verification/) 
 [^2]: [How AI Works in Signature Verification Tools](https://sqnbankingsystems.com/blog/how-ai-works-in-signature-verification-tools/)
