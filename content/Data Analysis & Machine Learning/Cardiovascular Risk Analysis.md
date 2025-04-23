@@ -260,114 +260,11 @@ removed_rows, cleaned_data.head()
 
 Then, the dataset is divided into features and labels before splitting into training and test sets using the `train_test_split` method from `sklearn`. `stratify = y_cardio_df` is used to ensure that both training set and test set have equal rows of label data. The size of the test set is **20%** of the entire dataset. 
 
-*Snippet: Splitting dataset*
-```python
-from sklearn.model_selection import train_test_split
-
-# Splitting the features and label from the original dataset
-X_cardio_df:pd.DataFrame = cardio_df.drop(columns = 'Cardiovascular_risk(y)')
-y_cardio_df:pd.Series= cardio_df['Cardiovascular_risk(y)']
-
-# Extracting the training set and test set
-X_train, X_test, y_train, y_test = train_test_split(X_cardio_df, y_cardio_df, test_size=0.2, random_state= 42, stratify=  y_cardio_df)
-```
-
 Age data remain right-skewed so, discretising them is beneficial to ensure each age group gets equal representation.
 
 ![[age_category.jpg]]
 
 In our chosen features, there are 6 features with nominal data and 3 features with ordinal data. In the 6 features with nominal data, 5 – gender, family, junk food, smoking, and discipline - will be pre-processed with `LabelBinarizer` because their data consists of yes or no, or male or female. `OneHotEncoder` would not be suitable as it just adds unnecessary complexities when dealing with binary features. Transportation will be encoded with `OneHotEncoder`. `OrdinalEncoder` will be used on alcohol, tv, and snack. Finally, for better performance, cardiovascular risk will also be encoded with ordinal encoder.
-
-*Snippet: Creating encoders*
-```python
-from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, LabelBinarizer
-
-# Create encoders
-def fit_encoders(X_data:pd.DataFrame, y_data:pd.Series) -> TUPLE[
-		LabelBinarizer, 
-		LabelBinarizer, 
-		LabelBinarizer, 
-		LabelBinarizer, 
-		LabelBinarizer, 
-		OneHotEncoder,
-		OrdinalEncoder,
-		OrdinalEncoder]:
-		
-	cardiovascular_categories:list[str] = [['low', 'medium', 'high']]
-	lifestyle_categories:list[list[str]] = [
-		['none', 'low', 'medium', 'high'],
-		['rare', 'moderate', 'often'],
-		['No', 'Sometimes', 'Frequently', 'Always']
-	]
-	one_encoder:OneHotEncoder = OneHotEncoder(sparse_output= False)
-	ordinal_encoder:OrdinalEncoder = OrdinalEncoder(categories=lifestyle_categories)  
-	
-	label_ordinal_encoder:OrdinalEncoder = OrdinalEncoder(categories=cardiovascular_categories)
-	
-	lb_gender:LabelBinarizer = LabelBinarizer()
-	lb_gender.fit(X_data['Gender'])
-	
-	lb_family:LabelBinarizer = LabelBinarizer()
-	lb_family.fit(X_data['Family_history'])
-	
-	lb_junk_food:LabelBinarizer = LabelBinarizer()
-	lb_junk_food.fit(X_data['Junk_food'])
-	
-	lb_smoking:LabelBinarizer = LabelBinarizer()
-	lb_smoking.fit(X_data['Smoking'])
-	
-	lb_discipline:LabelBinarizer = LabelBinarizer()
-	lb_discipline.fit(X_data['Discipline'])
-	
-	one_encoder.fit(X_data[['Transportation']])
-	ordinal_encoder.fit(X_data[['Alcohol', 'TV', 'Snack']])
-	
-	label_ordinal_encoder.fit(pd.DataFrame(y_data))
-	
-	return (lb_gender, lb_family, lb_junk_food, lb_smoking, lb_discipline, one_encoder, ordinal_encoder, label_ordinal_encoder)
-```
-
-*Snippet: Transforming Dataset*
-```python
-def transform_data(X_data:pd.DataFrame,
-		y_data:pd.Series,
-		lb_gender:LabelBinarizer,
-		lb_family:LabelBinarizer,
-		lb_junk_food:LabelBinarizer,
-		lb_smoking:LabelBinarizer,
-		lb_discipline:LabelBinarizer,
-		one_encoder:OneHotEncoder,
-		ordinal_encoder:OrdinalEncoder,
-		label_ordinal_encoder:OrdinalEncoder
-) -> tuple[np.array, np.array]:
-
-	gender_encoded:np.array = lb_gender.transform(X_data['Gender'])
-	family_encoded:np.array = lb_family.transform(X_data['Family_history'])
-	junk_food_encoded:np.array = lb_junk_food.transform(X_data['Junk_food'])
-	smoking_encoded:np.array = lb_smoking.transform(X_data['Smoking'])
-	discipline_encoded:np.array = lb_discipline.transform(X_data['Discipline'])
-	
-	transport_encoded:np.array = one_encoder.transform(X_data[['Transportation']])
-	ordinal_encoded:np.array = ordinal_encoder.transform(X_data[['Alcohol', 'TV', 'Snack']])
-	
-	categorical_encoded:np.array = np.concatenate([
-		gender_encoded,
-		family_encoded,
-		junk_food_encoded,
-		smoking_encoded,
-		discipline_encoded,
-		transport_encoded,
-		ordinal_encoded,
-		X_data[['age_cat']].to_numpy()
-	], axis=1)
-	
-	numerical:np.array = X_data[['BMI' , 'Exercise']].to_numpy()
-	
-	X_processed:np.array = np.concatenate([numerical, categorical_encoded], axis=1)
-	y_processed:np.array = label_ordinal_encoder.transform(pd.DataFrame(y_data)).ravel()
-	
-	return X_processed, y_processed
-```
 
 # Methodology
 
@@ -379,55 +276,6 @@ K-fold cross validation is used when in training the model. This is done manuall
 
 >[!NOTE] Side Note
 >Now that I've done it, `StratifiedKFold` wasn't really necessary. 
-
-The following codes are used: 
-
-*Snippet: Training the model with stratified k fold*
-```python
-from sklearn.model_selection import StratifiedKFold
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
-
-# Getting the folds 
-skf:StratifiedKFold = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-
-cv_accuracy:list[float] = []
-cv_f1_score:list[float] = []
-cv_precision_score:list[float] = []
-cv_recall_score:list[float] = []
-
-for train_index, val_index in skf.split(X_train_processed, y_train_processed):
-    # selecting the random feature set and label set
-    X_train_fold, X_val_fold = X_train_processed[train_index], X_train_processed[val_index]
-    y_train_fold, y_val_fold = y_train_processed[train_index], y_train_processed[val_index]
-
-    knn_model_temp:KNeighborsClassifier = KNeighborsClassifier()
-    knn_model_temp.fit(X_train_fold, y_train_fold)
-
-    y_pred:np.array = knn_model_temp.predict(X_val_fold)
-
-    accuracy:float = accuracy_score(y_val_fold, y_pred)
-    f1:float = f1_score(y_val_fold, y_pred, average='weighted')
-    precision:float = precision_score(y_val_fold, y_pred, average='weighted')
-    recall:float = recall_score(y_val_fold, y_pred, average='weighted')
-
-    cv_accuracy.append(accuracy)
-    cv_precision_score.append(precision)
-    cv_f1_score.append(f1)
-    cv_recall_score.append(recall)
-
-print(f'Cross-Validation Accuracy Scores:\n{cv_accuracy}')
-print(f'Average Accuracy: {sum(cv_accuracy) / len(cv_accuracy)}\n')
-
-print(f'Cross-Validation Precision Scores:\n{list(map(float,cv_precision_score))}')
-print(f'Average Precision: {sum(cv_precision_score) / len(cv_precision_score)}\n')
-
-print(f'Cross-Validation Recall Scores:\n{list(map(float,cv_recall_score))}')
-print(f'Average Recall: {sum(cv_recall_score) / len(cv_recall_score)}\n')
-
-print(f'Cross-Validation F1 Scores:\n{list(map(float, cv_f1_score))}')
-print(f'Average F1: {sum(cv_f1_score) / len(cv_f1_score)}')
-```
 
 ### K-Nearest Neighbours
 
@@ -457,17 +305,6 @@ Average F1: 0.987109908814127
 ```
 
 *The result from the k-fold cross validation is quite promising.* 
-
-```python
-final_knn_model:KNeighborsClassifier = KNeighborsClassifier()
-final_knn_model.fit(X_train_processed, y_train_processed)
-y_train_pred:np.array = final_knn_model.predict(X_train_processed)
-
-accuracy:float = accuracy_score(y_train_processed, y_train_pred)
-f1:float = f1_score(y_train_processed, y_train_pred, average='weighted')
-precision:float = precision_score(y_train_processed, y_train_pred, average='weighted')
-recall:float = recall_score(y_train_processed, y_train_pred, average='weighted')
-```
 
 ```text
 Metrics after training on the entire training set:
@@ -532,19 +369,6 @@ Average F1 score: 0.9851515254830552
 ```
 
 *The result from the k-fold cross validation is quite promising.* 
-
-```python
-final_model: LogisticRegression = OneVsRestClassifier(LogisticRegression(solver='lbfgs', max_iter=5000, penalty='l2', class_weight='balanced'))
-
-final_model.fit(X_train_processed, y_train_processed)
-
-y_train_pred:np.array = final_model.predict(X_train_processed)
-
-accuracy:float = accuracy_score(y_train_processed, y_train_pred)
-f1:float = f1_score(y_train_processed, y_train_pred, average='weighted')
-recall:float = recall_score(y_train_processed, y_train_pred,  average='weighted')
-precision:float = precision_score(y_train_processed, y_train_pred, average='weighted')
-```
 
 ```text
 Model evaluation after training with the training set:
@@ -650,13 +474,6 @@ The training score remains 1.0 throughout the sample size, but the validation sc
 ## Model Testing
 
 Before testing the model, the same pre-processing is done on the testing datasets.  
-
-*Snippet: Pre-processing testing dataset*
-```python
-discretise_age(X_test)
-
-X_test_processed , y_test_processed = transform_data(X_test, y_test, lb_gender, lb_family, lb_junk_food, lb_smoking, lb_discipline, one_encoder, ordinal_encoder, label_ordinal_encoder)
-```
 
 ### K-Nearest Neighbours
 
