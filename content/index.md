@@ -28,7 +28,7 @@ If you don't know where to look for sources, maybe [[Sources|this]] can help!
 *To-do list:*
 - [ ] Personalise the garden
 - [ ] Add more completed projects
-	- [ ] Signature Verification Project
+	- [x] Signature Verification Project
 	- [ ] Bongo Animals
 	- [ ] Malaysia Cuisine Website
 - [x] Create a map for the site

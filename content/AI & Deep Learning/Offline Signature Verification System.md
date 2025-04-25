@@ -502,3 +502,6 @@ Overall, this project was definitely a boost.
 [^3]: [How AI and ML can Revolutionize Banks Signature Verification Process](https://www.forbes.com/councils/forbestechcouncil/2023/08/09/how-ai-and-ml-can-revolutionize-banks-signature-verification-process/)
 [^4]:[CEDAR signature](https://paperswithcode.com/dataset/cedar-signature)
 [^5]:[Otsu's Method](https://en.wikipedia.org/wiki/Otsu%27s_method)
+
+[^99]: [Signature Verification Model](https://www.kaggle.com/code/jimding/signature-verification-resnet-model)
+[^100]: [YOLO NAS Model - Broken at 25/4/2025 ](https://www.kaggle.com/code/jimding/yolo-nas-model)

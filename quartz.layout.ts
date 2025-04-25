@@ -61,7 +61,7 @@ export const defaultContentPageLayout: PageLayout = {
           Component: Component.Darkmode()
         },
       ],
-      gap:"0.2rem"
+      gap:"0.5rem"
     }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.ConditionalRender({
