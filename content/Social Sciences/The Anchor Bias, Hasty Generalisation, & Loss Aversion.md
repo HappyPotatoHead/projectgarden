@@ -61,4 +61,4 @@ imated the actual product by extrapolation or adjustment. It is also found that 
 
 >[!faq] What can it mean?
 >1. Teachers mark their students' work based on the marks they attained from the previous one. 
->2. if you first see a T-shirt that costs $1,200 – then see a second one that costs $500 – you're prone to see the second shirt as cheap.
+>2. If you first see a T-shirt that costs $1,200$ - then see a second one that costs $500$ - you're prone to see the second shirt as cheap. 

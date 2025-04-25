@@ -4,6 +4,8 @@ draft: false
 tags: 
 description:
 ---
+# 25th April 2025
+- Added [[Offline Signature Verification System]]
 # 19th April 2025
 
 - Made table of content collapsible on mobile
