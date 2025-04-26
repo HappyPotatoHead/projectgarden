@@ -32,7 +32,6 @@ If you don't know where to look for sources, maybe [[Sources|this]] can help!
 	- [x] Bongo Animals
 	- [ ] Malaysia Cuisine Website
 - [x] Create a map for the site
-- [ ] Add analytics
 - [ ] And so much more!
 
 ---
