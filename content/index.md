@@ -29,7 +29,7 @@ If you don't know where to look for sources, maybe [[Sources|this]] can help!
 - [ ] Personalise the garden
 - [ ] Add more completed projects
 	- [x] Signature Verification Project
-	- [ ] Bongo Animals
+	- [x] Bongo Animals
 	- [ ] Malaysia Cuisine Website
 - [x] Create a map for the site
 - [ ] Add analytics
