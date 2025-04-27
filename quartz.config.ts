@@ -14,7 +14,7 @@ const config: QuartzConfig = {
     enablePopovers: true,
     analytics: {
       provider: "goatcounter",
-      websiteId: process.env.GOATCOUNTER_WEBSITE_ID || 'default_id'
+      websiteId: "process.env.GOATCOUNTER_WEBSITE_ID",
     },
     locale: "en-US",
     baseUrl: "quartz.jzhao.xyz",
