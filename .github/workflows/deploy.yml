@@ -26,11 +26,11 @@ jobs:
           node-version: 22
       - name: Install Dependencies
         run: npm ci
-      - name: Prepare Environment Secrets
-        env:
-          GOATCOUNTER_CODE: 9719
-        run: |
-          sed -i "s/GOATCOUNTER_CODE_PLACEHOLDER/${GOATCOUNTER_CODE}/g" quartz.config.ts
+      # - name: Prepare Environment Secrets
+      #   env:
+      #     GOATCOUNTER_CODE: ${{ secrets.GOATCOUNTER_CODE }}
+      #   run: |
+      #     sed -i "s/GOATCOUNTER_CODE_PLACEHOLDER/${GOATCOUNTER_CODE}/g" quartz.config.ts
       - name: Build Quartz
         run: npx quartz build
         # run: |
