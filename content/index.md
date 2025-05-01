@@ -36,7 +36,7 @@ If you don't know where to look for sources, maybe [[Sources|this]] can help!
 
 ---
 
-Watch this anime, please.  
+My current wallpaper. 
 ![[frieren.png]]
 *Frieren: Beyond Journey's End*
 

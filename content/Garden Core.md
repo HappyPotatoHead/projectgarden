@@ -5,8 +5,6 @@ tags:
 description:
 ---
  *Sources:* [[Sources|Check me out!]]
-
-*This is here, because, quite frankly, modifying `FolderPage` is a lot of work*
 # Data Analysis & Machine Learning
 
 | Description                             | Link                                        |
