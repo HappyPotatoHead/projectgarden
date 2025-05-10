@@ -6,8 +6,8 @@ tags:
   - machine_learning
 description:
 ---
->[!NOTE] Source Code
->Source code coming soon (*I have to edit it!*)
+>[!IMPORTANT] Check out the repository!
+>[Click me!](https://github.com/HappyPotatoHead/Cardiovascular-Risk-Analysis)
 # Problem Statement
 
 This project aimed to analyse patient data to identify key risk factors for cardiovascular disease and develop a predictive model for assessment. Diagnosis of cardiovascular risk can be made easier and smoother, albeit the predictions still require professionals' insights. Nonetheless, machine learning can help doctors and researchers to learn and uncover unsuspected correlations and new trends, allowing them to make informed decisions.
