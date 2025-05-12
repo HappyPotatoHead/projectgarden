@@ -16,7 +16,7 @@ If you don't know where to look for sources, maybe [[Sources|this]] can help!
 
 >[!QUOTE] 
 >```telescopic
->* Knowledge is not a reservoir to be hoarded but a river to be shred
+>* Knowledge is not a reservoir to be hoarded but a river to be shared
 >	* He who has a Why to live for can bear almost any How
 >		* There are things which must cause you to lose your reason or you have none to lose
 >			* The truth - that love is the ultimate and the highest goal to which man can aspire. The salvation of man is through love and in love
@@ -27,6 +27,7 @@ If you don't know where to look for sources, maybe [[Sources|this]] can help!
 
 *To-do list:*
 - [ ] Personalise the garden
+- [ ] Add Translation Feature
 - [ ] Add more completed projects
 	- [x] Signature Verification Project
 	- [x] Bongo Animals
