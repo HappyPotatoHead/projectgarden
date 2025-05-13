@@ -63,7 +63,13 @@ export const defaultContentPageLayout: PageLayout = {
       ],
       gap:"0.5rem"
     }),
-    Component.DesktopOnly(Component.TableOfContents()),
+    Component.DesktopOnly(    
+      Component.ConditionalRender({
+        component: Component.TableOfContents(),
+        condition: (page) => page.fileData.slug !== "index"
+    })
+  ),
+    // Component.TableOfContents()),
     Component.ConditionalRender({
       component: Component.Explorer({folderDefaultState: "open"}),
       condition: (page) => page.fileData.slug === "index"
