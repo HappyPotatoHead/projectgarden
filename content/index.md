@@ -22,6 +22,8 @@ I’m [HappyPotatoHead](https://github.com/HappyPotatoHead). This used to be a *
 *Dont know where to go?*
 - [[Garden Core]]
 - [[Sources]]
+
+*View changes at: [[Changelogs]]*
 # Featured
 
 ## Signature Verification System
