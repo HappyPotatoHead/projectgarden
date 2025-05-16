@@ -19,10 +19,9 @@ description:
 
 # Project for Fun
 
-| Description               | Link                                     |
-| ------------------------- | ---------------------------------------- |
-| Bongo Animals             | [[Bongo Animals\|Click me!]]             |
-| Malaysian Cuisine Website | [[Malaysian Cuisine Website\|Click me!]] |
+| Description   | Link                         |
+| ------------- | ---------------------------- |
+| Bongo Animals | [[Bongo Animals\|Click me!]] |
 
 # Social Science
 
