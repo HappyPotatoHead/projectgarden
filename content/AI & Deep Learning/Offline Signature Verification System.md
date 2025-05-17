@@ -5,7 +5,7 @@ tags:
 description:
 ---
 >[!TIP] Source Code
->Currently cleaning up and fixing the source code!
+>Working on the source code! Both model training and the web application will be released!
 
 >[!INFO] Offline
 >Offline here means signature written with pens on paper!
