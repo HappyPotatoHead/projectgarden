@@ -4,7 +4,9 @@ draft: false
 tags: 
 description:
 ---
->[!TIP] Source Code
+>[!BUG] Overhaul
+>This documentation is getting overhauled! (*I'm not really satisfied with it*)
+>
 >Working on the source code! Both model training and the web application will be released!
 
 >[!INFO] Offline
