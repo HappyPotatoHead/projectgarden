@@ -141,8 +141,9 @@
   // }
 
   &[data-callout="announcement"]{
-    --color: #FFD700;
-    --border: #FFD700;
+    --color: #FF4500;
+    --border: #FF4500;
+    --bg: none;
     --callout-icon: var(--callout-icon-megaphone);
   }
 
