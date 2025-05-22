@@ -4,7 +4,8 @@ draft: false
 tags: 
 description:
 ---
-
+>[!ANNOUNCEMENT] Exam
+>Exam season!
 
 I’m [HappyPotatoHead](https://github.com/HappyPotatoHead). This used to be a **digital garden** meant to record my academic journey throughout my Computer Science Degree, but I've decided to rebrand it to store my projects instead. *Maybe notes will make a comeback?*  
 
