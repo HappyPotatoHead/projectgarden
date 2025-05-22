@@ -139,11 +139,12 @@
   &[data-callout="reminder"]{
     --callout-color: 244, 187, 68;
     --callout-icon: sticky-note;
-    }
+  }
+  
   &[data-callout="announcement"]{
-    --color: #FFD700
-    --border: #FFD700
-    --callout-icon: var(--callout-icon-megaphone)
+    --color: #FFD700;
+    --border: #FFD700;
+    --callout-icon: var(--callout-icon-megaphone);
   }
 
   &.is-collapsed > .callout-title > .fold-callout-icon {
