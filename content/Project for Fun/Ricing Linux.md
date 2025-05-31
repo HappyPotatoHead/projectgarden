@@ -11,4 +11,4 @@ description:
 
 I might have a *tad* problem.
 
-![[2025-05-31_20-43.png]]
+![[content/Project for Fun/images/linux_ricing/2025-05-31_20-43.png]]
