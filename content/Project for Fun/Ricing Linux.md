@@ -9,3 +9,6 @@ description:
 ---
 # I went down a rabbit hole...
 
+I might have a *tad* problem.
+
+![[2025-05-31_20-43.png]]

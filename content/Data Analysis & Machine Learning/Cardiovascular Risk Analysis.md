@@ -110,7 +110,7 @@ Income is also ignored as we have features such as junk food, smoking, exercise,
 
 ### Cardiovascular Risk 
 
-![[cardiovascular_risk.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/cardiovascular_risk.jpg]]
 
 Most individuals in the dataset — 967 — are at high risk of developing cardiovascular diseases. The distribution of individuals with low and medium cardiovascular risk is relatively even, with minor differences.
 
@@ -120,7 +120,7 @@ This could also suggest that the sample was collected from a region where sedent
 
 ### Age, Weight, and Height
 
-![[age_bmi_histogram.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/age_bmi_histogram.jpg]]
 
 The age distribution is right-skewed, indicating that the demographic of the dataset is primarily teenagers and working adults. Based on the [[Cardiovascular Risk Analysis#Cardiovascular Risk|cardiovascular risk graph]], this suggests that most individuals with a higher risk of cardiovascular disease are younger.
 
@@ -131,7 +131,7 @@ peaks. There are peaks between 15 and 20, between 25 and 30, and between 30 and 
 
 ### Lifestyle and Demographic
 
-![[lifestyle_demographic.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/lifestyle_demographic.jpg]]
 
 The data distribution for the gender feature is evenly distributed with 50.5% male and 49.5% female. This suggests that both genders are evenly represented in the dataset. This can minimise potential bias in the machine learning model, preventing the model from skewing 
 towards one gender over the other. 
@@ -150,7 +150,7 @@ The most popular form of transportation in the dataset is the bus, with 1,573 in
 
 This could also provide insights into the overall physical activity levels of the sample, as reliance on buses may correlate with lower physical activeness compared to cycling. 
 
-![[fitness_level.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/fitness_level.jpg]]
 
 Rather than going off of a conjecture, the exercise bar graph shows that 716 individuals do not exercise, 773 individuals rarely exercise, 493 moderate exercises, and 118 regularly exercises.
 
@@ -158,7 +158,7 @@ Rather than going off of a conjecture, the exercise bar graph shows that 716 ind
 
 ### Age and Cardiovascular Risk Levels
 
-![[age_cardiovascular.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/age_cardiovascular.jpg]]
 
 The boxplot for the low-risk category shows that most individuals in this group are younger, with the median age being lower than the other categories. The range of ages in this group is also narrow, with a few outliers extending to older ages.
 
@@ -166,20 +166,20 @@ On the other hand, the medium-risk category displays a wider age range, with its
 
 ### BMI and Cardiovascular Risk
 
-![[bmi_cardiovascular_risk.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/bmi_cardiovascular_risk.jpg]]
 
 The scatter graph suggests correlations between BMI and cardiovascular risk. Based on the scatter graph, individuals with lower BMI have lower risks of developing cardiovascular diseases while individuals with higher BMI have higher cardiovascular risk. 
 
 ### Gender and Cardiovascular Risk 
 
-![[gender_cardiovascular.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/gender_cardiovascular.jpg]]
 
 The graph indicates that the spread of cardiovascular risk between the two genders is evenly distributed. Both females and males have the highest count in the high-risk category, with counts reaching 500, indicating that high cardiovascular risk is prevalent in both genders. However, 
 there are more medium-risk category counts in males compared to females. There are also lesser males with low-risk category compared to females. 
 
 ### Lifestyle and Cardiovascular Risk
 
-![[lifetstyle_cardiovascular.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/lifetstyle_cardiovascular.jpg]]
 
 It can be observed that a significant portion of individuals who consume low volumes of alcohol have higher cardiovascular risks, indicating that there are other factors - activeness and diet - at play. 
 
@@ -264,7 +264,7 @@ Then, the dataset is divided into features and labels before splitting into trai
 
 Age data remain right-skewed so, discretising them is beneficial to ensure each age group gets equal representation.
 
-![[age_category.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/age_category.jpg]]
 
 In our chosen features, there are 6 features with nominal data and 3 features with ordinal data. In the 6 features with nominal data, 5 – gender, family, junk food, smoking, and discipline - will be pre-processed with `LabelBinarizer` because their data consists of yes or no, or male or female. `OneHotEncoder` would not be suitable as it just adds unnecessary complexities when dealing with binary features. Transportation will be encoded with `OneHotEncoder`. `OrdinalEncoder` will be used on alcohol, tv, and snack. Finally, for better performance, cardiovascular risk will also be encoded with ordinal encoder.
 
@@ -332,11 +332,11 @@ Recall: 0.9961365099806826
   weighted avg       1.00      1.00      1.00      1553
 ```
 
-![[knn_confusion_matrix.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/knn_confusion_matrix.jpg]]
 
 According to the confusion matrix, most misclassification occurs in the low-risk – 4 false negatives and 2 false positives - and medium-risk – 2 false negatives and 4 false positives - category.
 
-![[knn_learning_curve.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/knn_learning_curve.jpg]]
 
 The learning curve shows that the training score starts high and remains consistent throughout, except for a small initial dip, before stabilising at a high level. Such performance indicates some overfitting initially. The validation score starts much lower than the training score but, as the number of samples increases, the validation score improves significantly, showing that the data generalises well as it sees more data. The gap between training score and validation score also decreases as the training examples increase, indicating improved generalization. 
 
@@ -396,11 +396,11 @@ F1 score: 0.9922596724505841
 weighted avg       0.99      0.99      0.99      1552
 ```
 
-![[logistic_confusion_matrix.png]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/logistic_confusion_matrix.png]]
 
 Based on the confusion matrix, the model makes the most misclassifications when attempting to predict medium-risk category with 7 false negatives and 5 true positives. 
 
-![[logistic_learning_curve.png]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/logistic_learning_curve.png]]
 
 Similar to the training curve from the KNN model, the model initially overfitted, with a very high training score, but dips as the number of data introduced increases. The validation score starts out much lower than the training score but improves as more data is used, indicating the model’s improvement at generalisation. The gap between training score and validation score at the end does reduce, but it would still benefit from more data or fine-tuning to further close the gap. 
 
@@ -465,11 +465,11 @@ precision    recall  f1-score   support
 weighted avg       1.00      1.00      1.00      1553
 ```
 
-![[random_forest_confusion_matrix.png]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/random_forest_confusion_matrix.png]]
 
 Based on the confusion matrix, the random forest model gave a perfect training result with zero misclassification across all three level of risks. As great as this is, this may indicate overfitting of the model. 
 
-![[random_forest_learning_curve.png]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/random_forest_learning_curve.png]]
 
 The training score remains 1.0 throughout the sample size, but the validation score changes. There is also an absence of a shaded area between the training and validation learning curves; this likely means that the generalisation gap of the model is small. 
 
@@ -492,11 +492,11 @@ F1: 0.9871479329334849
 Comparing the two metrices, the performance of the model on unseen data is consistent with the performance on training data. 
 
 
-![[knn_test_confusion_matrix.png]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/knn_test_confusion_matrix.png]]
 
 In comparison to the training confusion matrix, there is not much disparity in the performance. There are only 5 misclassifications that the model makes - misclassifying medium risk as low risk 5 times. 
 
-![[knn_roc_auc.png]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/knn_roc_auc.png]]
 
 The AUC ROC curve show that the AUC for each level of cardiovascular risks is consistently reaching 1.000. This means that the model is capable of distinguishing the three classes apart from each other. The AUC for high risk being 1 tallies with the perfect prediction as shown in the confusion matrix, while there exists minor misclassification between low and high cardiovascular risk. 
 
@@ -517,9 +517,9 @@ F1 score: 0.9897032781140256
 
 Comparing the two metrices, the performance of the model on unseen data is also consistent with the performance on training data.
 
-![[logistic_regression_test_matrix.png]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/logistic_regression_test_matrix.png]]
 
-![[logistic_regression_ROC_curve.png]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/logistic_regression_ROC_curve.png]]
 
 For the ROC AUC Curve, the model demonstrates a good performance in in distinguishing between 
 the three categories. However, there exists misclassification across all three level of cardiovascular risks. 
@@ -540,9 +540,9 @@ F1: 0.9897032781140256
 
 The metrics dropped when the model is being used on unseen data, but still remains consistently high. 
 
-![[random_forest_test_matrix.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/random_forest_test_matrix.jpg]]
 
-![[random_forest_test_AUC.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/random_forest_test_AUC.jpg]]
 
 The confusion matrix for the test data shows that the 
 model performs well but not perfectly when applied to new data. Specifically, 108 instances of Low risk were correctly classified, with 2 misclassified as Medium and none as High. For the Medium risk category, 103 instances were correctly predicted, while 1 Low was misclassified. In the High-risk category, the model correctly classified all 175 instances with no misclassifications. While the misclassifications in the Low and Medium categories are 
@@ -571,9 +571,9 @@ Tuned Metrics:
 |  Recall              |  0.987147 |
 |  $\text{F}_1$ Score  |  0.987187 |
 ```
-![[knn_fine_tune_matrix.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/knn_fine_tune_matrix.jpg]]
 
-![[knn_fine_tune_roc_auc.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/knn_fine_tune_roc_auc.jpg]]
 
 According to the fine-tuned model, the most misclassifications still happen in medium￾risk category and low-risk category with 1 false negative and 4 false positives. However, looking at the ROC AUC curve, the AUC for low-risk category dipped but improved slightly for medium risk category. Overall, the performance of the fine-tuned model improved with a rather negligible amount.
 
@@ -610,9 +610,9 @@ After performing fine tuning, it is shown that the best parameters to form the b
 |  $\text{F}_1$ Score  |  0.989703 |
 ```
 
-![[logistic_regression_fine_tune_matrix.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/logistic_regression_fine_tune_matrix.jpg]]
 
-![[logistic_regression_fine_tune_auc_roc.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/logistic_regression_fine_tune_auc_roc.jpg]]
 
 The Fined Tuned Confusion Matrix is similar to the Testing Confusion Matrix. Based on the ROC AUC Curve, there is a small improvement in the model's ability to differentiate 
 these 3 categories. However, for the low-risk category continues to have the lowest score among the 3 categories.
@@ -635,9 +635,9 @@ However, this version does not perform as well as the former.
 |  $\text{F}_1$ Score  |  0.958804 |
 ```
 
-![[logistic_regression_fine_tune_matrix_2.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/logistic_regression_fine_tune_matrix_2.jpg]]
 
-![[logistic_regression_fine_tune_aoc_roc_2.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/logistic_regression_fine_tune_aoc_roc_2.jpg]]
 
 The model makes the most mistakes in distinguishing between low and medium categories. The ROC AUC curve shows that the model has a harder time predicting medium￾risk category compared to predicting low-risk or high-risk categories. According to the confusion matrix, 7 false positives are made and 6 false negatives are made when classifying medium-risk category. 
 
@@ -661,9 +661,9 @@ The grid search explored parameters:
 |  $\text{F}_1$ Score  |  0.992289 |
 ```
 
-![[rf_fine_tune_matrix.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/rf_fine_tune_matrix.jpg]]
 
-![[rf_fine_tune_roc_auc.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/rf_fine_tune_roc_auc.jpg]]
 
 The fine tuned confusion matrix remains the same as the testing confusion matrix, while the ROC AUC scores for tunned shows near-perfect performance. However, there is a slight variation in the AUC values between the two testing 
 scenarios. The AUC for the Low category slightly increased from 0.9992 to 0.9994. Conversely, the AUC for the Medium category decreased from 0.9990 to 0.9988. The AUC for the High category remains consistently perfect at 1.0 in both cases, indicating exceptional performance in distinguishing the High class from the others across both tests.
@@ -708,7 +708,7 @@ According to random forest,
 | Transportation_motorcycle | 0.000376   |
 | Transportation_bicycle    | 0.000170   |
 
-![[random_forest_feature_importance.jpg]]
+![[content/Data Analysis & Machine Learning/images/Cardiovascular/random_forest_feature_importance.jpg]]
 
 BMI is the most important factor in predicting cardiovascular risk, with an importance 
 score close to 0.75, indicating it has a major influence on the model's performance, while other features seem to play very minor role. 
