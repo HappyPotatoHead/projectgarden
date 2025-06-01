@@ -23,11 +23,11 @@ description:
 | ------------- | ---------------------------- |
 | Bongo Animals | [[Bongo Animals\|Click me!]] |
 
-# Social Science
+%% # Social Science
 
 >[!WARNING] 
 >I'm a computer science student. I read these for fun!
 
 1. [[Zeigarnik Effect, Feature Positive Effects, & Default Effect]]
-2. [[The Anchor Bias, Hasty Generalisation, & Loss Aversion]]
+2. [[The Anchor Bias, Hasty Generalisation, & Loss Aversion]] %%
 

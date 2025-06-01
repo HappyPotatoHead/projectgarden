@@ -4,6 +4,8 @@ draft: false
 tags: 
 description:
 ---
+# 1st June 2025
+- Added [[Ricing Linux]]
 # 14th May 2025
 - Modified the index page
 # 10th May 2025

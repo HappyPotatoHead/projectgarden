@@ -25,6 +25,7 @@ description:
 - Random monitor stand
 ## On The Go
 - Redmi Pad Pro
+- Lenovo Latitude 3410
 # Software
 ## Note Taking
 - [Obsidian](https://obsidian.md/) (*The only one you need*)

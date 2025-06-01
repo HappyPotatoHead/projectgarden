@@ -49,6 +49,12 @@ One of the greatest pleasure of being a developer is to be able to make whatever
 
 Complete Documentation: [[Bongo Animals]]
 
+# What's next?
+
+- [ ] Overhauling [[Offline Signature Verification System]]
+- [ ] More analysis projects
+- [ ] Game development?
+- [ ] *Get a haircut*
 # Links
 
 Gardens that I shamelessly copy from:
