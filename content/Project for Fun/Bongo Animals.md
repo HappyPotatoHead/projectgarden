@@ -5,7 +5,7 @@ tags:
 description:
 ---
 >[!INFO]
->Project is still ongoing
+>Project is done! Sort of. I'm not really sure if I should add sound. 
 
 Link: [Bongo Animals](https://bongo-animals.netlify.app/)
 
@@ -16,6 +16,18 @@ One of the greatest pleasure of being a developer is to be able to make whatever
 *Don't know what to display on your screen while you study? Just want to watch animals slam their hands, paws, or whatever limbs they have on the desk? Well, you have come to the right place!*
 
 ![[bongo_shark.png]]
+*Man, I wanna quit...*
+
+![[bongo_dog.png]]
+*No more work! No more work! No more!*
+
+# How To Bongo
+
+Click anywhere on the webpage or press any key on your keyboard to make the animals move! Alternatively, you can toggle the button on the bottom left corner to enable automatic *bongo-ing*!
+
+Click the **umbrella** to select a different *bongo*!
+
+Enjoy!
 
 # Tools used:
 1. Framework & Libraries
