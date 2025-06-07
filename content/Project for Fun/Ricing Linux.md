@@ -13,8 +13,16 @@ description:
 
 I might have a *tad* problem.
 
+## First Version
+
 ![[fern.png]]
 ![[fern_rice.png]]
+
+## Second Version
+
+![[fern_two.png]]
+
+![[fern_neo.png]]
 
 **Details**
 - Distro: Linux Mint
