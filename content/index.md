@@ -28,7 +28,7 @@ I’m [HappyPotatoHead](https://github.com/HappyPotatoHead). This used to be a *
 
 This project aimed to develop a system that utilises deep learning models to efficiently verifying *offline* (handwritten) signatures. The challenged was to accurately compare scanned or captured signatures against known samples, even with variations in style and quality. With this system, the process of verifying valid signatures can be significantly shorter and less tedious. 
 
-Complete documentation: [[Offline Signature Verification System]]
+Complete documentation: [[Offline Signature Verification]]
 
 ## Cardiovascular Risk Analysis
 
@@ -48,7 +48,7 @@ Complete Documentation: [[Bongo Animals]]
 
 # What's next?
 
-- [ ] Overhauling [[Offline Signature Verification System]]
+- [ ] Overhauling [[Offline Signature Verification]]
 - [ ] More analysis projects
 - [ ] Game development?
 - [ ] *Get a haircut*

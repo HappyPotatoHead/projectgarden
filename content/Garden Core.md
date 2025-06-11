@@ -15,7 +15,7 @@ description:
 
 | Description                           | Link                                                 |
 | ------------------------------------- | ---------------------------------------------------- |
-| Offline signature verification system | [[Offline Signature Verification System\|Click me!]] |
+| Offline signature verification system | [[Offline Signature Verification\|Click me!]] |
 
 # Project for Fun
 

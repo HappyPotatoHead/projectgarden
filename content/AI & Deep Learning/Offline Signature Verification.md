@@ -32,7 +32,10 @@ I've decided to split the system into 4 subsystems, each with its own challenges
 
 ## Signature Detection and Extraction
 
-[YOLO NAS Model - Broken at 25/4/2025 ](https://www.kaggle.com/code/jimding/yolo-nas-model)
+>[!BUG] Unfortunately
+>The model worked, but I forgot to save an example (*oops!*), and the library is bugged.
+> 
+>So, I will link the [YOLO NAS Model - Broken at 25/4/2025 ](https://www.kaggle.com/code/jimding/yolo-nas-model)
 ### Model Selection
 
 The challenge in this phase is to precisely locate the signature area within a given image. High accuracy is pertinent as the subsequent phases rely on having the correct signature images to analyse. 
@@ -281,11 +284,6 @@ Once the parameters were set, I used the `Trainer` object to load the `yolo_nas_
 To test the fine-tuned model, I evaluated it using SuperGradients `trainer.test`. I configured the evaluation metrics to calculate Mean Average Precision (`mAP`) at an Intersection over Union (`IoU`) threshold of 0.5, a standard metric for object detection accuracy.
 
 Beyond quantitative metrics, I also validated the model's performance qualitatively by generating predictions on individual images from the test set. This involved feeding images into the fine-tuned model and visualising the predicted bounding boxes. 
-
->[!BUG] Unfortunately
->The model works, but I forgot to save an example, and the library is bugged.
-> 
->So, I will link the [kaggle notebook](https://www.kaggle.com/code/jimding/yolo-nas-model) 
 
 ### Extracting Signatures
 
@@ -599,7 +597,21 @@ There are a multitude of factors that may have contributed to this:
 
 Regardless, this *experiment* demonstrates that using a deep learning model in a signature verification task is feasible, provided a sufficient amount of signatures are used.
 
-# Implementation and Deployment
+# Learning and Takeaways
+
+The major challenge was achieving sufficient accuracy on a dataset with a relatively limited number of data while avoiding overfitting. At times, the clusters of signatures in PCA graph on the training set were completely separated, yet the model did not perform as well on the test set (*as shown in the [[Offline Signature Verification#Verification|verification]] section*). To attenuate this, [[Offline Signature Verification#Data Augmentation|data augmentation]] and [[Offline Signature Verification#Custom Feature Processing Layer|experimentation with varrying numbers of additional CNN layers]] are crucial strategies for improving generalisation and robustness.
+
+Building this system from end-to-end was definitely a challenge. Although I possess knowledge in traditional machine learning, deep learning with PyTorch has proven to be an entirely different beast; unlike Scikit-Learn, PyTorch does not provide certain functions - such as grid search or random search - that would streamline the fine-tuning process. 
+
+PyTorch prioritises flexibility and low-level control, especially for building custom neural networks and training loops, which come at the cost of requiring more boilerplate code for common tasks such as hyperparameter optimisation. 
+
+However, there other third party libraries - [Optuna](https://optuna.org/) or [Ray Tune](https://docs.ray.io/en/latest/tune/index.html) to to make up for the missing features in PyTorch, but that would require me to spend more time learning these libraries (*Definitely putting these into my to-do list*). 
+
+> As I garner more knowledge in data science, I would definitely revisit this project.  
+
+# Bonus
+
+## Implementation and Deployment
 
 >[!BUG]
 >Under Development! 
@@ -611,17 +623,6 @@ The simple webpage would allow the user to insert a signature image along with t
 ![[metrics.png]]
 *Example*
 
-# Learning and Takeaways
-
-The major challenge was achieving sufficient accuracy on a dataset with a relatively limited number of data while avoiding overfitting. At times, the clusters of signatures in PCA graph on the training set were completely separated, yet the model did not perform as well on the test set (*as shown in the [[Offline Signature Verification System#Verification|verification]] section*). To attenuate this, [[Offline Signature Verification System#Data Augmentation|data augmentation]] and [[Offline Signature Verification System#Custom Feature Processing Layer|experimentation with varrying numbers of additional CNN layers]] are crucial strategies for improving generalisation and robustness.
-
-Building this system from end-to-end was definitely a challenge. Although I possess knowledge in traditional machine learning, deep learning with PyTorch has proven to be an entirely different beast; unlike Scikit-Learn, PyTorch does not provide certain functions - such as grid search or random search - that would streamline the fine-tuning process. 
-
-PyTorch prioritises flexibility and low-level control, especially for building custom neural networks and training loops, which come at the cost of requiring more boilerplate code for common tasks such as hyperparameter optimisation. 
-
-However, there other third party libraries - [Optuna](https://optuna.org/) or [Ray Tune](https://docs.ray.io/en/latest/tune/index.html) to to make up for the missing features in PyTorch, but that would require me to spend more time learning these libraries (*Definitely putting these into my to-do list*). 
-
-> As I garner more knowledge in data science, I would definitely revisit this project.  
 
 [^1]: [Check Forgeries: Leveraging AI and Machine Learning for Signature Verification](https://orbograph.com/check-forgeries-leveraging-ai-and-machine-learning-for-signature-verification/)
 [^2]: [How AI Works in Signature Verification Tools](https://sqnbankingsystems.com/blog/how-ai-works-in-signature-verification-tools/)

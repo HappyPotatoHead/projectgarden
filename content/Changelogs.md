@@ -11,9 +11,9 @@ description:
 # 14th May 2025
 - Modified the index page
 # 10th May 2025
-- Added [[Offline Signature Verification System]] GitHub repository
+- Added [[Offline Signature Verification]] GitHub repository
 # 25th April 2025
-- Added [[Offline Signature Verification System]]
+- Added [[Offline Signature Verification]]
 # 19th April 2025
 
 - Made table of content collapsible on mobile
