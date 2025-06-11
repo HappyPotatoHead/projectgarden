@@ -4,15 +4,11 @@ draft: false
 tags: 
 description:
 ---
->[!BUG] Overhaul
->This documentation is getting overhauled!
+
+>[!INFO] Update
+>The fine-tuning notebook has been released on GitHub! 
 >
->Working on the source code! The web application demo is being worked on!
->
->>[!INFO] Update
->>The fine-tuning notebook has been released on GitHub! 
->>
->>Check it out: [Click me!](https://github.com/HappyPotatoHead/Signature-Verification-Model)
+>Check it out: [Click me!](https://github.com/HappyPotatoHead/Signature-Verification-Model)
 
 >[!INFO] Offline
 >Offline here means handwritten signatures!
