@@ -5,45 +5,57 @@ tags:
 description:
 ---
 >[!BUG] Overhaul
->This documentation is getting overhauled! (*I'm not really satisfied with it*)
+>This documentation is getting overhauled!
 >
->Working on the source code! Both model training and the web application will be released!
+>Working on the source code! The web application demo is being worked on!
+>
+>>[!INFO] Update
+>>The fine-tuning notebook has been released on GitHub! 
+>>
+>>Check it out: [Click me!](https://github.com/HappyPotatoHead/Signature-Verification-Model)
 
 >[!INFO] Offline
->Offline here means signature written with pens on paper!
+>Offline here means handwritten signatures!
 
 > Check out the footnote for the resources!
 
 # Project Overview
 
-This project aimed to develop a system that utilises deep learning models to efficiently verifying *offline* (handwritten) signatures. The challenged was to accurately compare scanned or captured signatures against known samples, even with variations in style and quality. With this system, the process of verifying valid signatures can be significantly shorter and less tedious. 
+This project revolves around the verification of handwritten signatures, specifically using deep learning models to achieve accurate verification. However, since models are not perfect and can sometimes make potentially catastrophic mistakes, this system functions best when complemented by human oversight.
 # Approach
 
 I've decided to split the system into 4 subsystems, each with its own challenges: [^1][^2][^3]
 1. Signature Detection
 2. Signature Extraction
 3. Feature Extraction
-4. Signature Matching
+4. Signature Matching/Verification
 
 ## Signature Detection and Extraction
 
+[YOLO NAS Model - Broken at 25/4/2025 ](https://www.kaggle.com/code/jimding/yolo-nas-model)
 ### Model Selection
-The challenge in this phase is to precisely locate the signature area within a given document image. An accurate model is pertinent as the subsequent phases relies on having the correct signature image to analyse. 
 
-My approach to implement this phase is to leverage an **object detection models** specifically fine-tuned for locating handwritten signatures. There are several robust frameworks, including [options](https://github.com/ultralytics) from Ultralytics, [OpenMMLabs](https://github.com/open-mmlab/mmdetection), [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), and [Wong Kin Yiu's YOLOv9](https://github.com/WongKinYiu/yolov9), but I chose to work with [YOLO NAS](https://github.com/Deci-AI/super-gradients), because of it provides a good balance between speed and accuracy, a key consideration in building a system meant to very PIDs. This also allowed me to leverage the existing knowledge that the model had already gained from training on large datasets, significantly reducing the training time and computational resources while still achieving high accuracy and speed. 
+The challenge in this phase is to precisely locate the signature area within a given image. High accuracy is pertinent as the subsequent phases rely on having the correct signature images to analyse. 
+
+I decided to fine-tune existing **object detection models** to locate signatures . There are several robust frameworks, including options from [Ultralytics](https://github.com/ultralytics), [OpenMMLabs](https://github.com/open-mmlab/mmdetection), [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), and [Wong Kin Yiu's YOLOv9](https://github.com/WongKinYiu/yolov9), but I chose to work with [YOLO NAS](https://github.com/Deci-AI/super-gradients), because it provides a good balance between speed and accuracy, a key consideration in building a system meant to verify Personally Identifiable Information (PII). 
+
+Utilising an existing object detection model also allows me to leverage model's transfer learning capabilities, significantly reducing the training time and computational resources while still achieving high accuracy and speed. 
 
 ![[yolo_nas_frontier.png]]
 *Credits to DECI.AI*
 
-It's also easy to use with tonnes of documentations online to follow, making it a pretty solid choice. 
+It is also easy to use with a ton of documentations online to follow, making it a pretty solid choice. 
+
 ### Data Preparation 
 
-To train an effective object detection model, I require a substantial dataset of labelled signature images. This data preparation phase was the most tedious part of the project. I had to manually label signature instances across documents. To undertake this task, I had use [**Label Studio**](https://labelstud.io/), a free, open source data labelling platform. With **Label studio**, I can streamline the arduous task and enhance efficiency significantly by leveraging its model-assisted labelling the feature to accelerate the annotation workflow, albeit I had to use my own model.  
+To fine-tune an effective object detection model, I require a substantial dataset of labelled signature images. This task was the most tedious part of this project; I had to manually label signature instances across multiple documents. 
+
+To undertake this task, I used [**Label Studio**](https://labelstud.io/), a free, open source data labelling platform. Label studio offers a model-assisted labelling feature to accelerate the annotation workflow. However, this feature can only be used, if I provide a model of my own.  So, I still had to label the signature instances manually. 
 
 ![[labelling_signature_cheques.png]]
 *My hand broke*
 
-To build the model, I first annotated a batch of 100 images, used those images to fine-tune the YOLO NAS model, and then employed the fine-tuned model to annotate another batch of images. *Rinse and repeat*
+To build the model, I first annotated a batch of 100 images, used those images to fine-tune the YOLO NAS model, and then employed the fine-tuned model to annotate another batch of images - *rinse and repeat*
 
 ```mermaid
 ---
@@ -54,9 +66,9 @@ graph LR;
 	model[Model] --> |Annotate| images[Documents];
 ```
 
-While this is a tedious process, this meticulous process was fundamental to provide the model with high-quality data it needed to learn accurate signature localisation.
+The bounding box must be as tight as possible to ensure that both the object detection model and the feature extraction model learn only from relevant information. 
 
-Once a satisfactory batch of annotated documents are made (*depended on my mood*), I followed it up by processing the exported COCO-formatted data. This involved writing custom Python scripts to parse the JSON annotation files and organise the image data into a structure suitable for model training. 
+Once a satisfactory batch of annotated documents was created, I followed up by processing the exported COCO-formatted data. This involved writing custom Python scripts to parse the JSON annotation files and organise the image data into a structure suitable for model training. 
 
 >[!EXAMPLE]- `result.json`
 >```json
@@ -250,106 +262,96 @@ Once a satisfactory batch of annotated documents are made (*depended on my mood*
 >}
 >```
 
-The final step in data preparation is to prepare the training set, test set, and the validation set; I divided the labelled images into distinct training, validation, and test sets using standard techniques - `train_test_split` from `sklearn`, ensuring a fixed random seed for reproducibility. This splitting is needed to make sure that the model does not get over-tuned and to obtain an evaluation of its performance on unseen data before integrating it into the verification pipeline. 
-
-```python
-    train_files, test_files = train_test_split(images, test_size = test_size, random_state=random_state)
-    
-    train_files, validation_files = train_test_split(train_files, test_size = val_size, random_state=random_state)
-    
-    return (train_files, validation_files, test_files)
-```
+The final step in data preparation of any machine learning project is to prepare a training set, a test set, and a validation set. I divided the labelled images into distinct training, validation, and test sets with a fixed random seed for reproducibility. 
 
 ### Fine tuning
 
->[!INFO] Kaggle
->This is done in Kaggle. 
+With the labelled dataset prepared and split, the next step was to fine-tune the pre-trained YOLO NAS model to locate the signature areas. I loaded the pre-trained weights and configured the training pipeline to use my labelled signature dataset. 
 
-With the labelled dataset prepared and split, the next step was to fine tune the pre-trained YOLO NAS model to locate the signature areas. Using the YOLO NAS framework's training tools, I configured the fine-tuning process; I loaded the pre-trained weights and directed the training pipeline to use my labelled signature dataset. 
+I chose `Adam` optimiser with a dynamic learning rate schedule, implementing a small warmup phase to stabilise training at the beginning, followed by a cosine decay schedule. This approach gradually decreases the learning rate over epochs, allowing the model to converge more effectively, starting with an initial learning rate of $5\times{10}^{-4}$. 
 
-I chose `Adam` optimiser with a dynamic learning rate schedule. I configured the dynamic learning schedule, implementing a small warmup phase to stabilise training at the beginning, and a cosine decay schedule. This approach gradually decreases the learning rate over epochs, allowing the model to converge more effectively, with an initial learning rate of $5\times{10}^{-4}$. 
+To prevent overfitting, I incorporated **weight decay** and **Exponential Moving Average (EMA)** into the model weights. I utilised EMA, a technique known to enhance the model's generalisation ability by averaging weights over training steps.  
 
-To prevent overfitting to the relatively specialised signature, I incorporated **weight decay** and **Exponential Moving Average** for the model weights. I utilised EMA, a technique known to improve the model's generalisation ability by averaging weights over training steps.  
+For the loss function, I utilised `PPYoloELoss`, a standard loss function for the YOLO NAS architecture. It is designed to guide the model in learning both object localisation and classification for this type of network. During training, I monitored the model's performance using standard object detection metrics, focusing on **Mean Average Precision** (`mAP`). I evaluated it specifically at an Intersection over Union (`IoU`) threshold of 0.5 (`mAP@0.5`) and extended the analysis to a range of thresholds (`mAP@0.5:0.95`) to obtain a comprehensive view of the model's performance.  
 
-I set the training to run for a maximum of **75** epochs and monitored the training progress to determine the optimal stopping point. 
-
-For the loss function, I utilised `PPYoloELoss`, the standard loss function for the YOLO NAS architecture, designed to guide the model in learning both object localisation and classification for this type of network. During training, I monitored the model's performance using standard object detection metrics. I focused on **Mean Average Precision** (`mAP`), evaluating it specifically at an Intersection over Union (`IoU`) threshold of 0.5 (`mAP@0.5`) and extended it to a range of thresholds ($0.5$ - $0.95$) (`mAP@0.5:0.95`) to get a comprehensive view of the model's performance.  
-
-Once the parameters had been set, I used the `Trainer` object to load the `yolo_nas_s` model, as detecting signatures is a rather simple task and `yolo_nas_s` was deemed sufficient to provide a balance of accuracy and speed without being overly computationally expensive. I then initiated training, utilising Kaggle's GPU acceleration to speed up computation. 
+Once the parameters were set, I used the `Trainer` object to load the `yolo_nas_s` model, as detecting signatures is a relatively simple task. The `yolo_nas_s` was deemed sufficient to balance accuracy and speed without being overly computationally expensive. I then initiated training, utilising Kaggle's GPU acceleration to speed up computation. 
 
 ### Testing the model
 
-After fine-tuning, the YOLO NAS model's performance is evaluated on unseen data. I used a dedicated **test set**, held separate from the training and validation data, to obtain an unbiased measure. I evaluated the fine-tuned model - `best_model` - using the `SuperGradients's` `trainer.test`; I configured the evaluation metrics to calculate Mean Average Precision (`mAP`) at an Intersection over Union (`IoU`) threshold of 0.5, a standard metric for object detection accuracy.
+To test the fine-tuned model, I evaluated it using SuperGradients `trainer.test`. I configured the evaluation metrics to calculate Mean Average Precision (`mAP`) at an Intersection over Union (`IoU`) threshold of 0.5, a standard metric for object detection accuracy.
 
-Beyond quantitative metrics, I also validated the model's performance qualitatively by generating predictions on individual images from the test set. This involves feeding an image to the trained model and visualizing the predicted bounding boxes. 
+Beyond quantitative metrics, I also validated the model's performance qualitatively by generating predictions on individual images from the test set. This involved feeding images into the fine-tuned model and visualising the predicted bounding boxes. 
 
 >[!BUG] Unfortunately
 >The model works, but I forgot to save an example, and the library is bugged.
 > 
 >So, I will link the [kaggle notebook](https://www.kaggle.com/code/jimding/yolo-nas-model) 
+
 ### Extracting Signatures
 
-With the signature bounding box successfully identified by the fine-tuned YOLO NAS model and a some simple python code, I was able to isolate the signatures from the documents. This extraction process was essential to prepare the data for the subsequent signature verification stage.
+With the signature bounding box successfully identified by the fine-tuned YOLO NAS model, I was able to isolate the signatures from the documents. 
 
-However, for training the signature verification model, I had decided to use the CEDAR dataset[^4], because it is a widely used benchmark dataset in signature verification research. It provides a balance of genuine and forged signatures from multiple individuals, making it highly suitable for training and evaluating a verification model.
+However, for the signature verification model experimentation, I decided to use the CEDAR dataset[^4], because it is a widely used benchmark dataset in signature verification research. It provides a balanced set of genuine and forged signatures from multiple individuals, making it highly suitable for training and evaluating a verification model.
+
 ## Processing Images[^5]
 
-In this stage, my aim is to reduce as much noise as possible and ensure that the crucial features extracted for the verification model are confined to the strokes of the signatures. 
+The goal in this phase is to reduce as much noise in the extracted signature images as much as possible; this is essential to ensure that the feature extraction model captures feature embeddings that are strictly confined to the strokes of the signatures, which is critical for achieving high accuracy. 
 
-After obtaining the signature images, I notice that the while the images are grayscale and generally clear, variations in stroke intensity and potential residual 
-noise could still impact the accuracy of the features extracted to capture the precise shape and structure of each stroke of the signatures. 
+The following step depends on the colour of the signature images. Since, the pertinent feature of the signature images are the strokes, the colours do not play much of a role. If I allow the signature images to be in RGB format, I may interfere with the model's ability to effectively capture relevant feature embeddings; RGB format would have irrelevant colour information and may capture lighting conditions which can introduce noise. In contrast, grayscale or black and white forces the model to focus solely on intensity differences. 
+
+Grayscale/BW also enhances the contrast between the signature strokes and the background, effectively isolating the signature. This reduces noise and makes it easier for the feature extraction models to identify key patterns. 
+
+Grayscale/BW will ensure uniformity across all the signature images regardless of ink colour. However, potential residual noise could still impact the accuracy of the feature embeddings extracted. 
 
 I had implemented **Otsu's thresholding**. This technique automatically determines the optimal global threshold to convert the grayscale image into a binary image. 
 
-| Class    | Before                            | After                           |
-| -------- | --------------------------------- | ------------------------------- |
-| Original | ![[unprocessed_original_1_1.png]] | ![[processed_original_1_1.png]] |
+For example, 
 
-By applying this technique, I was able to effectively isolate the signature strokes from the background, creating a cleaner representation of the signature's strokes. The clear distinction of the foreground from the background is important for the subsequent feature extraction that rely on analysing the shape, contours, and topology of the signature. Now that every stroke has the same intensity in colour, the verification model can focus on the most relevant visual information for distinguishing genuine signatures from forgeries.
+| Before                            | After                           |
+| --------------------------------- | ------------------------------- |
+| ![[unprocessed_original_1_1.png]] | ![[processed_original_1_1.png]] |
 
->[!NOTE]- The Difference In Image Size
+With this technique, I was able to effectively isolate the signature strokes from the background, creating a cleaner representation of the signatures' strokes. This introduced clearer distinctions of the foregrounds from the backgrounds which improved the accuracy of the feature embeddings extracted by the model significantly, as the model was able to analysed the shape, contours, and topology of the signature with minimal noise. 
+
+>[!INFO]- The Difference In Image Size
 >Most pre-trained models available on `PyTorch` are built to accept $224\times 224$ sizes. 
 
-## Signature Verification Model Components
+## Signature Verification Model
 
-Now that I've applied **Otsu's thresholding** to both sets of forgeries and original images, it's time to build the dataset; however, before I went ahead with that, I had to determine how the model would learn and verify signature images - this required the model to learn the subtle visual characteristics that distinguish genuine signatures from different individuals' signatures and forgeries.. 
 
-After thorough research into deep metric learning techniques commonly applied in image recognition tasks such as face recognition, I determined that an **embedding-based** approach would fit perfectly with this problem. I decided that I would train a **convolutional neural network (CNN)** to map each signature image into an embedding in a high-dimensional space; the embeddings of the genuine signatures from the same author would be close to each other, while embeddings signatures from other authors or forgeries should be far apart.  
+Once the pre-processing of signature images had been figured out, another question arose: *What model should I use?*
 
-I chose to develop a  **triplet loss function**, because of the mechanisms in which it works;  there are three data points - anchor (*a genuine signature*), positive (*another genuine signature from the same author*), and negative (*a forged signature or signature from another author*) - used in each instance. The model learns to widen the distance between the negative data point and the anchor, while minimising the distance between the anchor and the positive data point. 
+After thorough research into deep metric learning techniques commonly applied in image recognition tasks such as face recognition, I determined that an **embedding-based** approach, specifically a **convolutional neural network (CNN)**, would fit perfectly with this problem. 
 
-This embedding-based approach directly supports the verification task; if I want to verify a signature, I would compare its embedding to known genuine embeddings; if the distance is below a threshold, it's more likely to be genuine. 
+A CNN maps each signature image into an embedding in a high-dimensional space. The embeddings of genuine signatures from the same signer will be close to each other, while those of signatures from other signers or forgeries will be far apart.  
 
-### Triplet Loss
+However, this leads to more questions: *How should the model be fine-tuned from general image classification to verifying signature images?*
 
-Within the framework of Triplet Loss, the strategy for selecting informative and useful triplets during training - **triplet mining** - is crucial to produce a robust model. Instead of using an offline mining strategy, I decided to implement an online batch mining approach where triplets are generated directly from the embeddings within each training batch, allowing me to dynamically control the difficulty of the triplets used. Offline triplet mining, on the other hand, would select triplets only once, which might become outdated quickly as the model learns
+I answered this question with a **Triplet Loss Function**. 
 
-I implemented a custom `BatchTripletLoss` class to facilitate experimentation and finding the most effective training signals; this class supports both **batch hard** and **batch semi-hard** mining strategies. Batch hard mining focuses on selecting triplets with the hardest negative sample for each anchor-positive pair in a batch while batch semi hard selects triplets that violate the margin but are not so hard that they cause training instability. This class also allowed for the use of either **Euclidean** or **Cosine** distance metrics to measure similarity in the embedding space, providing further flexibility in defining how distances are calculated. 
+A triplet loss function works as follows: 
 
-Developing this flexible loss module was key to iterating on the training process and optimizing the network's ability to learn a highly discriminative embedding space for signature verification.
-#### Configurable Parameters 
-##### Margin
+There are three nodes, called triplet, which comprises a signature that serves as an anchor, a genuine signature from the same signer, and a forged signature or signature from another signer. The goal is to inform the model which nodes should be **near** one another and which nodes should be distanced. From the feature embeddings extracted by the CNN model, the distances between anchor nodes and positives nodes, as well as between anchor nodes and negative nodes are calculated with a distance metric - Euclidean, Cosine, Manhattan, and etc. Once the distances are calculated. Loss values are calculated to the model which nodes should be nearer and which nodes should be further apart. 
 
-A key hyperparameter in Triplet Loss is the **margin**. I had set the margin to 0.5 by default which defines the minimum required difference between the Anchor-Negative distance and the Anchor-Positive distance. 
+This embedding-based approach directly supports the verification task; if I want to verify a signature, I would compare its feature embedding to known genuine feature embedding - if the distance is below a threshold, it's more likely to be genuine. 
 
-$$(\text{distance}(A,P)+\text{margin}<\text{distance}(A,N))$$
+Essentially, the triplet loss is the core of this verification system. 
 
-Choosing the right margin was important to balance the compactness of same-author signatures and the separation of different-author signatures in the embedding space. I also included the option to use a **soft margin**, which introduces flexibility by allowing the margin to adapt dynamically. This is useful in scenarios where the difficulty of triplets varies significantly.
-
-I've experiment with different margin values - 0.2, 0.5. 1.0 - and I found that the starting value, 0.5, gave the best result (With **batch hard** and **Euclidean** distance metrics). 
-
-##### Distance Metric and Mining strategy
-
-The loss calculation can be configured to use either **Euclidean** or **Cosine** distance metrics to measure similarity in the embedding space. Amongst these two, **Euclidean** distance is the more common choice, while **Cosine** distance, which measures the angle between vectors, can be more robust to variations in embedding magnitude. However, the choice of the distance metrics also depends on the choice of mining strategy; the **Euclidean** distance metric is better suited to the **batch hard** mining strategy, while **Cosine** distance is more flexible, being compatible with both **batch hard** and **batch semi hard** strategies.
-
-I experimented with multiple combinations and found that the combination of  **Euclidean** distance metric and **batch hard** strategy gave me the best result. Batch hard mining was chosen to ensure that the model was constantly learning form the hardest triplets within each batch, maximising the discriminative power of the embedding space. Euclidean distance measured the straight-line distance in the embedding space, aligning well with the goal of making similar signature close and dissimilar ones distanced from one another. 
 ### Feature Extraction Model
 
-The core of the signature verification system is the **Convolutional Neural Network (CNN)** responsible for extracting features and generating the embedding vector for each signature image. This is paired with the Triplet Loss function to learn discriminative embedding space. 
+[Signature Verification Model](https://github.com/HappyPotatoHead/Signature-Verification-Model)
 
-The model I had chosen to work with is the pre-trained `ResNet18` model from `PyTorch`. Compared to larger models in the `ResNet` family - `ResNet34`, `ResNet50`, `ResNet101`, and `ResNet152` - `ResNet18` architecturally simpler with significantly fewer parameters. Given the nature of extracting features from pre-processed binary signature images for a similarity task, `ResNet18` provided satisfactory performance without requiring excessive computational resources. 
+I had concluded that a  **Convolutional Neural Network (CNN)** model paired a **Triplet Loss Function** would create a *killer combo* in creating a model to learn discriminative embedding space. 
 
-Utilising a pre-trained model was a deliberate decision to leverage the powerful transfer learning capabilities of CNNs. By using weights learned on a vast dataset like ImageNet, the model already possessed a strong foundation in recognizing visual patterns, which accelerated the training process on the more specialized signature data.
+This leads to another question: *What kind of CNN model?*
+
+Fortunately, `PyTorch` offers tons of pre-trained image classification model. Check it out: [Click me!](https://docs.pytorch.org/vision/main/models.html)
+
+The model I had chosen to work with is the `ResNet` group (Not to be confused with `RegNet`). The `ResNet` family comprises `ResNet18`, `ResNet34`, `ResNet50`, `ResNet101`, and `ResNet152`, each becoming more architecturally complex than the previous. 
+
+Utilising a pre-trained model was a deliberate decision to leverage the powerful transfer learning capabilities of CNNs. By using pre-trained weights, the models already possess a strong foundation in recognizing visual patterns, which accelerates the training process on the more specialized signature data. Essentially, I am not training a model entirely from scratch.
+
+I tested with `ResNet18`, `ResNet34`, and `ResNet50` and, to no one's surprise, found that `ResNet18` required the most epochs before convergence was achieved, while `ResNet50` took the fewest epochs to converge. 
 
 #### First Layer Modification
 
@@ -357,20 +359,80 @@ I replaced the network's first convolutional layer, which is designed for 3-chan
 
 #### Custom Feature Processing Layer
 
-I removed the standard final classification layer of `ResNet18` since the model's main purpose is to provide embedding vector for each signature image.  Following the main `ResNet` backbone, I added a custom stack of convolutional layers, batch normalisation, and `ReLU` activations. These layers are important to further process the features extracted by the backbone; this block served to further process and refine the feature maps from the `ResNet` backbone, performing crucial channel reductions (from 512 channels down to 
-the desired dimension size), and spatially aggregate the features using adaptive pooling to a fixed size of $1\times1$. This was essential for preparing the features into the precise dimensionality and format required before the final projection into the embedding space. 
+In my custom class, the final classification layer of a `ResNet` model is removed, as its primary purpose is to extract feature embeddings from the signature images. Following the main `ResNet` backbone, I included an option to add a custom stack of convolutional layers, batch normalisation, and `ReLU` activations. 
+
+Introducing additional layers helps the model converge faster, but increases of overfitting. 
+
+These extra layers are important for further processing of the feature embeddings extracted by the backbone; this block served to further process and refine the feature maps from the `ResNet` backbone, performing crucial channel reductions, and spatially aggregate the features using adaptive pooling to a fixed size of $1\times1$. 
+
+This was essential for preparing the features into the precise dimensionality and format required before the final projection into the embedding space. 
+
+For my particular run, I chose a final dimension of 256 because of the balanced feature complexity; 256 dimensions provide a rich yet efficient feature space for encoding patterns. Since this task revolves around signature images, which are relatively simple, I do not need a higher level of dimensions; a higher dimension can lead to redundancy. 
 
 #### Embedding Projection Head
 
-After these custom feature processing layers, I added a final sequence of layers - flattening, batch normalization, `ReLU`, and dropout - culminating in a linear layer to project the features down to the desired embedding dimension (256) and produce the final embedding vector.
+After these custom feature processing layers, I added a final sequence of layers - flattening, batch normalization, `ReLU`, and dropout - culminating in a linear layer that projects the features down to the desired embedding dimension (256) to produce the final embedding vector.
 
 #### Forward Pass
 
-Furthermore, in the network's forward pass, I applied **L2 normalization** to the final embedding vector. This standard practice in metric learning projects embeddings onto the unit sphere, improving training stability and ensuring that similarity is primarily determined by the direction of the embedding. This adapted `ResNet18` architecture served as the core network trained by the Triplet Loss to generate the discriminative signature embeddings.
+In model's forward pass, I applied **L2 normalization** to the final embedding vector to improve training stability and ensure that similarity is primarily determined by the direction of the embedding. 
+
+### Triplet Loss Function[^6]
+
+Within the framework of a Triplet Loss function, the strategy for selecting informative and useful triplets during training - **triplet mining** - is crucial to produce a robust model. 
+
+There are two strategies when it comes to selecting triplets for training. I've decided to implement an online triplet mining approach, where triplets are generated directly from the embeddings within each training batch, allowing me to dynamically control the difficulty of the triplets used. This characteristic allowed me to ensure that the model learnt from the most informative and hardest triplets, contributing to a *smarter* model. However, this does come with a couple of drawbacks - it is computationally expensive and, if not monitored and controlled well, prone to overfitting. 
+
+Offline triplet mining, on the other hand, would select triplets before training, or in my case, fine-tuning, which may become outdated quickly as the model learns. However, this is not to say that the offline approach should be avoided. This approach often offers greater stability and consistency than online mining strategy, as it operates on static datasets. Additionally, it demands fewer system resources and less processing power since it does not  calculating distances on the fly. 
+
+Since I have the resources, online triplet mining strategy is a no-brainer. 
+
+I implemented a custom `BatchTripletLoss` class which supports both **batch hard** and **batch semi-hard** mining strategies. 
+
+>[!INFO] Hard and Semi Hard
+>Batch hard triplet mining focuses on challenging pairs: 
+>- Positive nodes that are far from the anchor
+>- Negative nodes that are close to the anchor
+>
+>Semi-hard triplet mining focuses on moderately challenging pairs. The negative nodes are still closer to the anchor than the positive sample, but they're still within the margin  (minimum acceptable distance)
+
+My custom class allows the use of either **Euclidean** or **Cosine** distance metrics to measure similarity in the embedding space, providing flexibility in defining how distances are calculated.  
+
+#### Arguments
+
+##### Margin
+
+Besides mining strategy and distance metric, another key hyperparameter in a triplet loss function is the **margin**. The margin is a predefined constant that represents the minimum acceptable distance between anchor-positive and anchor-negative pairs. 
+
+> I had left the margin to be 1.0 by default, but I use 0.5 during fine-tuning. 
+
+$$(\text{distance}(A,P)+\text{margin}<\text{distance}(A,N))$$
+
+The goal is to fulfil the formula above, the distance between an anchor node and a positive node must be lesser than the distance between the anchor node and a negative node even after margin has been added. 
+
+Choosing the right margin is important to balance the compactness of same-signer signatures and the separation of different-signer signatures in the embedding space. 
+
+However, there's a catch - hard margin can cause the model to be rigid. This is why I introduced a **soft margin** option. Soft margin provides a more flexible approach to enforcing the separation between anchor-positive and anchor-negative pairs by allowing the margin to adapt dynamically based on the difficulty of the triplets. 
+
+> But, I had only used hard margin in my run. 
+
+I experimented with different margin values - 0.2, 0.5. 1.0 - and I found that 0.5 gave the best results (With **batch hard** and **Euclidean** distance metrics). 
+
+##### Distance Metric and Mining strategy
+
+The choice of the distance metrics may depend on the choice of mining strategy; the **Euclidean** distance metric is widely used in batch hard mining strategy because it directly measures the absolute spatial separation between points, while **Cosine** distance metric works well with both batch hard and batch semi hard strategies because it focuses on directional similarity between the nodes rather than absolute distances.
+
+I experimented with multiple combinations and found that the combination of  **Euclidean** distance metric and **batch hard** strategy gave me the best result. Batch hard mining was chosen to ensure that the model was constantly learning form the hardest triplets within each batch, maximising the discriminative power of the embedding space. Euclidean distance measured the absolute spatial separation in the embedding space, aligning well with the goal of making similar signature close and dissimilar ones distanced from one another. 
+
+### Preparing Dataset
+
+My approach to this is to create a signature mapping that associates each signer with their signatures (both original and forgeries). Instead of loading the images upfront, I store the paths to the images and defer rendering until training. This optimises memory usage and reduce unnecessary overhead.  
+
+I also decided to the standard train-test ratio of 0.2 to ensure a balance between model validation and training data availability, though mainly because it's the standard. 
 
 ### Data Augmentation
 
-Before feeding the signature images to the loss function to form triplets and begin training, I applied data augmentation via `transforms`. This pre-processing step was designed to artificially increase the diversity of the training dataset by applying random but realistic transformations  to the images, representing the naturally occurring variability seen in signatures, such as differences in scale, orientation, and alignment.
+The CEDAR dataset has only 2640 signatures, which is considered small in the context of deep learning models. To attenuate the impact of a limited dataset, I applied data augmentation via `transforms`. This pre-processing step artificially increases the diversity of the training dataset by applying random yet realistic transformations to the images. These transformations represent the naturally occurring variability in signatures, such as differences in scale, orientation, and alignment.
 
 My implementation included applying:
 * **Random rotation**
@@ -378,105 +440,169 @@ My implementation included applying:
 * **Random displacements**
 * **Random cropping**
 
-By training the network on these augmented images, I introduced more variability into the dataset. This significantly helped in minimizing overfitting to the specific examples in the original dataset and encouraged the network to learn more robust and generalisable features that are less sensitive to minor variations in how a signature is presented. The augmented images were then used to construct the triplets for training the embedding network.
+These transformations help minimise overfitting and encourage the model to learn more robust and generalisable features. 
 
-## Model Training
+## Fine-Tuning
 
-To manage the end-to-end training and testing process for the signature embedding network, I implemented a dedicated `SignatureVerification` class. This class served as the primary training orchestrator, encapsulating the core loop and incorporating essential practices for robust deep learning training. 
+Once the model, dataset, and triplet loss function are defined, I implemented a dedicated training class called `TrainingClass` (*creative, I know*). This class served as the primary training orchestrator, encapsulating the core loop and incorporating essential practices for robust deep learning training. 
 
 Within this class, I implemented key features such as:
 
 * **Early Stopping** 
-	* Monitored validation loss and automatically halted training if no significant improvement was observed over a set number of epochs to prevent overfitting.
+	* Monitors validation loss and automatically halts training if no significant improvement is observed over a set number of epochs, preventing overfitting
 * **Learning Rate Scheduling** 
-	* Managed the adjustment of the learning rate throughout training to optimise convergence. 
-	* I implemented a `OneCycleLR` learning rate schedule with the `Adam` optimizer. This schedule dynamically adjusts the learning rate over the course of training following a specific cyclical pattern, speeding up training convergence.
+	* Manages the adjustment of the learning rate throughout training to optimise convergence. 
 * **Checkpointing**
-	* Automatically saved model snapshots - weights, and optimizer state - at key points - when a new best validation loss was achieved - to ensure progress could be restored and the best model recovered.
+	* Automatically saves model snapshots - weights, and optimizer state - at key points when a new best validation loss is achieved, ensuring progress can be restored and the best model recovered.
 * **Device Management:** 
-	* Handled moving data and the model to the GPU for accelerated computation.
+	* Handles moving data and the model to the GPU for accelerated computation.
 
-The class includes methods for executing individual training and validation epochs. The `train_epoch` method iterates through batches of augmented signature image triplets, computes the Triplet Loss using my custom `BatchTripletLoss` module, performs backpropagation, and updates the network's weights using the configured optimizer. The `validate` method performs a similar forward pass on the validation data to monitor performance without weight updates.
+For my run, I implemented a `OneCycleLR` learning rate schedule with the `Adam` optimizer. This schedule dynamically adjusts the learning rate over the course of training following a specific cyclical pattern, speeding up training convergence.
 
-This structured implementation provided a reliable and organized pipeline for training the signature embedding network effectively.
+I also implemented a k-fold cross validation class (*guess what it's called*) which utilises the `TrainingClass`. 
 
 ## Verification
 
->[!INFO] Configurations
->Model: `ResNet18`
->Loss function: Triplet Loss
->Learning rate: `OneCycleLR`
->Optimiser: `Adam`
->Margin: 0.5
->Strategy: Hard Batch
+>[!HINT] 
+> The following result is based on this configuration.
+>  
+>>[!INFO] Model's configuration
+>>Model: `ResNet18`
+>>Loss function: Triplet Loss
+>>Learning rate: `OneCycleLR`
+>>Optimiser: `Adam`
+>>Margin: 0.5
+>>Strategy: Batch hard mining
+>>Extra layers: \[512, 256]
+>
+> Sample model is here: [Click me!](https://drive.google.com/drive/folders/19Xu-Hgjdd62Sjq2RQoIWAeZ0aMTHTERz?usp=drive_link)
 
-To evaluate the effectiveness of the learned embedding space for signature verification, I used a combination of qualitative visualization and standard quantitative metrics.
+To evaluate the effectiveness of the model, I used a combination of qualitative visualization - confusion matrix, 2D embedding distance graph and 3D embedding distance graph - and quantitative metrics - AUC ROC, and EER.
+
+In a 2D embedding distance graph, anchor nodes are shown in blue, positive nodes are shown in green, and negative nodes are shown in red. While a 2D projection has limitations in fully representing distances in higher-dimensional embedding space, this visualization offers some intuition into how the model has positioned different types of embeddings. 
+
+I included qualitative and quantitative results produced by the model at the first checkpoint and after final fine-tuning to demonstrate its transfer learning capability. 
+
 ### Training
-#### Visualizing the Embedding Space
 
-![[__results___33_2.png]]
+#### Visualising the Embedding Space
 
-This scatter plot provides a 2D visualization of the embedding space, generated by applying **Principal Component Analysis (PCA)** to the embeddings of signatures from the training set. The plot shows Anchor embeddings (blue), their corresponding Positive embeddings (green), and Negative embeddings (red). While a 2D projection has limitations in fully representing distances in the higher-dimensional embedding space, this visualization offers some intuition into how the model has positioned different types of embeddings. 
+| First Checkpoint                            | Final Checkpoint                          |
+| ------------------------------------------- | ----------------------------------------- |
+| ![[resnet18_untrained_embedding_space.png]] | ![[resnet18_trained_embedding_space.png]] |
 
-Based on the learned embeddings, the model has generally positioned genuine signatures from the same author closer together than signatures from different authors. Visually, the Anchor and Positive embeddings are located in relatively close proximity to each other ; however, the plot also shows a significant intermingling and overlapping with negative embeddings. This visual overlap aligns with the challenge of achieving perfect separation, as quantified by the evaluation metrics.
+Based on the graphs, the model has learnt to position genuine signatures from the same signer closer together than signatures from different authors. Visually, there is a clear separation between different signers. 
+
+However, upon zooming in into a single cluster, a critical problem is found; the model struggles to push negative nodes away from positive and anchor nodes.
+
+![[zoomed_in_cluster.png]]
+
+This means the triplet loss is not being fully satisfied, and the model isn't pushing "hard" negatives far enough. 
+
+This can be attributed to the lack of training data. 
+
+Regardless, this is not a definitive measure of the model's performance; projecting high-dimensional data down to just 2D or 3D inevitably results in loss of information. It's highly probable that separations occurring in  higher dimensions are not visible in low-dimension plots. 
 
 #### Quantitative Verification Metrics
 
-While visualization provides intuition, quantitative metrics offer a more reliable measure of the model's discriminatory power. I evaluated the model's performance using standard metrics for verification tasks:
+While visualization provides intuition, quantitative metrics offer a more reliable measure of the model's discriminatory power. I evaluated the model's performance with the following metrics:
 
-* **ROC AUC** 
-	* My model achieved an ROC AUC of 0.83, indicating good discriminatory power significantly better than random chance.
-* **Equal Error Rate (EER)**
-	* My model achieved an EER of 0.2492 at a threshold of 0.1905 on the training set.
-	* This means that at the best operating point, the system would have approximately a 25% chance of incorrectly accepting a forgery or rejecting a genuine signature.
-* **Confusion Matrix (threshold 0.2)**
-	* **Accuracy:** $\approx 74.85\%$ 
-	* **Recall:** $\approx 80.38\%$
+|                           | First Checkpoint    | Final Checkpoint     |
+| ------------------------- | ------------------- | -------------------- |
+| Average Triplet Loss      | 0.14460422640497034 | 0.004072530900664402 |
+| Average Positive Distance | 0.6789131164550781  | 0.0504145473241806   |
+| Average Negative Distance | 1.0927975177764893  | 1.2984496355056763   |
+| AUC ROC                   | 0.9624911221590909  | 0.9962648053690312   |
+| EER                       | 0.10250946969696972 | 0.00875946969696972  |
+| EER Threshold             | 0.9113010764122009  | 0.11373268812894821  |
+| Accuracy                  | 0.8929924242424242  | 0.9850852272727273   |
+| Precision                 | 0.8929924242424242, | 0.98531501657982     |
+| Recall                    | 0.8929924242424242  | 0.9848484848484849   |
 
-![[__results___30_0.png]]
+Based on the table, the model has become more confident in grouping positive nodes with anchor nodes while effectively separating negative nodes from anchor nodes. There is a dramatic decrease in average triplet loss, from 0.1446 to 0.0041. The accuracy, precision, and recall calculated at EER threshold are all near perfect, indicating excellent performance in capturing actual positives accurately.  
 
-EER: 0.2492 at threshold: 0.1905
+| First Checkpoint                      | Final Checkpoint            |
+| ------------------------------------- | --------------------------- |
+| ![[resnet18_untrained_roc_curve.png]] | ![[resnet18_trained_roc_curve.png]] |
 
-![[__results___33_0 1.png]]
+The AUC ROC has also improved from 0.96 to 0.99 - a near-perfect score. Additionally, both EER and EER threshold has dropped significantly, indicating a significant increase in the model's confidence. 
 
-These quantitative results, supported by the embedding space visualization, demonstrate that the trained network has successfully learned an embedding space capable of distinguishing between genuine and forged signatures with a reasonable degree of accuracy, although challenges remain due to the inherent variability in handwritten signatures.
+| First Checkpoint (Threshold: 0.9)            | Final Checkpoint (Threshold: 0.2)          |
+| -------------------------------------------- | ------------------------------------------ |
+| ![[resnet18_untrained_confusion_matrix.png]] | ![[resnet18_trained_confusion_matrix.png]] |
 
-These metrics align with the overlap observed in the distance distribution histogram; the AUC and EER quantify the level of separability (and overlap) in the embedding space.
+Based on these quantitative and qualitative results, it can be **conjectured** that the model has successfully learnt an embedding space capable of distinguishing genuine signatures from forgeries. However, while these results are near-perfect, they may also indicate that the model has simply overfitted. The real test lies in how the model performs against unseen data.
 
 ### Testing
 
-To assess the final performance of the trained signature verification system, I evaluated the model on a held-out test set that was not used during training or validation. This provides an unbiased measure of how well the model generalizes to completely unseen signatures.
+I will only include the final fine-tuning in this section as the model at the first checkpoint treats all data as unseen data. 
 
-#### Visualizing the Embedding Space
+To assess the final performance of the trained signature verification system, I evaluated the model on a held-out test set that was not used during training or validation. This provides an unbiased measure of how well the model generalizes to completely unseen signatures. 
 
-![[__results___38_2.png]]
-This scatter plot provides a 2D visualization of the embedding space generated by applying **Principal Component Analysis (PCA)** to the embeddings of signatures from the **test set**. Similar to the visualizations during training, this plot shows Anchor embeddings (blue), their corresponding Positive embeddings (green), and Negative embeddings (red). While the 2D projection has inherent limitations in fully representing the true distances in the higher-dimensional space, it offers intuition into the model's behaviour on unseen data.
+#### Visualising the Embedding Space
 
-The plot shows a tendency for Anchor and Positive embeddings (blue and green points) to be located in relatively close proximity to each other, visually demonstrating the model's success in reducing distances between same-identity signatures. However, the plot also reveals a significant intermingling and overlap between these positive pairs and the Negative embeddings (red points) across the visualization space. 
+![[resnet18_trained_embedding_space_unseen.png]]
 
-Furthermore, although the model aims to cluster embeddings by author identity, the visual clarity of these clusters in the test set embedding space is diminished compared to what was observed on the training data.
+Based on the graph, the model is struggling to form clear clusters and distinguish between  signers. The blue, green, and red points are heavily intermingled, and there is no clear visual organisation into distinct groups for different identities. *Although, with generous interpretation, some form of clustering can be seem at the vertices.*
 
-This visual representation illustrates the level of separation achieved by the model on unseen data – highlighting both the learned similarities within identities and the challenges in distinguishing certain different-identity pairs – which is precisely quantified by the following metrics.
+Once again, projecting high-dimensional data into 2D or 3D inevitably results in loss of information. 
 
 #### Quantitative Verification Metrics
 
-Using the same quantitative metrics:
-* **ROC AUC** 
-	* My model achieved an ROC AUC of 0.84, indicating good discriminatory power significantly better than random chance.
-* **Equal Error Rate (EER)**
-	* My model achieved an EER of 0.2167 at a threshold of 0.6085 on the training set.
-	* This means that at the best operating point, the system would have approximately a 21% chance of incorrectly accepting a forgery or rejecting a genuine signature.
-* **Confusion Matrix (threshold 0.6)** 
-	* **Accuracy:** $\approx 78.33\%$ 
-	* **Recall:** $\approx 76.67\%$
+|                           | Fine-Tuning Result   | Testing Result      |
+| ------------------------- | -------------------- | ------------------- |
+| Average Triplet Loss      | 0.004072530900664402 | 0.17237715298930803 |
+| Average Positive Distance | 0.0504145473241806   | 0.7287392020225525  |
+| Average Negative Distance | 1.2984496355056763   | 1.1788407564163208  |
+| AUC ROC                   | 0.9962648053690312   | 0.9179167384067952  |
+| EER                       | 0.00875946969696972  | 0.14583333333333337 |
+| EER Threshold             | 0.11373268812894821  | 1.070979356765747   |
+| Accuracy                  | 0.9850852272727273   | 0.8541666666666666  |
+| Precision                 | 0.98531501657982     | 0.8541666666666666  |
+| Recall                    | 0.9848484848484849   | 0.8541666666666666  |
 
-![[__results___34_0.png]]
+As expected, there is a dip in performance. However, how much of a dip in performance is considered bad?
+
+When interpreting numbers, the numbers should never be viewed in isolation. When viewing the **Testing Result** in isolation,  an EER of 14.58% or an accuracy of 85.4% might, on its own, be considered "not too bad" depending on the context; however, upon comparing these results with the **Fine-Tuning Result**, it is clear that the model has overfitted. 
+
+One of the most concerning deterioration is EER; a increase in error rate from $0.88\%$ to $14.58\%$ is very substantial, indicating a lack of generalisation. An EER of nearly $15\%$ is considered to be quite high for a verification system. 
+
+Additionally, the EER Threshold has shifted drastically - from 0.11 to 1.07 - indicating the model's drop in confidence. 
+
+| Final Checkpoint                    | Testing Result                             |
+| ----------------------------------- | ------------------------------------------ |
+| ![[resnet18_trained_roc_curve.png]] | ![[resnet18_trained_roc_curve_unseen.png]] |
+
+The AUC value dipped from 0.9962648053690312 to 0.9179167384067952, indicating a significant degradation in the model's discriminative power when faced with unseen data. 
 
 EER: 0.2167 at threshold: 0.6085
 
-![[__results___38_0.png]]
+| Final Checkpoint (Threshold: 0.2)          | Testing Result (Threshold 1.07)                   |
+| ------------------------------------------ | ------------------------------------------------- |
+| ![[resnet18_trained_confusion_matrix.png]] | ![[resnet18_trained_confusion_matrix_unseen.png]] |
+
+The model's ability to detect true positives accurately has also degraded significantly. 
+
+### Conclusion
+
+*So, what does this mean?*
+
+The discrepancies in results clearly indicate that this particular model has overfitted.  
+
+There are a multitude of factors that may have contributed to this:
+1. Lack of training data (Possibly primary cause)
+	- With only 2640 signatures, the deep learning model has a limited number of examples to learn from. 
+	- The lack of training data also introduces limited variability. The signatures may not capture the full range of authentic signature variations and the full spectrum of imposter variations. Even after a `transformation` has been applied, it may not be enough. 
+2. Overly complex model
+	- This particular model has additional layers implemented. This excess capacity allows it to *memorise* the training data, including noise and irrelevant patterns, rather than learning meaningful, generalisable features. 
+	- Although I had implemented regularisation, it may not be enough to mitigate the effects of a lack of training data
+
+Regardless, this *experiment* demonstrates that using a deep learning model in a signature verification task is feasible, provided a sufficient amount of signatures are used.
 
 # Implementation and Deployment
+
+>[!BUG]
+>Under Development! 
 
 To make the system accessible, I developed a backend API using Flask to handle verification requests. This API integrated the trained `ResNet18` model. I had also developed a simple frontend via React that could interact with the backend. To store the signature images, I had decided to use a vector database developed with PostgreSQL's open source plugin - [`pgvector`](https://github.com/pgvector/pgvector). Finally, the entire system was containerized using Docker for easy deployment and testing. 
 
@@ -485,27 +611,21 @@ The simple webpage would allow the user to insert a signature image along with t
 ![[metrics.png]]
 *Example*
 
-# Challenges and Solutions
-
-A major challenge I encountered was determining the combinations of parameters and hyperparameters - optimiser and scheduler, margin, and mining strategies - that work the best. Due to the nature of machine learning problems and data science, there is no one-size-fit-all parameters that I can drag and drop into this project. To address this, I just had to trial-and-error; try various combinations and observe the outcome. There were a lot of failure, but there were some promising results. 
-
-Another major challenge I encountered was attempting to achieve sufficient accuracy on a dataset with $\approx 2\text{k}$ row without overfitting. There were times where the clusters of signatures in **PCA** graph on the training set were completely separated, but it did not perform as well on the test set. The challenge was finding the right balance. One of the solution to this was implementing data augmentation and experimenting with different custom layers of CNN layers.  
-
 # Learning and Takeaways
 
-Building this system from end-to-end was definitely a challenge; although I posses knowledge in traditional machine learning pipeline, deep learning prove to be much more esoteric.  This would not be possible without existing resources only that were of significant help.
+The major challenge was achieving sufficient accuracy on a dataset with a relatively limited number of data while avoiding overfitting. At times, the clusters of signatures in PCA graph on the training set were completely separated, yet the model did not perform as well on the test set (*as shown in the [[Offline Signature Verification System#Verification|verification]] section*). To attenuate this, [[Offline Signature Verification System#Data Augmentation|data augmentation]] and [[Offline Signature Verification System#Custom Feature Processing Layer|experimentation with varrying numbers of additional CNN layers]] are crucial strategies for improving generalisation and robustness.
 
-My skills in Python, `PyTorch`, `Flask`, and Docker were significantly enhanced through this project. 
+Building this system from end-to-end was definitely a challenge. Although I possess knowledge in traditional machine learning, deep learning with PyTorch has proven to be an entirely different beast; unlike Scikit-Learn, PyTorch does not provide certain functions - such as grid search or random search - that would streamline the fine-tuning process. 
 
-Overall, this project was definitely a boost.
+PyTorch prioritises flexibility and low-level control, especially for building custom neural networks and training loops, which come at the cost of requiring more boilerplate code for common tasks such as hyperparameter optimisation. 
+
+However, there other third party libraries - [Optuna](https://optuna.org/) or [Ray Tune](https://docs.ray.io/en/latest/tune/index.html) to to make up for the missing features in PyTorch, but that would require me to spend more time learning these libraries (*Definitely putting these into my to-do list*). 
 
 > As I garner more knowledge in data science, I would definitely revisit this project.  
 
-[^1]: [Check Forgeries: Leveraging AI and Machine Learning for Signature Verification](https://orbograph.com/check-forgeries-leveraging-ai-and-machine-learning-for-signature-verification/) 
+[^1]: [Check Forgeries: Leveraging AI and Machine Learning for Signature Verification](https://orbograph.com/check-forgeries-leveraging-ai-and-machine-learning-for-signature-verification/)
 [^2]: [How AI Works in Signature Verification Tools](https://sqnbankingsystems.com/blog/how-ai-works-in-signature-verification-tools/)
 [^3]: [How AI and ML can Revolutionize Banks Signature Verification Process](https://www.forbes.com/councils/forbestechcouncil/2023/08/09/how-ai-and-ml-can-revolutionize-banks-signature-verification-process/)
 [^4]:[CEDAR signature](https://paperswithcode.com/dataset/cedar-signature)
 [^5]:[Otsu's Method](https://en.wikipedia.org/wiki/Otsu%27s_method)
-
-[^99]: [Signature Verification Model](https://www.kaggle.com/code/jimding/signature-verification-resnet-model)
-[^100]: [YOLO NAS Model - Broken at 25/4/2025 ](https://www.kaggle.com/code/jimding/yolo-nas-model)
+[^6]:[Triplet Loss](https://www.v7labs.com/blog/triplet-loss)

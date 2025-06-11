@@ -4,6 +4,8 @@ draft: false
 tags: 
 description:
 ---
+# 10th June 2025
+- Uploaded [updated model notebook](https://github.com/HappyPotatoHead/Signature-Verification-Model)
 # 1st June 2025
 - Added [[Ricing Linux]]
 # 14th May 2025
