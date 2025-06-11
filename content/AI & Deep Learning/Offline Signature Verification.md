@@ -1,5 +1,5 @@
 ---
-title: Offline signature verification system
+title: Offline Signature Verification
 draft: false
 tags: 
 description:

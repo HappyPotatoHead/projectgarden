@@ -6,15 +6,15 @@ description:
 ---
 I’m [HappyPotatoHead](https://github.com/HappyPotatoHead). This used to be a **digital garden** meant to record my academic journey throughout my Computer Science Degree, but I've decided to rebrand it to store my projects instead. *Maybe notes will make a comeback?*  
 
-> Most of the projects would primarily revolve around Data Science.
+> Projects would primarily revolve around Data Science with a couple for *funsies*.
 
 >[!QUOTE] 
 >```telescopic
->* Knowledge is not a reservoir to be hoarded but a river to be shared
->	* He who has a Why to live for can bear almost any How
->		* There are things which must cause you to lose your reason or you have none to lose
->			* The truth - that love is the ultimate and the highest goal to which man can aspire. The salvation of man is through love and in love
->				* Set me like a seal upon thy heart, love is as strong as death
+>* <em>Knowledge is not a reservoir to be hoarded but a river to be shared</em>
+>	* <em>He who has a Why to live for can bear almost any How</em><br><br>- Friedrich Nietzsche
+>		* <em>There are things which must cause you to lose your reason or you have none to lose</em><br><br> - Gotthold Lessing
+>			* <em>Set me like a seal upon thy heart, love is as strong as death </em>
+>				* <em>Do what you can, with what you have, where you are. </em><br><br> - Theodore Roosevelt
 >```
 
 *Dont know where to go?*
@@ -24,9 +24,9 @@ I’m [HappyPotatoHead](https://github.com/HappyPotatoHead). This used to be a *
 *View changes at: [[Changelogs]]*
 # Featured
 
-## Signature Verification System
+## Offline Signature Verification
 
-This project aimed to develop a system that utilises deep learning models to efficiently verifying *offline* (handwritten) signatures. The challenged was to accurately compare scanned or captured signatures against known samples, even with variations in style and quality. With this system, the process of verifying valid signatures can be significantly shorter and less tedious. 
+This project aimed to develop a system that utilizes deep learning models to efficiently verify handwritten signatures. The challenge was to accurately compare scanned or captured signatures against known samples, despite variations in style and quality. With this system, the process of verifying valid signatures can be significantly faster and less tedious.
 
 Complete documentation: [[Offline Signature Verification]]
 
@@ -44,14 +44,21 @@ One of the greatest pleasure of being a developer is to be able to make whatever
 
 *Don't know what to display on your screen while you study? Just want to watch animals slam their hands, paws, or whatever limbs they have on the desk? Well, you have come to the right place!*
 
-Complete Documentation: [[Bongo Animals]]
+Complete d ocumentation: [[Bongo Animals]]
+
+# Linux 
+
+*I have a problem*
+
+![[Ricing Linux#^89dd04|Ricing Linux]]
 
 # What's next?
 
-- [ ] Overhauling [[Offline Signature Verification]]
+- [ ] Overhaul [[Offline Signature Verification]] (*in-progress*)
+- [ ] Fix the table of content height
 - [ ] More analysis projects
 - [ ] Game development?
-- [ ] *Get a haircut*
+- [x] *Get a haircut*
 # Links
 
 Gardens that I shamelessly copy from:

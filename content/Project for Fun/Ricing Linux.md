@@ -20,11 +20,11 @@ I might have a *tad* problem.
 
 ## Second Version
 
-![[fern_two.png]]
+![[fern_two.png]] ^89dd04
 
 ![[fern_neo.png]]
 
-**Details**
+# How it's made
 - Distro: Linux Mint
 - WM: i3wm
 - Compositor: picom
