@@ -573,8 +573,6 @@ Additionally, the EER Threshold has shifted drastically - from 0.11 to 1.07 - in
 
 The AUC value dipped from 0.9962648053690312 to 0.9179167384067952, indicating a significant degradation in the model's discriminative power when faced with unseen data. 
 
-EER: 0.2167 at threshold: 0.6085
-
 | Final Checkpoint (Threshold: 0.2)          | Testing Result (Threshold 1.07)                   |
 | ------------------------------------------ | ------------------------------------------------- |
 | ![[resnet18_trained_confusion_matrix.png]] | ![[resnet18_trained_confusion_matrix_unseen.png]] |
@@ -597,6 +595,59 @@ There are a multitude of factors that may have contributed to this:
 
 Regardless, this *experiment* demonstrates that using a deep learning model in a signature verification task is feasible, provided a sufficient amount of signatures are used.
 
+# Implementation and Deployment
+
+> This deployment uses the same sample model as the previous section. 
+> 
+> This deployment also uses this reference image (the same images from the testing dataset):
+> ![[reference_signature.png]]
+
+Relying purely on the model itself is prone to misclassifications in edge cases, so I implemented cosine similarity to complement the model.
+
+Cosine similariy will measure how similar two vectors are, based on the angle between them rather than their magnitude.
+1. If the two vectors point in the same direction, similarity score is close to 1.0,
+2. If the two vectors are orthogonal, simmilarity score is 0.0, indicating an absence of similarity
+3. Opposite vectors have a similarity score near -1.0, signifying total dissimilarity.
+
+As for the distance, I implemented a simple Euclidean distance calculation.
+
+Additionally, a confidence score derived from the similarity score and the distance is also calculated.
+
+>*The more time you spend thinking about this, the more you realise the amount of additional work needed to make it a complete system. So, I will only keep this example simple.*
+
+For this demonstration, I paired the reference signature with 4 other signatures:
+- A variant of the reference signature (hard mining)
+- A forged signature of the same signer (hard mining)
+- A forged signature of a different signer (easy mining)
+- An original signature of a different singer (easy mining)
+
+Ideally, the model should yield a low distance and high similarity for the first pair, while producing a high distance and low similarity for the remaining pairs.
+
+## Result
+
+|                    | Same Signer (Original)   | Same Signer (Forged)                  | Different Signer (Forged)                  | Different Signer (Original)                  |
+| ------------------ | ------------------------ | ------------------------------------- | ------------------------------------------ | -------------------------------------------- |
+| Images             | ![[input_signature.png]] | ![[forged_signature_same_signer.png]] | ![[forged_signature_different_signer.png]] | ![[original_signature_different_signer.png]] |
+| Genuineness Flag   | True                     | False                                 | False                                      | False                                        |
+| Prediction Level   | High Confidence          | Failed Threshold Check                | Failed Threshold Check                     | Failed Threshold Check                       |
+| Similarity Score   | 0.8619                   | 0.3142                                | 0.1238                                     | 0.1688                                       |
+| Confidence Score   | 0.8087                   | 0.2712                                | 0.0990                                     | 0.1367                                       |
+| Euclidean Distance | 0.4042                   | 0.9009                                | 1.0000                                     | 0.9918                                       |
+| Distance Score     | 0.5958                   | 0.0991                                | 0.0000                                     | 0.0082                                       |
+
+> The model works in this particular example!
+
+
+
+>[!INFO]- Previous version
+>I developed a backend API using Flask to handle verification requests. 
+>
+>A simple frontend is developed with React and a backend is developed using Flask microweb framework. I decided to implement a vector database using PostgreSQL with an open source plugin, [`pgvector`](https://github.com/pgvector/pgvector). Finally, the entire system was containerised using [Docker](https://www.docker.com/)for easy deployment and testing. 
+>
+>The webpage allows the user to insert a signature image along with the user's details, and upon verification, the similarity score, confidence score, Euclidean distance, and the distance score will be calculated and displayed. 
+>
+>![[metrics.png]]
+
 # Learning and Takeaways
 
 The major challenge was achieving sufficient accuracy on a dataset with a relatively limited number of data while avoiding overfitting. At times, the clusters of signatures in PCA graph on the training set were completely separated, yet the model did not perform as well on the test set (*as shown in the [[Offline Signature Verification#Verification|verification]] section*). To attenuate this, [[Offline Signature Verification#Data Augmentation|data augmentation]] and [[Offline Signature Verification#Custom Feature Processing Layer|experimentation with varrying numbers of additional CNN layers]] are crucial strategies for improving generalisation and robustness.
@@ -608,21 +659,6 @@ PyTorch prioritises flexibility and low-level control, especially for building c
 However, there other third party libraries - [Optuna](https://optuna.org/) or [Ray Tune](https://docs.ray.io/en/latest/tune/index.html) to to make up for the missing features in PyTorch, but that would require me to spend more time learning these libraries (*Definitely putting these into my to-do list*). 
 
 > As I garner more knowledge in data science, I would definitely revisit this project.  
-
-# Bonus
-
-## Implementation and Deployment
-
->[!BUG]
->Under Development! 
-
-To make the system accessible, I developed a backend API using Flask to handle verification requests. This API integrated the trained `ResNet18` model. I had also developed a simple frontend via React that could interact with the backend. To store the signature images, I had decided to use a vector database developed with PostgreSQL's open source plugin - [`pgvector`](https://github.com/pgvector/pgvector). Finally, the entire system was containerized using Docker for easy deployment and testing. 
-
-The simple webpage would allow the user to insert a signature image along with the author's details and upon verification, the similarity score, confidence score, Euclidean distance, and the distance score will be displayed. 
-
-![[metrics.png]]
-*Example*
-
 
 [^1]: [Check Forgeries: Leveraging AI and Machine Learning for Signature Verification](https://orbograph.com/check-forgeries-leveraging-ai-and-machine-learning-for-signature-verification/)
 [^2]: [How AI Works in Signature Verification Tools](https://sqnbankingsystems.com/blog/how-ai-works-in-signature-verification-tools/)
