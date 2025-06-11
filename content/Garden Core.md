@@ -13,8 +13,8 @@ description:
 
 # AI & Deep Learning
 
-| Description                           | Link                                                 |
-| ------------------------------------- | ---------------------------------------------------- |
+| Description                           | Link                                          |
+| ------------------------------------- | --------------------------------------------- |
 | Offline signature verification system | [[Offline Signature Verification\|Click me!]] |
 
 # Project for Fun
@@ -22,6 +22,7 @@ description:
 | Description   | Link                         |
 | ------------- | ---------------------------- |
 | Bongo Animals | [[Bongo Animals\|Click me!]] |
+| Ricing Linux  | [[Ricing Linux\|Click me!]]  |
 
 %% # Social Science
 
