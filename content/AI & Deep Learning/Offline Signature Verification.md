@@ -461,6 +461,7 @@ I also implemented a k-fold cross validation class (*guess what it's called*) wh
 > The following result is based on this configuration.
 >  
 >>[!INFO] Model's configuration
+>>
 >>Model: `ResNet18`
 >>Loss function: Triplet Loss
 >>Learning rate: `OneCycleLR`
