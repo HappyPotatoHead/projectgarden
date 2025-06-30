@@ -7,9 +7,10 @@ description:
  *Sources:* [[Sources|Check me out!]]
 # Data Analysis & Machine Learning
 
-| Description                             | Link                                        |
-| --------------------------------------- | ------------------------------------------- |
-| Beginner-level machine learning project | [[Cardiovascular Risk Analysis\|Click me!]] |
+| Description                  | Link                                        |
+| ---------------------------- | ------------------------------------------- |
+| Cardiovascular Risk Analysis | [[Cardiovascular Risk Analysis\|Click me!]] |
+| QS Ranking Analysis          | [[QS Ranking Analysis\|Click me!]]          |
 
 # AI & Deep Learning
 

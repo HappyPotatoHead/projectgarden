@@ -6,8 +6,6 @@ tags:
   - machine_learning
 description:
 ---
->[!IMPORTANT] Check out the repository!
->[Click me!](https://github.com/HappyPotatoHead/Cardiovascular-Risk-Analysis)
 # Problem Statement
 
 This project aimed to analyse patient data to identify key risk factors for cardiovascular disease and develop a predictive model for assessment. Diagnosis of cardiovascular risk can be made easier and smoother, albeit the predictions still require professionals' insights. Nonetheless, machine learning can help doctors and researchers to learn and uncover unsuspected correlations and new trends, allowing them to make informed decisions.
@@ -201,40 +199,6 @@ in data, as they might be influenced by the distribution rather than a direct ca
 
 Due to the highly skewed distribution in numerical data (age, height, weight, and exercise), there are a lot of outliers in the dataset. Before removing outliers, height and weight are first combined into BMI as BMI gives a more meaningful measurement of body fat relative to height and weight. If outliers from weight and height are removed before combining into BMI, we may overlook how these two features interact. If observed separately, the values in weight and height may seem extreme but, combined, may look normal.
 
-*Snippet: Manipulating Features*
-```python
-# Combining Weight and Height to form BMI
-cardio_df['BMI'] = (cardio_df['Weight(kg)']/ np.square(cardio_df['Height(cm)']/100)).apply(lambda x:round(x,2))
-
-# Function to discretise age
-def discretise_age(data:pd.DataFrame)->None:
-    data['age_cat'] = pd.cut(data['Age'], bins = [13, 20, 25, 30, data['Age'].max()], labels=[1,2,3,4])
-```
-
-*Snippet: Removing outliers*
-```python
-# Define a function to remove outliers using the IQR method
-def remove_outliers_iqr(df, column):
-    Q1 = df[column].quantile(0.25)
-    Q3 = df[column].quantile(0.75)
-    IQR = Q3 - Q1
-    lower_bound = Q1 - 1.5 * IQR
-    upper_bound = Q3 + 1.5 * IQR
-    return df[(df[column] >= lower_bound) & (df[column] <= upper_bound)]
-
-# Apply outlier removal for the numerical columns
-numerical_columns = ['Age', 'BMI', 'Exercise']
-
-# Removing outliers from the dataset
-cleaned_data = cardio_df.copy()
-for col in numerical_columns:
-    cleaned_data = remove_outliers_iqr(cleaned_data, col)
-    
-# Display the number of rows removed due to outliers
-removed_rows = len(cardio_df) - len(cleaned_data)
-removed_rows, cleaned_data.head()
-```
-
 *Output*
 ```txt
 (158,
@@ -260,7 +224,7 @@ removed_rows, cleaned_data.head()
  6         2  moderate    8011         no                   high  45.26  )
 ```
 
-Then, the dataset is divided into features and labels before splitting into training and test sets using the `train_test_split` method from `sklearn`. `stratify = y_cardio_df` is used to ensure that both training set and test set have equal rows of label data. The size of the test set is **20%** of the entire dataset. 
+`stratify = y_cardio_df` is used to ensure that both training set and test set have equal rows of label data. The size of the test set is **20%** of the entire dataset. 
 
 Age data remain right-skewed so, discretising them is beneficial to ensure each age group gets equal representation.
 

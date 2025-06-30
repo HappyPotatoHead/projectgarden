@@ -4,9 +4,9 @@ draft: false
 tags: 
 description:
 ---
-I’m [HappyPotatoHead](https://github.com/HappyPotatoHead). This used to be a **digital garden** meant to record my academic journey throughout my Computer Science Degree, but I've decided to rebrand it to store my projects instead. *Maybe notes will make a comeback?*  
+This used to be a **digital garden** meant to record my academic journey throughout my Computer Science Degree, but I've decided to rebrand it to store my projects instead. 
 
-> Projects would primarily revolve around Data Science with a couple for *funsies*.
+> Projects would primarily revolve around Data Science with a couple of *funsies*.
 
 >[!QUOTE] 
 >```telescopic
@@ -54,10 +54,14 @@ Complete d ocumentation: [[Bongo Animals]]
 
 # What's next?
 
-- [ ] Overhaul [[Offline Signature Verification]] (*in-progress*)
+**To-do list**
 - [ ] Fix the table of content height
-- [ ] More analysis projects
+- [ ] Projects
+	- [ ] Computer vision project
+	- [ ] AI agent project
+	- [ ] More analysis projects
 - [ ] Game development?
+- [x] Overhaul [[Offline Signature Verification]]
 - [x] *Get a haircut*
 # Links
 

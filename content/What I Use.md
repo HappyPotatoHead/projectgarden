@@ -6,22 +6,16 @@ description:
 ---
 # Workstation
 ## Desktop
-### Internal Components
-- Gigabyte z790 ud ax
-- Intel Core i7-14700K 
-- NVIDIA GeForce RTX 4070 SUPER 12 GB
-- Silicon Power XPower Zenith DDR5 16GB x 2
-- Silicon Power NVMe PCIe Gen3x4 M.2 2280 SSD 512GB x 2
+
 ### Peripherals
 - Samsung 24" S36C Curved Monitor
-- Armaggeddon Scorpion 5 RGB Mouse
 - Aula F75 Keyboard
 - Moondrop Space Travel
 - Creative Pebble
 - 8BitDo Ultimate 2c
 - HUION HS64 
 ### Accessories 
-- Random Black Deskmat
+- Random black deskmat
 - Random monitor stand
 ## On The Go
 - Redmi Pad Pro

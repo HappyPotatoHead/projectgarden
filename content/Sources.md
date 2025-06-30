@@ -8,38 +8,43 @@ description:
 # Programming Languages
 ## C++
 
-| Name                                                                 | Link                                                                                                                               | Description                                                                                                                                   |
-| -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| Learn C++                                                            | https://www.learncpp.com/                                                                                                          | This website provides complete and thorough information regarding coding in C++. However, the website does not teach us how to **programme.** |
-| Order of Items in Classes: Fields, Properties, Constructors, Methods | [Stack Overflow Link](https://stackoverflow.com/questions/150479/order-of-items-in-classes-fields-properties-constructors-methods) | This thread discusses the best practice in ordering the items in classes.                                                                     |
+| Name                                                                 | Link                                                                                                                               | Description                                |
+| -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| Learn C++                                                            | https://www.learncpp.com/                                                                                                          | Teaches how to code, not how to program    |
+| Order of Items in Classes: Fields, Properties, Constructors, Methods | [Stack Overflow Link](https://stackoverflow.com/questions/150479/order-of-items-in-classes-fields-properties-constructors-methods) | Best practice in ordering items in classes |
 ## Python
-| Name                       | Link                                                           | Description                                                                                                         |
-| -------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| Brocode                    | https://youtu.be/XKHEtdqhLK8?si=aP92k1NGfisYGhDE               | This is where I started                                                                                             |
-| Github  Python Study Guide | https://github.com/huangsam/ultimate-python?tab=readme-ov-file | The repository contains websites, books, and videos on everything python. You will never run out of resources here. |
+| Name                       | Link                                                           | Description                                       |
+| -------------------------- | -------------------------------------------------------------- | ------------------------------------------------- |
+| Brocode                    | https://youtu.be/XKHEtdqhLK8?si=aP92k1NGfisYGhDE               | Introductory course                               |
+| Github  Python Study Guide | https://github.com/huangsam/ultimate-python?tab=readme-ov-file | Websites, books, and videos on everything python. |
 
 # Front End Web Development
 ## HTML
-| Name         | Link                                 | Description                                                                                                               |
-| ------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
-| MDN Web Docs | https://developer.mozilla.org/en-US/ | Details on Open Web technologies, encompassing HTML, CSS, and APIs, applicable to both websites and progressive web apps. |
+| Name         | Link                                 | Description                                                        |
+| ------------ | ------------------------------------ | ------------------------------------------------------------------ |
+| MDN Web Docs | https://developer.mozilla.org/en-US/ | Details on Open Web technologies, encompassing HTML, CSS, and APIs |
 ## JavaScript
 
-| Name                           | Link                     | Description                                 |
-| ------------------------------ | ------------------------ | ------------------------------------------- |
-| The Modern JavaScript Tutorial | https://javascript.info/ | The go-to site to learn vanilla JavaScript. |
+| Name                           | Link                     | Description          |
+| ------------------------------ | ------------------------ | ------------------- |
+| The Modern JavaScript Tutorial | https://javascript.info/ Vanilla JavaScript. t. |
 
 # Data Structure and Algorithm
-| Name                        | Link                                                   | Description                                                                      |
-| --------------------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------- |
-| Coding Interview Univeristy | https://github.com/jwasham/coding-interview-university | This repository contains all the resources needed to learn DSA from zero to hero |
-| The Algorithms              | https://the-algorithms.com/                            | Open-source collection of codes for all the algorithms you can think of.         |
+| Name                        | Link                                                   | Description                               |
+| --------------------------- | ------------------------------------------------------ | ----------------------------------------- |
+| Coding Interview Univeristy | https://github.com/jwasham/coding-interview-university | Resources to learn DSA                    |
+| The Algorithms              | https://the-algorithms.com/                            | Open-source collection of algorithm codes |
+# Data Science
 
-# Data Science 
+| Name               | Link                    | Description |
+| ------------------ | ----------------------- | ----------- |
+| R for Data Science | https://r4ds.hadley.nz/ | Holy grail  |
+
+# Machine Learning, Deep Learning, and Artificial Intelligence
 
 | Name                                                            | Link                                                                          | Description                            |
 | --------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------------- |
-| Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow | https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ | Appropriate for all level of expertise |
+| Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow | https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/ | Appropriate for all level of expertise |
 # Game Development
 
 ## Godot
@@ -47,7 +52,7 @@ description:
 | Name        | Link                                    | Description                  |
 | ----------- | --------------------------------------- | ---------------------------- |
 | Godot       | https://docs.godotengine.org/en/stable/ | Official Godot documentation |
-| uHeartBeast | https://www.youtube.com/@uheartbeast    | Godot tutor                  |
+| uHeartBeast | https://www.youtube.com/@uheartbeast    | -                            |
 
 # Tools
 
