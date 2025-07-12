@@ -4,16 +4,7 @@ draft: false
 tags: 
 description:
 ---
-
->[!INFO] Update
->The fine-tuning notebook has been released on GitHub! 
->
 >Check it out: [Click me!](https://github.com/HappyPotatoHead/Signature-Verification-Model)
-
->[!INFO] Offline
->Offline here means handwritten signatures!
-
-> Check out the footnote for the resources!
 
 # Project Overview
 

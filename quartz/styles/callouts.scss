@@ -114,9 +114,10 @@
   }
 
   &[data-callout="quote"] {
-    --color: var(--secondary);
-    --border: var(--lightgray);
+    --color: #71797E;
+    --border: #36454F; 
     --callout-icon: var(--callout-icon-quote);
+    --bg: none;
   }
 
   &[data-callout="definition"] {
