@@ -9,8 +9,6 @@ description:
 
 Link: [Bongo Animals](https://bongo-animals.netlify.app/)
 
-> Who doesn't love bongo cat? The cat that took the Internet by storm
-
 One of the greatest pleasure of being a developer is to be able to make whatever I want, whenever I want. Sometimes, a project doesn't have to solve a real-world problem - it just has to be fun. 
 
 *Don't know what to display on your screen while you study? Just want to watch animals slam their hands, paws, or whatever limbs they have on the desk? Well, you have come to the right place!*
@@ -42,4 +40,4 @@ Enjoy!
 # Credits
 1. [Inspiration from hostrider](https://hostrider.com/#0)
 2. [Toggle button](https://uiverse.io/cuzpq/gentle-goat-72)
-3. And the things that I no longer have
+3. And the things I no longer have

@@ -13,12 +13,12 @@ description:
 
 I might have a *tad* problem.
 
-## First Version
+## First
 
 ![[fern.png]]
 ![[fern_rice.png]]
 
-## Second Version
+## Second 
 
 ![[fern_two.png]] ^89dd04
 

@@ -13,21 +13,21 @@ description:
 | Learn C++                                                            | https://www.learncpp.com/                                                                                                          | Teaches how to code, not how to program    |
 | Order of Items in Classes: Fields, Properties, Constructors, Methods | [Stack Overflow Link](https://stackoverflow.com/questions/150479/order-of-items-in-classes-fields-properties-constructors-methods) | Best practice in ordering items in classes |
 ## Python
-| Name                       | Link                                                           | Description                                       |
-| -------------------------- | -------------------------------------------------------------- | ------------------------------------------------- |
-| Brocode                    | https://youtu.be/XKHEtdqhLK8?si=aP92k1NGfisYGhDE               | Introductory course                               |
-| Github  Python Study Guide | https://github.com/huangsam/ultimate-python?tab=readme-ov-file | Websites, books, and videos on everything python. |
+| Name                       | Link                                                           | Description                                      |
+| -------------------------- | -------------------------------------------------------------- | ------------------------------------------------ |
+| Brocode                    | https://youtu.be/XKHEtdqhLK8?si=aP92k1NGfisYGhDE               | Introductory course                              |
+| Github  Python Study Guide | https://github.com/huangsam/ultimate-python?tab=readme-ov-file | Websites, books, and videos on everything python |
 
 # Front End Web Development
 ## HTML
-| Name         | Link                                 | Description                                                        |
-| ------------ | ------------------------------------ | ------------------------------------------------------------------ |
-| MDN Web Docs | https://developer.mozilla.org/en-US/ | Details on Open Web technologies, encompassing HTML, CSS, and APIs |
+| Name         | Link                                 | Description                                                              |
+| ------------ | ------------------------------------ | ------------------------------------------------------------------------ |
+| MDN Web Docs | https://developer.mozilla.org/en-US/ | Details about Open Web technologies, which encompass HTML, CSS, and APIs |
 ## JavaScript
 
-| Name                           | Link                     | Description          |
-| ------------------------------ | ------------------------ | ------------------- |
-| The Modern JavaScript Tutorial | https://javascript.info/ Vanilla JavaScript. t. |
+| Name                           | Link                     | Description        |
+| ------------------------------ | ------------------------ | ------------------ |
+| The Modern JavaScript Tutorial | https://javascript.info/ | Vanilla JavaScript |
 
 # Data Structure and Algorithm
 | Name                        | Link                                                   | Description                               |

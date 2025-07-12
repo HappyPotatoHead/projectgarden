@@ -25,6 +25,33 @@ description:
 | Bongo Animals | [[Bongo Animals\|Click me!]] |
 | Ricing Linux  | [[Ricing Linux\|Click me!]]  |
 
+# Library
+
+| Description                                                   | Link                                    |
+| ------------------------------------------------------------- | --------------------------------------- |
+| Man's Search for Meaning                                      | [[Man's Search for Meaning\|Click me!]] |
+| Bone Houses                                                   | [[Bone Houses\|Click me!]]              |
+| The Fox Wife                                                  | [[The Fox Wife\|Click me!]]             |
+| The Silent Patient                                            | -                                       |
+| The Man Who Died Twice                                        | -                                       |
+| The Vanishing Half                                            | -                                       |
+| The One and Future Witches                                    | -                                       |
+| The Midnight Library                                          | -                                       |
+| The Invisible Life of Addie LaRue                             | -                                       |
+| A Good Girl's Guide to Murder                                 | -                                       |
+| Good Girl, Bad Blood                                          | -                                       |
+| As Good As Dead                                               | -                                       |
+| People We Meet on Vacation                                    | -                                       |
+| Six of Crows                                                  | -                                       |
+| Six Crimson Cranes                                            | -                                       |
+| The Magician: The Secrets of the Immortal Nicholas Flamel     | -                                       |
+| The Sorceress: The Secrets of the Immortal Nicholas Flamel    | -                                       |
+| Sapiens: A Brief History of Humankind                         | -                                       |
+| Atomic Habits: Tiny Changes, Remarkable Results               | -                                       |
+| The Power of Habit: Why We Do What We Do in Life and Business | -                                       |
+| Thinking, Fast and Slow                                       | -                                       |
+
+
 %% # Social Science
 
 >[!WARNING] 

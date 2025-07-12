@@ -22,13 +22,11 @@ description:
 - Lenovo Latitude 3410
 # Software
 ## Note Taking
-- [Obsidian](https://obsidian.md/) (*The only one you need*)
-	- Works best on desktops
+- [Obsidian](https://obsidian.md/)
 - [Microsoft's OneNote](https://www.onenote.com/?public=1&wdorigin=ondcauth2&wdorigin=ondc) 
 ## Programming
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/)
-- [Eclipse IDE](https://eclipseide.org/)
 - [Docker](https://www.docker.com/)
 ## Creative
 ### Drawing and Image editing
