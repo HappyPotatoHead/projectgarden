@@ -15,6 +15,7 @@ This used to be a **digital garden** meant to record my academic journey through
 >		* <em>There are things which must cause you to lose your reason or you have none to lose</em><br><br> - Gotthold Lessing
 >			* <em>Set me like a seal upon thy heart, love is as strong as death </em>
 >				* <em>Do what you can, with what you have, where you are. </em><br><br> - Theodore Roosevelt
+>					* <em>Forever and always, wherever you are </em>
 >```
 
 *Dont know where to go?*

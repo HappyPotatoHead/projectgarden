@@ -6,15 +6,15 @@ tags:
   - machine_learning
 description:
 ---
-# Problem Statement
+%% # Problem Statement
 
 This project aimed to analyse patient data to identify key risk factors for cardiovascular disease and develop a predictive model for assessment. Diagnosis of cardiovascular risk can be made easier and smoother, albeit the predictions still require professionals' insights. Nonetheless, machine learning can help doctors and researchers to learn and uncover unsuspected correlations and new trends, allowing them to make informed decisions.
 
-Cardiovascular diseases are one of the most significant health challenges worldwide, contributing to millions of death each year. Early detection and accurate prediction of cardiovascular risk in an individual can save that individual from costs of treatment, pain, and stress, leading to an overall healthier and happier life. 
+Cardiovascular diseases are one of the most significant health challenges worldwide, contributing to millions of death each year. Early detection and accurate prediction of cardiovascular risk in an individual can save that individual from costs of treatment, pain, and stress, leading to an overall healthier and happier life.  %%
 
 # Data Source
 
-The dataset includes patient information such as age, gender, lifestyle factors, health metrics, and demographic profile.
+The dataset includes lifestyle factors, health metrics, and demographic profile.
 
 | Gender | Age | Height(cm) | Weight(kg) | Family_history | Alcohol | Junk_food | Vege_day | Meals_day | Snack     | Smoking | Water_intake(L) | Transportation | Exercise | TV       | Income | Discipline | Cardiovascular_risk |
 | ------ | --- | ---------- | ---------- | -------------- | ------- | --------- | -------- | --------- | --------- | ------- | --------------- | -------------- | -------- | -------- | ------ | ---------- | ------------------- |
@@ -43,6 +43,7 @@ LIMIT 10
 >I don't have much information over the dataset other than the data, so most of the analysis are speculations.
 
 The dataset has 17 features, 1 label and 2100 rows:
+
 ```python 
 row, column = cardio_df.shape
 print(f"The number of rows: {row}\nThe number of columns: {column}\n")
@@ -81,8 +82,8 @@ Information from the output above:
 1. There are 17 features
 2. There is no `null` values
 
-Before moving on to analysing and visualizing the dataset, it is important to extract relevant features first.
-Those are:
+Relevant features:
+
 1. gender
 2. age
 3. height(cm)
@@ -97,24 +98,12 @@ Those are:
 12. tv
 13. discipline
 
-Height and weight will be combined to become BMI as, individually, doesn’t give much information.
-
-These features have a more direct relationships with 
-cardiovascular risks compared to vege_day, meals_day, water_intake(L), and income. The meaning of the values in vege_day is ambiguous and do not synchronise with the values in meals_day. The volume of water intake does influence the risk of cardiovascular disease but, its relationship with cardiovascular risk is often indirect and influenced by other factors.
-
-Income is also ignored as we have features such as junk food, smoking, exercise, and TV that can serve as proxies for socio-economic status. 
-
+> Height and weight are combined to calculate BMI, as individually they don’t provide much meaningful information.
 ## Univariate Analysis
 
 ### Cardiovascular Risk 
 
 ![[cardiovascular_risk.jpg]]
-
-Most individuals in the dataset — 967 — are at high risk of developing cardiovascular diseases. The distribution of individuals with low and medium cardiovascular risk is relatively even, with minor differences.
-
-This could indicate that the population is, overall, rather unhealthy. However, the sample size of 2,100 may be too small to represent the general population. 
-
-This could also suggest that the sample was collected from a region where sedentary or unhealthy lifestyles are more prevalent.
 
 ### Age, Weight, and Height
 
@@ -122,35 +111,21 @@ This could also suggest that the sample was collected from a region where sedent
 
 The age distribution is right-skewed, indicating that the demographic of the dataset is primarily teenagers and working adults. Based on the [[Cardiovascular Risk Analysis#Cardiovascular Risk|cardiovascular risk graph]], this suggests that most individuals with a higher risk of cardiovascular disease are younger.
 
-The histogram shows that the distribution of height is a rather normal distribution with some spikes. The distribution of weight is slightly right skewed with some seemingly extreme weights. Paired with the age histogram, this may explain why individuals with a higher risk of developing cardiovascular risk are younger. 
-
-Finally, the BMI histogram denotes a multimodal distribution, as shown by the presence of multiple 
-peaks. There are peaks between 15 and 20, between 25 and 30, and between 30 and 40. This suggests that the dataset may represent several underlying subpopulations or distinct clusters with different BMI ranges.
+Finally, the BMI histogram denotes a multimodal distribution, as shown by the presence of multiple peaks. There are peaks between 15 and 20, between 25 and 30, and between 30 and 40, suggesting several underlying subpopulations or distinct clusters with different BMI ranges.
 
 ### Lifestyle and Demographic
 
 ![[lifestyle_demographic.jpg]]
 
-The data distribution for the gender feature is evenly distributed with 50.5% male and 49.5% female. This suggests that both genders are evenly represented in the dataset. This can minimise potential bias in the machine learning model, preventing the model from skewing 
-towards one gender over the other. 
-
-The majority of individuals — 81.7% — have a family member with cardiovascular disease, while only 18.3% have no such family history. Having a family history _of_ cardiovascular disease is shown to elevate the risk factor.[^1][^2]
-
-The alcohol feature shows that the low value significantly dominates the rest, followed by none. This suggests that the younger individuals in the sample tend to consume little to no alcohol. Alcohol is also known to elevate the risk factor, and the relatively low levels of alcohol consumption suggest that other factors are likely driving the risk factor.
-
-It may be argued that low to moderate alcohol consumption is cardio-protective amongst apparently healthy individuals [^3]; however, this conclusion is made from some older studies which may have had methodological issues, attenuating the strength of the conclusion. 
-
-More modern research suggests that the risks of alcohol consumption often outweigh any potential benefits. [^4]
-
-The large gap between the levels of consumption may introduce bias to the model.
-
-The most popular form of transportation in the dataset is the bus, with 1,573 individuals using it. In contrast, only 6 individuals rely on bicycles. This disparity may suggest that the data was collected from urban areas where buses are a common mode of transportation, while cycling is less prevalent. 
-
-This could also provide insights into the overall physical activity levels of the sample, as reliance on buses may correlate with lower physical activeness compared to cycling. 
-
 ![[fitness_level.jpg]]
 
-Rather than going off of a conjecture, the exercise bar graph shows that 716 individuals do not exercise, 773 individuals rarely exercise, 493 moderate exercises, and 118 regularly exercises.
+Both genders are evenly represented in the dataset, which may help minimise potential bias in the machine learning models and prevent them from skewing toward one gender . 
+
+The majority of individuals — 81.7% — have a family member with cardiovascular disease, while only 18.3% report no such family history. A family history _of_ cardiovascular disease is shown to elevate the risk factor [^1][^2]. Despite the reported low levels of alcohol consumption, other contributing factors are likely driving the observed cardiovascular risk. There are arguments that low to moderate alcohol consumption is cardio-protective amongst apparently healthy individuals [^3]; however, this conclusion came from older studies which may had methodological issues, attenuating the strength of the conclusion. Nonetheless, modern research suggests that the risks of alcohol consumption outweigh any potential benefits [^4].
+
+In terms of performance, the large gap between the levels of consumption may introduce bias to the model. The large disparity between transportation via bus and via bicycle may suggest that the data was collected from urban areas where buses are a common mode of transportation, while cycling is less prevalent. This could also provide insights into the overall physical activity levels of the sample, as reliance on buses may correlate with lower physical activeness compared to cycling. 
+
+The majority of the sample reported engaging in little to no regular physical activity, a a factor known to elevate cardiovascular risk [^5].
 
 ## Bivariate Analysis
 
@@ -158,456 +133,358 @@ Rather than going off of a conjecture, the exercise bar graph shows that 716 ind
 
 ![[age_cardiovascular.jpg]]
 
-The boxplot for the low-risk category shows that most individuals in this group are younger, with the median age being lower than the other categories. The range of ages in this group is also narrow, with a few outliers extending to older ages.
+The boxplot for the low-risk category indicates that most individuals are relatively young, with a lower median age compared to other risk categories. The age range is narrow of ages, suggesting limited variability, although a few outliers extend into older age groups.
 
-On the other hand, the medium-risk category displays a wider age range, with its median age positioned slightly higher than the low-risk boxplot. The distribution of age also suggests that individuals in this group are more diverse, with several outliers.
+In contrast, the medium-risk category exhibits a wider age distribution, with the median age slightly higher than that of the low-risk group. The presence of several outliers, along with the broader spread, suggests greater diversity in age among individuals in this category. 
 
 ### BMI and Cardiovascular Risk
 
 ![[bmi_cardiovascular_risk.jpg]]
 
-The scatter graph suggests correlations between BMI and cardiovascular risk. Based on the scatter graph, individuals with lower BMI have lower risks of developing cardiovascular diseases while individuals with higher BMI have higher cardiovascular risk. 
+The scatter graph reveals a positive correlation between BMI and cardiovascular risk. Individuals with lower BMI tend to exhibit lower risk levels for cardiovascular diseases, whereas those with higher BMI appear to face elevated risk. 
 
 ### Gender and Cardiovascular Risk 
 
 ![[gender_cardiovascular.jpg]]
 
-The graph indicates that the spread of cardiovascular risk between the two genders is evenly distributed. Both females and males have the highest count in the high-risk category, with counts reaching 500, indicating that high cardiovascular risk is prevalent in both genders. However, 
-there are more medium-risk category counts in males compared to females. There are also lesser males with low-risk category compared to females. 
+The graph indicates that the distribution of cardiovascular risk between the two genders is relatively even. Both females and males show the highest count in the high-risk category, with each reaching 500, suggesting that high cardiovascular risk is prevalent across both genders. However, the number of individuals in the medium-risk category is higher among males compared to females. Additionally, fewer males fall into the low-risk category than females. 
 
 ### Lifestyle and Cardiovascular Risk
 
 ![[lifetstyle_cardiovascular.jpg]]
 
-It can be observed that a significant portion of individuals who consume low volumes of alcohol have higher cardiovascular risks, indicating that there are other factors - activeness and diet - at play. 
+It can be observed that a significant portion of individuals who consume low volumes of alcohol exhibit higher cardiovascular risks, suggesting that other factors - such as physical activity and dietary habits - may play a more influential role. 
 
-The same can be said to smoking, snack consumption rate, and tv as well; majority of individuals who do not smoke, indulge in snacks sometimes, and rarely watch tv fall in the high cardiovascular risk category.  
+A similar trend is seen with smoking status, snack consumption rate, and television viewing habits. The majority of individuals who do not smoke, occasionally indulge in snacks, and rarely watch television still fall into the high cardiovascular risk category, indicating that these behaviours alone do not fully account for cardiovascular health outcomes.
 
-Individuals who do not exercise have fall into high cardiovascular risk categories in contrast to individuals who regularly exercise.[^5] Individuals who take passive transportation have much larger cardiovascular risk as opposed to those who take active transportation.[^6]
+Individuals who do not engage in regular physical activity are more likely to fall into high cardiovascular risk categories compared to those who exercise consistently [^5]. Moreover, those who rely on passive transportation methods - such as driving or public transport - tend to have significantly higher cardiovascular risk than individuals who use active modes of transport like walking or cycling [^6].
 
-Majority of individuals who admitted to consuming junk food fall into high cardiovascular risk category.[^7]Finally, individuals believe they do not have discipline have higher cardiovascular risk compared to those who do. 
-
-## Potential Issues
-
-The analysis reveals several patterns between lifestyle factors and cardiovascular risk, such as alcohol consumption, and cardiovascular risk levels. For instance, a significant proportion of individuals who consume low amounts of alcohol are categorized as having a high cardiovascular risk. Such findings may hold some truth, but the topic remains highly debated, and further research is necessary.
-
-However, it can be conjectured that these observed relationships may be driven by the distribution of the data rather than representing genuine causal links between 
-the features and the label. This highlights the importance of careful consideration when interpreting correlations 
-in data, as they might be influenced by the distribution rather than a direct cause-and-effect relationship. To fix this issue, more data must be gathered to ensure that each group has equal representation and the relationship between the feature and label is more realistic and accurate.
+A large proportion of individuals who admit to regularly consuming junk food also fall into the high-risk category [^7]. Finally, individuals believe they lack personal discipline are more likely to be categorised as a high-risk compared to those who consider themselves disciplined. 
 
 # Data Cleaning and Pre-processing
 
-Due to the highly skewed distribution in numerical data (age, height, weight, and exercise), there are a lot of outliers in the dataset. Before removing outliers, height and weight are first combined into BMI as BMI gives a more meaningful measurement of body fat relative to height and weight. If outliers from weight and height are removed before combining into BMI, we may overlook how these two features interact. If observed separately, the values in weight and height may seem extreme but, combined, may look normal.
+> There are much better ways to handle skewed data - logging, Yeoh-Johnson, etc.
 
-*Output*
-```txt
-(158,
-    Gender  Age  Height(cm)  Weight(kg) Family_history Alcohol Junk_food  \
- 1  Female   19       175.3        80.0            yes    none       yes   
- 3  Female   23       165.0        70.0            yes     low        no   
- 4    Male   23       169.0        75.0            yes     low       yes   
- 5    Male   23       172.0        82.0            yes     low       yes   
- 6  Female   21       172.0       133.9            yes     low       yes   
- 
-    Vege_day  Meals_day      Snack Smoking  Water_intake(L) Transportation  \
- 1         2          1  Sometimes      no             2.65            bus   
- 3         2          1  Sometimes      no             2.00            bus   
- 4         3          3  Sometimes      no             2.82            bus   
- 5         2          1  Sometimes      no             1.00            bus   
- 6         3          3  Sometimes      no             2.42            bus   
- 
-    Exercise        TV  Income Discipline Cardiovascular_risk(y)    BMI  
- 1         3  moderate    5551         no                 medium  26.03  
- 3         0      rare    9451         no                 medium  25.71  
- 4         1     often   17857         no                 medium  26.26  
- 5         1  moderate    3114         no                 medium  27.72  
- 6         2  moderate    8011         no                   high  45.26  )
-```
+Due to the highly skewed distribution in numerical data such as age, height, weight, and exercise frequency, the dataset contains a significant number of outliers. Before proceeding with outlier removal, height and weight are first combined into the Body Mass Index (BMI), which provides a more meaningful metric for assessing body fat in relation to height and weight. 
 
-`stratify = y_cardio_df` is used to ensure that both training set and test set have equal rows of label data. The size of the test set is **20%** of the entire dataset. 
+Removing outliers from height and weight independently before calculating BMI may lead to overlooking important interactions between these features. While weight and height values may appear extreme when observed in isolation, their combination in BMI could produce values that fall within a normal range. Therefore, deriving BMI before filtering outliers helps preserve the integrity of feature relationships and ensures a more accurate representation of physical health indicators.
 
-Age data remain right-skewed so, discretising them is beneficial to ensure each age group gets equal representation.
+The age feature remains right-skewed, making discretisation a beneficial pre-processing step to ensure balanced representation across age groups. 
 
 ![[age_category.jpg]]
 
-In our chosen features, there are 6 features with nominal data and 3 features with ordinal data. In the 6 features with nominal data, 5 – gender, family, junk food, smoking, and discipline - will be pre-processed with `LabelBinarizer` because their data consists of yes or no, or male or female. `OneHotEncoder` would not be suitable as it just adds unnecessary complexities when dealing with binary features. Transportation will be encoded with `OneHotEncoder`. `OrdinalEncoder` will be used on alcohol, tv, and snack. Finally, for better performance, cardiovascular risk will also be encoded with ordinal encoder.
+Among the selected features, six contain nominal data and three contain ordinal data. Of the nominal features, 5 – gender, family, junk food, smoking, and discipline - will be pre-processed with `LabelBinarizer`, as they are binary and applying `OneHotEncoder` would introduce unnecessary complexity. The transportation feature, which contains more than two categories, will be encoded with `OneHotEncoder`. 
+
+For the ordinal features - alcohol consumption, television viewing, and snack frequency -  `OrdinalEncoder` will be used to preserve their inherit order. Additionally, for improved model performance and interpretability, cardiovascular risk will also be encoded using  `OrdinalEncoder`.
 
 # Methodology
 
 ## Model Training
 
-Based on the dataset presented, this is a supervised, offline, multi-class classification problem. The models selected are, k-nearest neighbours, an extended logistic regression, and random forest. The main performance measure used to assess the models are confusion matrix, 
-precision, recall, F1 Score, and AUC-ROC graph. 
-K-fold cross validation is used when in training the model. This is done manually with `StratifiedKFold` to give us more control over the type of metrics to measure in assessing the performance of the model. 
+This is a supervised, offline, multi-class classification problem. 
 
->[!NOTE] Side Note
->Now that I've done it, `StratifiedKFold` wasn't really necessary. 
+The models selected for evaluation are K-Nearest Neighbours, Extended Logistic Regression, and Random Forest. Model performance is assessed using the confusion matrix, precision, recall, F1 score, and the AUC-ROC curve, providing a comprehensive view of classification effectiveness.
+
+K-Fold Cross Validation is employed, implemented manually through `StratifiedKFold`. This approach provides greater control over data splits and facilitates the measurement of specific performance metrics across consistent stratified folds, preserving the distribution of target classes in each fold.
 
 ### K-Nearest Neighbours
 
-K-nn can handle multiclass classification problems. Additionally, k-nn works well with a relatively small dataset of only 1.9 thousand rows of data. K-nn is a non-parametric algorithm, meaning it does not assume any underlying data distribution. This makes them more versatile for various data types and distributions. 
+K-NN performs well with relatively small datasets, such as the one used here with only 1, 900 rows. As a non-parametric algorithm, K-NN makes no assumptions about the underlying data distribution, making it versatile across various data types and distributions.
 
-Predictions are made based on simple majority vote of the nearest neighbours of each point. The number of nearest neighbours to consider is important when classifying the output. A high number of neighbours to consider means the algorithm is more sensitive to the local structure, subtle patterns and variations in the data but, the is more likely to overfit while a lower number may give better generalization but risk underfitting. Additionally, to determine whether a point is to be regarded a neighbour, distance metrics are used. There are 3 common distance metrics to consider, Euclidean distance, Manhattan distance, and Minkowski distance. 
+The number of neighbours considered plays an important role in model behavior:
+- A large value of k allows the algorithm to be more sensitive to the local structure, but increases the risk to overfit 
+- A smaller value of k may improve generalisation, but could lead to underfitting if too few neighbours are used. 
+
+To determine proximity, distance metrics are applied. The three most common ones include:
+- Euclidean distance
+- Manhattan distance
+- Minkowski distance 
 
 #### Training the Model
 
-The default hyperparameters for sklearn’s knn model are 5 numbers of neighbours, uniform weight, and Euclidean distance metric.
-```text
-Cross-Validation Accuracy Scores:
-[0.9839228295819936, 0.9871382636655949, 0.9903536977491961, 0.9935483870967742, 0.9806451612903225]
-Average Accuracy: 0.9871216678767762
+K-fold cross validation result with default parameters: 
 
-Cross-Validation Precision Scores:
-[0.9838980209559758, 0.9872878187392506, 0.9906863288612929, 0.9935483870967742, 0.9819499818774917]
-Average Precision: 0.9874741075061572
+| Metrices  | Value  |
+| --------- | ------ |
+| Accuracy  | 0.9871 |
+| Precision | 0.9875 |
+| Recall    | 0.9871 |
+| F1        | 0.9871 |
 
-Cross-Validation Recall Scores:
-[0.9839228295819936, 0.9871382636655949, 0.9903536977491961, 0.9935483870967742, 0.9806451612903225]
-Average Recall: 0.9871216678767762
-
-Cross-Validation F1 Scores:
-[0.9838693545172303, 0.9871400029132399, 0.9903546759767846, 0.9935483870967742, 0.9806371235666059]
-Average F1: 0.987109908814127
-```
-
-*The result from the k-fold cross validation is quite promising.* 
-
-```text
 Metrics after training on the entire training set:
-Accuracy: 0.9961365099806826
-F1: 0.9961367210034928
-Precision: 0.9961429103417135
-Recall: 0.9961365099806826
-```
 
-^3ee372
+| Metrices  | Value  |
+| --------- | ------ |
+| Accuracy  | 0.9961 |
+| Precision | 0.9961 |
+| Recall    | 0.9961 |
+| F1        | 0.9961 |
 
 #### Evaluation of Training Result
 
-*Classification Report*
-```text
-				  precision   recall  f1-score   support
-	       low       1.00      0.99      0.99       439
-	    medium       0.99      1.00      0.99       417
-          high       1.00      1.00      1.00       697
-      
-      accuracy                           1.00      1553
-     macro avg       1.00      1.00      1.00      1553
-  weighted avg       1.00      1.00      1.00      1553
-```
+Classification report
 
-![[knn_confusion_matrix.jpg]]
+| Class        | Precision | Recall | F1-Score | Support |
+| ------------ | --------- | ------ | -------- | ------- |
+| Low          | 1.00      | 0.99   | 0.99     | 439     |
+| Medium       | 0.99      | 1.00   | 0.99     | 417     |
+| High         | 1.00      | 1.00   | 1.00     | 697     |
+| Accuracy     | -         | -      | 1.00     | 1553    |
+| Macro Avg    | 1.00      | 1.00   | 1.00     | 1553    |
+| Weighted Avg | 1.00      | 1.00   | 1.00     | 1553    |
 
-According to the confusion matrix, most misclassification occurs in the low-risk – 4 false negatives and 2 false positives - and medium-risk – 2 false negatives and 4 false positives - category.
+| Confusion Matrix              | Learning Curve              |
+| ----------------------------- | --------------------------- |
+| ![[knn_confusion_matrix.jpg]] | ![[knn_learning_curve.jpg]] |
 
-![[knn_learning_curve.jpg]]
+The learning curve illustrates that the training score begins at a high level and remains largely stable, with only a slight initial dip before settling. This consistent performance may suggest some degree of overfitting. This consistent performance may suggest some degree of early overfitting. In contrast, the validation score starts noticeably lower but improves significantly as the number of training samples increases, reflecting better generalisation over time. 
 
-The learning curve shows that the training score starts high and remains consistent throughout, except for a small initial dip, before stabilising at a high level. Such performance indicates some overfitting initially. The validation score starts much lower than the training score but, as the number of samples increases, the validation score improves significantly, showing that the data generalises well as it sees more data. The gap between training score and validation score also decreases as the training examples increase, indicating improved generalization. 
+The narrowing gap between training and validation scores with increased data highlights improved model generalisation. As the model encounters more diverse samples, its ability to generalise beyond the training set strengthens, reducing overfitting and enhancing predictive reliability.
 
 ### Logistic Regression
 
-Logistic regression is naturally a binary classifier; however, logistic regression can be extended to handle multiclass classification. 
+In the One-vs-Rest (OvR) approach, three separate binary logistic regression models are trained, each acting as a detector for a specific cardiovascular risk class: low risk, medium risk, and high risk. During classification, each model outputs a confidence score for its respective class, and the individual is assigned to the class with the highest predicted score among the three.
 
-In OvR, 3 binary Logistic regression model is trained, one for each cardiovascular risk - low-risk detector, medium-risk detector, and high-risk detector. Then, to classify an individual, the class whose classifier outputs the highest score is selected. 
 #### Training the Model
 
-The initial parameters used to train the model are:
+K-fold cross validation result with default parameters: 
 
-*Snippet: Extended logistic regression*
-```python
-model = OneVsRestClassifier(LogisticRegression(solver='lbfgs', max_iter=5000, penalty='l2', class_weight='balanced'))
-```
+| Metrices  | Value  |
+| --------- | ------ |
+| Accuracy  | 0.9852 |
+| Precision | 0.9852 |
+| Recall    | 0.9852 |
+| F1        | 0.9852 |
 
-K-fold cross validation is still used. 
+Metrics after training on the entire training set:
 
-```text
-Cross-Validation Accuracy Scores: [0.977491961414791, 0.9935691318327974, 0.9870967741935484, 0.9838709677419355, 0.9838709677419355]
-Average Accuracy: 0.9851799605850016
-
-Cross-Validation Precision Scores: [np.float64(0.9774732279819921), np.float64(0.9935691318327974), np.float64(0.9874423963133642), np.float64(0.983815331010453), np.float64(0.9839490968801314)]
-Average Precision: 0.9852498368037477
-
-Cross-Validation Recall Scores:[0.977491961414791, 0.9935691318327974, 0.9870967741935484, 0.9838709677419355, 0.9838709677419355]
-Average Recall: 0.9851799605850016
-
-Cross-Validation F1 Scores: [np.float64(0.97744180336778), np.float64(0.9935691318327974), np.float64(0.9870272108248518), np.float64(0.9838278729017544), np.float64(0.9838916084880929)]
-Average F1 score: 0.9851515254830552
-```
-
-*The result from the k-fold cross validation is quite promising.* 
-
-```text
-Model evaluation after training with the training set:
-Accuracy: 0.9922680412371134
-Precision: 0.9922562076504403
-Recall: 0.9922680412371134
-F1 score: 0.9922596724505841
-```
-
-^919a2a
+| Metrices  | Value  |
+| --------- | ------ |
+| Accuracy  | 0.9923 |
+| Precision | 0.9923 |
+| Recall    | 0.9923 |
+| F1        | 0.9923 |
 
 #### Evaluation of Training Result
 
-*Classification Report*
-```text
-				precision    recall  f1-score   support
-         low       0.99      0.99      0.99       439
-	  medium       0.99      0.98      0.99       417
-        high       1.00      1.00      1.00       696
+Classification report
 
-    accuracy                           0.99      1552
-   macro avg       0.99      0.99      0.99      1552
-weighted avg       0.99      0.99      0.99      1552
-```
+| Class        | Precision | Recall | F1-Score | Support |
+| ------------ | --------- | ------ | -------- | ------- |
+| Low          | 0.99      | 0.99   | 0.99     | 439     |
+| Medium       | 0.99      | 0.98   | 0.99     | 417     |
+| High         | 1.00      | 1.00   | 1.00     | 696     |
+| Accuracy     | -         | -      | 0.99     | 1552    |
+| Macro Avg    | 0.99      | 0.99   | 0.99     | 1552    |
+| Weighted Avg | 0.99      | 0.99   | 0.99     | 1552    |
 
-![[logistic_confusion_matrix.png]]
+| Confusion Matrix                   | Learning Curve                   |
+| ---------------------------------- | -------------------------------- |
+| ![[logistic_confusion_matrix.png]] | ![[logistic_learning_curve.png]] |
 
-Based on the confusion matrix, the model makes the most misclassifications when attempting to predict medium-risk category with 7 false negatives and 5 true positives. 
+Similar to the learning curve observed in the KNN model, this model initially exhibits signs of overfitting, with a very high training score early on. As more data is introduced, the training score slightly dips, reflecting reduced overfitting and a shift toward generalisable patterns. Meanwhile, the validation score begins substantially lower but improves steadily with increasing data, indicating enhanced generalisation. 
 
-![[logistic_learning_curve.png]]
-
-Similar to the training curve from the KNN model, the model initially overfitted, with a very high training score, but dips as the number of data introduced increases. The validation score starts out much lower than the training score but improves as more data is used, indicating the model’s improvement at generalisation. The gap between training score and validation score at the end does reduce, but it would still benefit from more data or fine-tuning to further close the gap. 
-
-The model's performance on the validation set fluctuates more when examples are small as denoted by the wider green shaded area. %% The variance fluctuates the most between 400 and 800 training samples; however, the uncertainty does reduce as more training data is added, indicating that the model is becoming more stable at generalizing %%
+%% 
+The model's performance on the validation set fluctuates more when examples are small as denoted by the wider green shaded area.  The variance fluctuates the most between 400 and 800 training samples; however, the uncertainty does reduce as more training data is added, indicating that the model is becoming more stable at generalizing 
+%%
 
 ### Random Forest 
 
-Random Forest is a machine learning algorithm can be used for classification or regression task, creating a collection of decision trees (forest), each trained on random subsets of the data. It performs well on small datasets by averaging multiple decision trees, which 
-reduces overfitting.
-
-Moreover, its robustness to noisy data improves accuracy and stability, while its ability to manage multi-class classification makes it suitable for three-category task - low, medium, and high. This combination of simplicity, interpretability, and performance makes Random Forest 
-a strong option. In addition, random forest is helpful for feature selection. It ranks the importance of 
-each feature and help determine which features have the greatest impact on the prediction, making it useful in data analysis and interpretation.
+Random forest is valuable for feature selection, as it ranks the relative importance of each input variable. This helps determine the features with the greatest impact on the prediction, making it useful for data analysis and model interpretation.
 
 #### Training the Model
 
-The default settings include 100 decision trees, Gini impurity as the criterion for splitting, and no limit on tree depth, allowing the trees to grow until all leaves 
-are pure or contain fewer than the minimum number of samples required for splitting.
+K-fold cross validation result with default parameters: 
 
-*K-fold cross validation is still used.* 
-```txt
-Cross-Validation Accuracy Scores:
-[1.0, 1.0, 1.0, 1.0, 1.0]
-Average Accuracy: 1.0
+| Metrices  | Value |
+| --------- | ----- |
+| Accuracy  | 1.0   |
+| Precision | 1.0   |
+| Recall    | 1.0   |
+| F1        | 1.0   |
 
-Cross-Validation Precision Scores:
-[1.0, 1.0, 1.0, 1.0, 1.0]
-Average Precision: 1.0
+Metrics after training on the entire training set:
 
-Cross-Validation Recall Scores:
-[1.0, 1.0, 1.0, 1.0, 1.0]
-Average Recall: 1.0
+| Metrices  | Value |
+| --------- | ----- |
+| Accuracy  | 1.0   |
+| Precision | 1.0   |
+| Recall    | 1.0   |
+| F1        | 1.0   |
 
-Cross-Validation F1 Scores:
-[1.0, 1.0, 1.0, 1.0, 1.0]
-Average F1: 1.0
-```
-
-```txt
-Training Model:
-Accuracy: 1.0
-Precision: 1.0
-Recall: 1.0
-F1: 1.0
-```
-
-^b2711e
-
-Although the k-fold cross validation and the overall training metrics looks *perfect*, it may indicate that the model has overfitted. 
+Although the K-Fold Cross Validation and overall training metrics appear _perfect_, this may be a sign that the model has overfitted; the model might have learnt noise or peculiarities in the data rather than generalisable patterns. 
 
 #### Evaluation of Training Result
 
-```txt
-precision    recall  f1-score   support
+| Class        | Precision | Recall | F1-Score | Support |
+| ------------ | --------- | ------ | -------- | ------- |
+| Low          | 1.00      | 1.00   | 1.00     | 439     |
+| Medium       | 1.00      | 1.00   | 1.00     | 417     |
+| High         | 1.00      | 1.00   | 1.00     | 697     |
+| Accuracy     | -         | -      | 1.00     | 1553    |
+| Macro Avg    | 1.00      | 1.00   | 1.00     | 1553    |
+| Weighted Avg | 1.00      | 1.00   | 1.00     | 1553    |
 
-         low       1.00      1.00      1.00       439
-      medium       1.00      1.00      1.00       417
-        high       1.00      1.00      1.00       697
+| Confusion Matrix                        | Learning Curve                        |
+| --------------------------------------- | ------------------------------------- |
+| ![[random_forest_confusion_matrix.png]] | ![[random_forest_learning_curve.png]] |
 
-    accuracy                           1.00      1553
-   macro avg       1.00      1.00      1.00      1553
-weighted avg       1.00      1.00      1.00      1553
-```
 
-![[random_forest_confusion_matrix.png]]
+Based on the confusion matrix, the Random Forest model produced a perfect training result, with zero misclassification across all three cardiovascular risk levels. While this may appear ideal, it raises concerns about potential overfitting. 
 
-Based on the confusion matrix, the random forest model gave a perfect training result with zero misclassification across all three level of risks. As great as this is, this may indicate overfitting of the model. 
-
-![[random_forest_learning_curve.png]]
-
-The training score remains 1.0 throughout the sample size, but the validation score changes. There is also an absence of a shaded area between the training and validation learning curves; this likely means that the generalisation gap of the model is small. 
+The training score consistently remains at 1.0 across all sample size, while the validation score exhibits variation, reflecting the model's fluctuating generalisation performance. Additionally, the absence of a shaded region between the training and validation learning curves suggests a minimal generalisation gap. Although this may seem encouraging, it could also indicate that the validation performance plateaus prematurely, possibly due to limitations in sample diversity or insufficient complexity in unseen cases. 
 
 ## Model Testing
 
-Before testing the model, the same pre-processing is done on the testing datasets.  
-
 ### K-Nearest Neighbours
 
-```txt
-Testing Metrics:
-Accuracy: 0.987146529562982
-Precision: 0.987736138298625
-Recall: 0.987146529562982
-F1: 0.9871479329334849
-```
+| Metrices  | Value  |
+| --------- | ------ |
+| Accuracy  | 0.9871 |
+| Precision | 0.9877 |
+| Recall    | 0.9871 |
+| F1        | 0.9871 |
 
-![[Cardiovascular Risk Analysis#^3ee372]]
+The performance of the model on unseen data is consistent with the performance on training data. 
 
-Comparing the two metrices, the performance of the model on unseen data is consistent with the performance on training data. 
+| Confusion Matrix                   | AUC-ROC Curve        |
+| ---------------------------------- | -------------------- |
+| ![[knn_test_confusion_matrix.png]] | ![[knn_roc_auc.png]] |
 
+In comparison to the training confusion matrix, the validation performance shows minimal disparity. The model exhibits strong consistency, with only five misclassifications, all of which involve medium risk cases being incorrectly classified as low risk.
 
-![[knn_test_confusion_matrix.png]]
+The AUC-ROC curve shows that the Area Under the Curve for each cardiovascular risk category consistently reaches 1.000, indicating that the model is highly effective at distinguishing between the three classes. The perfect AUC score for the **high-risk** category aligns with its flawless prediction performance in the confusion matrix, while only minor misclassifications are observed between the low and medium risk groups.
 
-In comparison to the training confusion matrix, there is not much disparity in the performance. There are only 5 misclassifications that the model makes - misclassifying medium risk as low risk 5 times. 
+With the testing result closely matching the training result, this suggests that the model has generalised well without significant overfitting.
 
-![[knn_roc_auc.png]]
-
-The AUC ROC curve show that the AUC for each level of cardiovascular risks is consistently reaching 1.000. This means that the model is capable of distinguishing the three classes apart from each other. The AUC for high risk being 1 tallies with the perfect prediction as shown in the confusion matrix, while there exists minor misclassification between low and high cardiovascular risk. 
-
-With the testing result being comparable to training result, this indicates that the model has not overfitted and learnt well.
-
-Overall, based on the metrics, confusion matrix, and the AUC ROC curve, the model has not overfitted and is a good candidate for the problem. 
+Overall, considering the classification metrics, confusion matrix, and AUC-ROC analysis, the model demonstrates strong performance and appears to be a suitable candidate for addressing the classification task.
 ### Logistic Regression
 
-```text
-Testing evalution: 
-Accuracy: 0.9897172236503856
-Precision: 0.9897082455173656
-Recall: 0.9897172236503856
-F1 score: 0.9897032781140256
-```
+| Metrices  | Value  |
+| --------- | ------ |
+| Accuracy  | 0.9897 |
+| Precision | 0.9897 |
+| Recall    | 0.9897 |
+| F1        | 0.9897 |
 
-![[Cardiovascular Risk Analysis#^919a2a]]
+| Confusion Matrix                         | AUC-ROC Curve                          |
+| ---------------------------------------- | -------------------------------------- |
+| ![[logistic_regression_test_matrix.png]] | ![[logistic_regression_ROC_curve.png]] |
 
-Comparing the two metrices, the performance of the model on unseen data is also consistent with the performance on training data.
+Comparing the two sets of metrics, the model's performance on unseen data closely mirrors its performance on the training data, demonstrating consistent behaviour across both phases.
 
-![[logistic_regression_test_matrix.png]]
+In the ROC AUC analysis, the model shows strong capability in distinguishing between the three cardiovascular risk categories. However, some misclassifications persist across all levels, indicating room for improvement in class separation.
 
-![[logistic_regression_ROC_curve.png]]
-
-For the ROC AUC Curve, the model demonstrates a good performance in in distinguishing between 
-the three categories. However, there exists misclassification across all three level of cardiovascular risks. 
-
-Overall, based on the metrics, confusion matrix, and the AUC ROC curve, the model has not overfitted and is a good candidate for the problem. 
+Overall, based on the classification metrics, confusion matrix, and ROC AUC curve, the model appears to generalize well without significant overfitting, making it a strong candidate for addressing this classification problem
 
 ### Random Forest
 
-```txt
-Testing Model:
-Accuracy: 0.9897172236503856
-Precision: 0.9897082455173656
-Recall: 0.9897172236503856
-F1: 0.9897032781140256
-```
+| Metrices  | Value  |
+| --------- | ------ |
+| Accuracy  | 0.9897 |
+| Precision | 0.9897 |
+| Recall    | 0.9897 |
+| F1        | 0.9897 |
 
-![[Cardiovascular Risk Analysis#^b2711e]]
+| Confusion Matrix                   | AUC-ROC Curve                   |
+| ---------------------------------- | ------------------------------- |
+| ![[random_forest_test_matrix.jpg]] | ![[random_forest_test_AUC.jpg]] |
 
-The metrics dropped when the model is being used on unseen data, but still remains consistently high. 
+While performance metrics declined slightly on unseen data, they still remained consistently high, indicating strong generalisation capabilities.
 
-![[random_forest_test_matrix.jpg]]
+The confusion matrix for the test data shows that the model performs very well, albeit not perfectly, when applied to new samples. Specifically, 108 instances of low risk were correctly classified, with 2 misclassified as Medium and none as High. For the medium risk category, 103 instances were correctly predicted, while 1 low-risk instance misclassified. In the high-risk category, the model achieved perfect classification, correctly identifying all 175 instances with no misclassifications. While minor error exists in the low and medium categories, the overall performance remains robust. 
 
-![[random_forest_test_AUC.jpg]]
+The ROC AUC curve demonstrates nearly perfect discrimination between the risk levels. The AUC values for low, medium, and high risk are 0.9992, 0.9990, and 1.0000, respectively. These near-ideal scores suggest excellent excellent predictive capabilities, with minimal false positives and high true positive rates across all classes.
 
-The confusion matrix for the test data shows that the 
-model performs well but not perfectly when applied to new data. Specifically, 108 instances of Low risk were correctly classified, with 2 misclassified as Medium and none as High. For the Medium risk category, 103 instances were correctly predicted, while 1 Low was misclassified. In the High-risk category, the model correctly classified all 175 instances with no misclassifications. While the misclassifications in the Low and Medium categories are 
-minimal, the overall performance remains very strong.
-
-The ROC AUC curve shows  nearly perfect discrimination between the risk categories. The area under the curve (AUC) values for Low, Medium, and High are 0.9992, 0.9990, and 1.0000, respectively. These near-ideal AUC scores indicate that the model has excellent predictive capabilities, with a very low false positive rate and a high true positive rate across all risk categories.
-
-Overall, based on the metrics, confusion matrix, and the AUC ROC curve, the model has not overfitted and is a good candidate for the problem. 
+Overall, the model shows strong generalisation and does not exhibit signs of overfitting, making it a promising candidate for addressing this classification task
 
 ## Model Fine-Tuning
 
-`GridSearch` is used for fine-tuning the model. 
+> `GridSearch` is used for fine-tuning the model. 
 
 ### K-Nearest Neighbours
 
-2 main hyperparameters – `n_neighbours` and `distance` metric - will be considered during fine-tuning. The fine tuning will be done with `GridSearch`. After fine tuning, it is found that the best KNN model uses Manhattan distance metric and considers 8 nearest neighbours. 
+Two key hyperparameters—`n_neighbors` and the `distance` metric—are considered during model fine-tuning. Based on the results, the optimal KNN model employs the Manhattan distance metric and considers eight nearest neighbors for prediction.
+
+Tuned Metrics:
+
+| Metrics (weighted) | Average  |
+| ------------------ | -------- |
+| Accuracy           | 0.9871         |
+| Precision                   | 0.9874          |
+| Recall                   | 0.9871         |
+| $\text{F}_1$ Score                   | 0.9872         |
 
 F1 score improves slightly with the new, fine-tuned model but precision dips slightly.
 
-Tuned Metrics:
-```tx
-|  Metrics (weighted)  |  Average  |
-  -------------------  |  -------  |
-|  Accuracy            |  0.987147 |
-|  Precision           |  0.987387 |
-|  Recall              |  0.987147 |
-|  $\text{F}_1$ Score  |  0.987187 |
-```
-![[knn_fine_tune_matrix.jpg]]
+| Confusion Matrix              | AUC-ROC Curve                  |
+| ----------------------------- | ------------------------------ |
+| ![[knn_fine_tune_matrix.jpg]] | ![[knn_fine_tune_roc_auc.jpg]] |
 
-![[knn_fine_tune_roc_auc.jpg]]
+According to the fine-tuned model, most misclassifications still occur within the medium-risk and low-risk categories, with one false negative and four false positives. Despite these minor errors, the ROC AUC curve shows a slight dip in the AUC for low-risk category, while the medium-risk category exhibits modest improvement. 
 
-According to the fine-tuned model, the most misclassifications still happen in medium￾risk category and low-risk category with 1 false negative and 4 false positives. However, looking at the ROC AUC curve, the AUC for low-risk category dipped but improved slightly for medium risk category. Overall, the performance of the fine-tuned model improved with a rather negligible amount.
+Overall, the performance of the fine-tuned model improved, albeit marginally. The changes in classification accuracy and AUC suggest better calibration but indicate that further gains may require additional tuning or richer feature engineering.
 
 ### Logistic Regression
 
-During fine tuning stage, we are focusing on five main hyperparameters: 
-1. `regularization strength`
+During the fine-tuning stage, five key hyperparameters were considered for optimizing the logistic regression model:
+1. `regularization strength (C)`
 2. `penalty` 
-3. `maximum iterations`
+3. `maximum iterations (max_iter)`
 4. `solver options`
 5. `class weight`
 
-Since the model is extended to One-vs-Rest (OvR), only the solvers that support this multiclass classification are used. 
+Since the model is extended to One-vs-Rest (OvR) multiclass classification approach, only solvers compatible with OvR were selected. Given the relatively small dataset size of 1,900 samples, the `sag` and `saga` solvers were excluded, as they are better suited for larger datasets.
 
-Additionally, since the dataset contains only 1.9k samples (after trimming), which is considered a rather small dataset, `sag` and `saga` solvers are not used, because these solvers are better suited for larger datasets.
+Solvers were fine-tuned separately, taking into account their support for specific penalty types:
+- `liblinear` can support both `l1` and `l2` penalties
+- `lbfgs` supports only `l2`.
 
-Since the solvers used  support separate penalties, fine-tuning is done separately for both solvers. 
+The best-performing logistic regression model was found to use the following configuration:
+- `C`: `0.1`
+- `max_iter`: `5000`
+- `penalty`: `l2`
+- `solver`: `lbfgs`
+- `class_weight`: `balanced`
 
-`liblinear` can support both `l1` and `l2` penalty while `lbfgs` can only support `l2` penalty.
+| Metrics (weighted) | Average  |
+| ------------------ | -------- |
+| Accuracy           | 0.989717 |
+| Precision          | 0.989708 |
+| Recall             | 0.989717 |
+| $\text{F}_1$ Score | 0.989703 |
 
-After performing fine tuning, it is shown that the best parameters to form the best logistic regression model are:
-- `C: 0.1`
-- `max_iter: 5000`
-- `penalty: l2`
-- `solver: lbfgs`
-- `class_weight: balanced`
+| Confusion Matrix                              | AUC-ROC Curve                                  |
+| --------------------------------------------- | ---------------------------------------------- |
+| ![[logistic_regression_fine_tune_matrix.jpg]] | ![[logistic_regression_fine_tune_auc_roc.jpg]] |
 
-```tx
+The fine-tuned confusion matrix closely resembles the testing confusion matrix, indicating consistent performance across evaluation stages. Based on the ROC AUC Curve, the model exhibits a slight improvement in its ability to differentiate between the three cardiovascular risk categories. However, the low-risk category continues to show the lowest AUC score among the three categories.
+
+The optimal parameters for the alternative solver, `liblinear`, are:
+- `C`: `0.1`
+- `max_iter`: `5000`
+- `penalty`: `l1`
+- `solver`: `liblinear`
+- `class_weight`: `balanced.`
+
+However, despite tuning, this configuration underperforms compared to the model trained using the `lbfgs` solver. The results suggest that `lbfgs`, combined with `l2` regularization, yields better overall classification performance for this dataset.
+
 |  Metrics (weighted)  |  Average  |
-  -------------------  |  -------  |
-|  Accuracy            |  0.989717 |
-|  Precision           |  0.989708 |
-|  Recall              |  0.989717 |
-|  $\text{F}_1$ Score  |  0.989703 |
-```
-
-![[logistic_regression_fine_tune_matrix.jpg]]
-
-![[logistic_regression_fine_tune_auc_roc.jpg]]
-
-The Fined Tuned Confusion Matrix is similar to the Testing Confusion Matrix. Based on the ROC AUC Curve, there is a small improvement in the model's ability to differentiate 
-these 3 categories. However, for the low-risk category continues to have the lowest score among the 3 categories.
-
-The best parameter for the other solver, `liblinear`, are:
-- `C: 0.1`
-- `max_iter: 5000`
-- `penalty: l1`
-- `solver: liblinear`
-- `class_weight: balanced.`
-
-However, this version does not perform as well as the former. 
-
-```tx
-|  Metrics (weighted)  |  Average  |
-  -------------------  |  -------  |
+| -------------------  |  -------  |
 |  Accuracy            |  0.958869 |
 |  Precision           |  0.958757 |
 |  Recall              |  0.958869 |
 |  $\text{F}_1$ Score  |  0.958804 |
-```
 
-![[logistic_regression_fine_tune_matrix_2.jpg]]
+| Confusion Matrix                                | AUC-ROC Curve                                    |
+| ----------------------------------------------- | ------------------------------------------------ |
+| ![[logistic_regression_fine_tune_matrix_2.jpg]] | ![[logistic_regression_fine_tune_aoc_roc_2.jpg]] |
 
-![[logistic_regression_fine_tune_aoc_roc_2.jpg]]
-
-The model makes the most mistakes in distinguishing between low and medium categories. The ROC AUC curve shows that the model has a harder time predicting medium￾risk category compared to predicting low-risk or high-risk categories. According to the confusion matrix, 7 false positives are made and 6 false negatives are made when classifying medium-risk category. 
+The model exhibits the greatest difficulty in distinguishing between the low and medium cardiovascular risk categories. This is reflected in the ROC AUC curve, which indicates that the model struggles more with predicting medium risk compared to low or high risk classifications.
 
 ### Random Forest
 
-The fine-tuning involves  evaluating 576 different combinations of parameters, using 5-fold cross-validation, which resulted in a total of 2,880 model fits. 
+The fine-tuning process involved evaluating 576 unique parameter combinations through 5-fold cross-validation, resulting in a total of 2,880 individual model fits. 
 
 The grid search explored parameters: 
 - `max_depth`
@@ -616,25 +493,27 @@ The grid search explored parameters:
 - `min_samples_split`
 - `n_estimators`
 
-```tx
 |  Metrics (weighted)  |  Average  |
-  -------------------  |  -------  |
+| -------------------  |  -------  |
 |  Accuracy            |  0.992288 |
 |  Precision           |  0.992313 |
 |  Recall              |  0.992288 |
 |  $\text{F}_1$ Score  |  0.992289 |
-```
 
-![[rf_fine_tune_matrix.jpg]]
+| Confusion Matrix             | AUC-ROC Curve                 |
+| ---------------------------- | ----------------------------- |
+| ![[rf_fine_tune_matrix.jpg]] | ![[rf_fine_tune_roc_auc.jpg]] |
 
-![[rf_fine_tune_roc_auc.jpg]]
+The fine-tuned confusion matrix remains identical to the original testing confusion matrix, underscoring consistent classification behaviour across both evaluations. The ROC AUC scores for the fine-tuned model indicate near-perfect performance, with only minor variations observed between the two scenarios.
+- The AUC for the low-risk category slightly increased from 0.9992 to 0.9994
+- The AUC for the medium-risk category decreased slightly from 0.9990 to 0.9988
+- The AUC for the high-risk category remained perfect at 1.0000
 
-The fine tuned confusion matrix remains the same as the testing confusion matrix, while the ROC AUC scores for tunned shows near-perfect performance. However, there is a slight variation in the AUC values between the two testing 
-scenarios. The AUC for the Low category slightly increased from 0.9992 to 0.9994. Conversely, the AUC for the Medium category decreased from 0.9990 to 0.9988. The AUC for the High category remains consistently perfect at 1.0 in both cases, indicating exceptional performance in distinguishing the High class from the others across both tests.
+These results reflect a high level of reliability and generalisation, with the fine-tuned model maintaining strong predictive power across all categories.
 
 # Results and Findings
 
-According to the fine-tuned version of the each model, 
+Using the fine-tuned version of the each model, 
 
 ```tx 
 | Models | K-NN | Logistic Regression (solvers) || Random Forest||
@@ -645,9 +524,11 @@ Precision (weighted) | 0.987387 | 0.958757 | 0.989708  | 0.992313 |
 F1 Score (weighted)  | 0.987187 | 0.958804 | 0.989703  | 0.992289 |
 ```
 
-According to these metrics, the random forest model performs the best with the highest values across all metrics, followed by logistic regression model with `lbfgs` solver and `k-nn` comes in last. The logistic regression model with “`liblinear`” solver performs the worst amongst all 4, albeit recording values above 0.9. 
+Based on the evaluation metrics, the Random Forest model delivers the best overall performance, consistently achieving the highest scores across all categories. It is followed by Logistic Regression model using the `lbfgs` solver while K-Nearest Neighbours (K-NN) comes in last. The Logistic Regression model with the “`liblinear`” solver performs the worst amongst the four, although it still records scores above 0.9 across most metrices.
 
-According to the confusion matrices, random forest makes the least mistakes in predicting cardiovascular risks whereas logistic regression with `liblinear` solver makes the most mistakes. Nonetheless, all of these models have something in common, most misclassifications in prediction happens between low-risk and medium-risk categories compared to high-risk categories. This may be attributed to to the uneven distribution – the domination of high-risk category - of the cardiovascular risks in the dataset, leading to poorer performance on the minority classes. This may also be the reason as to why `liblinear` solver performs so poorly; it is more sensitive to the distribution of classes. 
+According to the confusion matrices, Random Forest makes the fewest misclassifications when predicting cardiovascular risk levels, whereas the `liblinear`-based logistic regression model exhibits the most errors. Despite their differences, all models share a common challenge: most misclassifications occur between the low-risk and medium-risk categories, while the high-risk category is consistently predicted with high accuracy. 
+
+This trend can likely be attributed to the imbalanced distribution of risk levels in the dataset, where the high-risk category dominates, potentially leading to reduced performance on the minority classes. This imbalance may also explain why the `liblinear` solver, known to be more sensitive to class distribution, performs poorly in comparison.
 
 ## Feature Importance
 
@@ -674,10 +555,11 @@ According to random forest,
 
 ![[random_forest_feature_importance.jpg]]
 
-BMI is the most important factor in predicting cardiovascular risk, with an importance 
-score close to 0.75, indicating it has a major influence on the model's performance, while other features seem to play very minor role. 
+Body Mass Index (BMI) emerges as the most influential feature in predicting cardiovascular risk, with an importance score approaching 0.75. This indicates that BMI plays a dominant role in the model's decision-making process. In contrast, the remaining features contribute significantly less to the prediction, suggesting that their impact on the model's performance is relatively minor.
 
-# Discussion and Conclusion
+The prominence of BMI may reflect its strong correlation with cardiovascular outcomes, reinforcing its utility as a primary screening indicator in health-related classification tasks.
+
+%% # Discussion and Conclusion
 ## Strength and Weakness
 
 ### K-Nearest Neighbours
@@ -710,7 +592,7 @@ Random Forest classification model can be an effective choice for analysing and 
 
 #### Weakness
 
-Random Forest model’s complexity can result in longer computation times, particularly as the size of the dataset or the number of tress increase. This may be a limitation when working with larger or more computationally demanding task.
+Random Forest model’s complexity can result in longer computation times, particularly as the size of the dataset or the number of tress increase. This may be a limitation when working with larger or more computationally demanding task. %%
 
 
 [^1]: [Family History, Heart Disease and Stroke](https://www.heart.org/en/health-topics/consumer-healthcare/what-is-cardiovascular-disease/family-history-and-heart-disease-stroke)
