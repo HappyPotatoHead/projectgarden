@@ -515,14 +515,12 @@ These results reflect a high level of reliability and generalisation, with the f
 
 Using the fine-tuned version of the each model, 
 
-```tx 
-| Models | K-NN | Logistic Regression (solvers) || Random Forest||
-|  ^^    |  ^^  | liblinear with l1 penalty     | lbfgs with l2 penalty |^^|
--------- | ---- | :----------------------------: | ------------:|
-Recall (weighted)    | 0.987147 | 0.958869 | 0.989717  | 0.992288 |
-Precision (weighted) | 0.987387 | 0.958757 | 0.989708  | 0.992313 |
-F1 Score (weighted)  | 0.987187 | 0.958804 | 0.989703  | 0.992289 |
-```
+| Models/<br>Metrices  | K-NN     | Logistic Regression (solvers) |                           | Random Forest |
+| -------------------- | -------- | ----------------------------- | ------------------------- | ------------- |
+|                      |          | `liblinear` with `l1` penalty | `lbfgs` with `l2` penalty |               |
+| Recall (weighted)    | 0.987147 | 0.958869                      | 0.989717                  | 0.992288      |
+| Precision (weighted) | 0.987387 | 0.958757                      | 0.989708                  | 0.992313      |
+| F1 Score (weighted)  | 0.987187 | 0.958804                      | 0.989703                  | 0.992289      |
 
 Based on the evaluation metrics, the Random Forest model delivers the best overall performance, consistently achieving the highest scores across all categories. It is followed by Logistic Regression model using the `lbfgs` solver while K-Nearest Neighbours (K-NN) comes in last. The Logistic Regression model with the “`liblinear`” solver performs the worst amongst the four, although it still records scores above 0.9 across most metrices.
 
