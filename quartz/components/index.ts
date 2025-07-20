@@ -25,6 +25,7 @@ import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import FloatingButtons from "./_FloatingButtons"
 import _TableOfContents from "./_TableOfContents"
+import HiddenGlobalGraph from "./_hiddenGlobalGraph"
 
 export {
   ArticleTitle,
@@ -53,5 +54,6 @@ export {
   Flex,
   ConditionalRender,
   FloatingButtons,
-  _TableOfContents
+  _TableOfContents,
+  HiddenGlobalGraph
 }
