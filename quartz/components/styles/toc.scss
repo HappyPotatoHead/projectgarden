@@ -57,6 +57,9 @@ ul.toc-content.overflow {
       opacity: 0.75;
     }
   }
+  & > li > a:hover{
+    color: var(--secondary);
+  }
 
   @for $i from 0 through 6 {
     & .depth-#{$i} {
