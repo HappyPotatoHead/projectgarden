@@ -45,7 +45,7 @@ One of the greatest pleasure of being a developer is to be able to make whatever
 
 *Don't know what to display on your screen while you study? Just want to watch animals slam their hands, paws, or whatever limbs they have on the desk? Well, you have come to the right place!*
 
-Complete d ocumentation: [[Bongo Animals]]
+Complete documentation: [[Bongo Animals]]
 
 # Linux 
 
