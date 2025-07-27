@@ -7,7 +7,7 @@ description:
 >[!INFO]
 >Project is done! Sort of. I'm not really sure if I should add sound. 
 
-Link: [Bongo Animals](https://bongo-animals.netlify.app/)
+Link: [Bongo Animals](https://bongoanimals.surge.sh/)
 
 One of the greatest pleasure of being a developer is to be able to make whatever I want, whenever I want. Sometimes, a project doesn't have to solve a real-world problem - it just has to be fun. 
 
