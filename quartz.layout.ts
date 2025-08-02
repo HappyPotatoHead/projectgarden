@@ -20,7 +20,9 @@ export const sharedPageComponents: SharedLayout = {
           categoryId: 'DIC_kwDOOYwR8s4CpDaN',
           mapping: "specific",
           reactionsEnabled: false,
-          inputPosition: "top"
+          inputPosition: "top",
+          lightTheme: "light_high_contrast",
+          darkTheme: "dark_high_contrast"
         }
       }),
       condition: (page) => page.fileData.slug === "index"
