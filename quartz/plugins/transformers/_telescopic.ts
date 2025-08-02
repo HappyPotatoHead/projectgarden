@@ -29,7 +29,7 @@ import { findAndReplace as hastFindReplace } from "hast-util-find-and-replace"
 import isAbsoluteUrl from "is-absolute-url"
 import {
   FullSlug,
-  RelativeURL,
+  // RelativeURL,
   simplifySlug,
   splitAnchor,
   stripSlashes,

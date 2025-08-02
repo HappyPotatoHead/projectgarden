@@ -1,5 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import { defaultImage } from "./quartz/util/og"
 
 /**
  * Quartz 4 Configuration
@@ -97,7 +98,13 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.NotFoundPage(),
       // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
+      Plugin.CustomOgImages({
+        colorScheme: "darkMode",
+        width: 1200,
+        height: 630,
+        excludeRoot: false,
+        imageStructure: defaultImage,
+      }),
     ],
   },
 }

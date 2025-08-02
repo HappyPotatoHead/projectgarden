@@ -24,8 +24,11 @@ description:
 | ------------- | ---------------------------- |
 | Bongo Animals | [[Bongo Animals\|Click me!]] |
 | Ricing Linux  | [[Ricing Linux\|Click me!]]  |
+# Where I've Been
 
-# Library
+Because I like to dox myself
+
+# What I read
 
 | Description                                                   | Link                                    |
 | ------------------------------------------------------------- | --------------------------------------- |

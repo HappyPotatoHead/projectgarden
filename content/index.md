@@ -18,6 +18,9 @@ This used to be a **digital garden** meant to record my academic journey through
 >					* <em>Forever and always, wherever you are </em>
 >```
 
+Never really knew how to introduce myself aside from my name and 
+
+
 *Dont know where to go?*
 - [[Garden Core]]
 - [[Sources]]
