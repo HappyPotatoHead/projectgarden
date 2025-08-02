@@ -21,8 +21,8 @@ export const sharedPageComponents: SharedLayout = {
           mapping: "specific",
           reactionsEnabled: false,
           inputPosition: "top",
-          lightTheme: "light_high_contrast",
-          darkTheme: "dark_high_contrast"
+          lightTheme: "light",
+          darkTheme: "dark"
         }
       }),
       condition: (page) => page.fileData.slug === "index"
