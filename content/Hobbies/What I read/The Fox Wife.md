@@ -12,7 +12,7 @@ tags:
   - china
 description:
 ---
-![[The Fox Wife.png]]
+![[the_fox_wife.png]]
 
 **Author**: Yangsze Choo
 

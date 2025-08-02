@@ -1,9 +1,14 @@
 ---
-title: Changelog
+title: Logs
 draft: false
 tags: 
 description:
 ---
+# 2nd August 2025
+
+- Overhauled index file
+- Changed the folder page of **What I Read**
+
 # 12th June 2025
 
 - Added books folder

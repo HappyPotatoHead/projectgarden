@@ -60,8 +60,11 @@ export const defaultContentPageLayout: PageLayout = {
         { 
           Component: Component.Darkmode()
         },
+        { Component: Component.ReaderMode(), 
+          align:"start"
+        },
       ],
-      gap:"0.5rem"
+      gap:"0.5rem",
     }),
     Component.DesktopOnly(    
       Component.ConditionalRender({
