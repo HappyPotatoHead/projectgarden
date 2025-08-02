@@ -15,7 +15,7 @@ description:
 ## Python
 | Name                       | Link                                                           | Description                                      |
 | -------------------------- | -------------------------------------------------------------- | ------------------------------------------------ |
-| Brocode                    | https://youtu.be/XKHEtdqhLK8?si=aP92k1NGfisYGhDE               | Introductory course                              |
+| Brocode                    | https://youtu.be/XKHEtdqhLK8                                   | Introductory course                              |
 | Github  Python Study Guide | https://github.com/huangsam/ultimate-python?tab=readme-ov-file | Websites, books, and videos on everything python |
 
 # Front End Web Development
