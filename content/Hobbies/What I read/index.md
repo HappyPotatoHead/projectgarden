@@ -5,9 +5,7 @@ date modified: 2025-08-02
 ---
 I used to read a lot—until computer science came along. Now, I mostly read documentation and research papers.   
 
-# Completed List
-
-## Fiction
+# Fiction
 
 | Titles                                                     | Ratings    | Link                        | Covers                                    |
 | ---------------------------------------------------------- | ---------- | --------------------------- | ----------------------------------------- |
@@ -24,7 +22,7 @@ I used to read a lot—until computer science came along. Now, I mostly read doc
 | Six Crimson Cranes                                         |            | -                           | ![[six_crimson_cranes.jpg\|200]]          |
 | The Magician: The Secrets of the Immortal Nicholas Flamel  |            | -                           | ![[the_magician.jpg\|200]]                |
 | The Sorceress: The Secrets of the Immortal Nicholas Flamel |            | -                           | ![[the_sorceress.jpg\|200]]               |
-### A Good Girl's Guide to Murder
+## A Good Girl's Guide to Murder
 
 > A *GOATED* series. They're all 10/10
 
