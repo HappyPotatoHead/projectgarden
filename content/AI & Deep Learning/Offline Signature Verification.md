@@ -318,6 +318,8 @@ A triplet loss function works as follows:
 
 There are three nodes, called triplet, which comprises a signature that serves as an anchor, a genuine signature from the same signer, and a forged signature or signature from another signer. The goal is to inform the model which nodes should be **near** one another and which nodes should be distanced. From the feature embeddings extracted by the CNN model, the distances between anchor nodes and positives nodes, as well as between anchor nodes and negative nodes are calculated with a distance metric - Euclidean, Cosine, Manhattan, and etc. Once the distances are calculated. Loss values are calculated to the model which nodes should be nearer and which nodes should be further apart. 
 
+![[triplet_loss.png]]
+
 This embedding-based approach directly supports the verification task; if I want to verify a signature, I would compare its feature embedding to known genuine feature embedding - if the distance is below a threshold, it's more likely to be genuine. 
 
 Essentially, the triplet loss is the core of this verification system. 
@@ -406,6 +408,16 @@ I experimented with different margin values - 0.2, 0.5. 1.0 - and I found that 0
 ##### Distance Metric and Mining strategy
 
 The choice of the distance metrics may depend on the choice of mining strategy; the **Euclidean** distance metric is widely used in batch hard mining strategy because it directly measures the absolute spatial separation between points, while **Cosine** distance metric works well with both batch hard and batch semi hard strategies because it focuses on directional similarity between the nodes rather than absolute distances.
+
+$$
+\begin{align}
+D_{E}(x,y) &= \sqrt{\Sigma_{i=1}^{n}(x_{i} - y_{i})^2}  \\
+D_{C}(A, B) &= \frac{A \cdot B}{\Vert{A}\Vert \Vert B \Vert}
+\end{align}
+
+$$
+<span style="font-size:0.9rem;"><em>Equation (1) defines the Euclidean distance — the straight-line distance between two points in space.</em></span>
+<span style="font-size:0.9rem;"><em>Equation (2) defines cosine similarity — a measure of orientation between two vectors, capturing how similar their directions are regardless of magnitude.</em></span>
 
 I experimented with multiple combinations and found that the combination of  **Euclidean** distance metric and **batch hard** strategy gave me the best result. Batch hard mining was chosen to ensure that the model was constantly learning form the hardest triplets within each batch, maximising the discriminative power of the embedding space. Euclidean distance measured the absolute spatial separation in the embedding space, aligning well with the goal of making similar signature close and dissimilar ones distanced from one another. 
 
