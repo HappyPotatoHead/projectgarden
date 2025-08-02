@@ -11,7 +11,7 @@ export const sharedPageComponents: SharedLayout = {
         provider: 'giscus',
         options: {
           // from data-repo
-          repo: 'HappyPotatoHead/project-garden',
+          repo: 'HappyPotatoHead/projectgarden',
           // from data-repo-id
           repoId: 'R_kgDOOYwR8g',
           // from data-category
