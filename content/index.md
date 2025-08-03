@@ -44,6 +44,4 @@ Gardens that I shamelessly copy from:
 - [# Eilleen's (online!) Everything Notebook](https://quartz.eilleeenz.com/)
 - [Aaron Pham](https://aarnphm.xyz/)
 
-> Giscus bugged out. Please use dark mode to view the comments. 🙏 Sorry about that.
-
 
