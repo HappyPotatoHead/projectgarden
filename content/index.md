@@ -30,6 +30,13 @@ Check out these pages:
 - [[Bongo Animals]]
 - [[Offline Signature Verification]]
 
+```
+	Meow
+  ／l、    Meow       
+（ﾟ､ ｡ ７         
+  l  ~ヽ       
+  じしf_,)ノ
+```
 
 ![[lightning.jpg]]
 *It can't be an index page without an image*
