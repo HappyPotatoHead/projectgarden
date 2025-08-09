@@ -1,5 +1,5 @@
 ---
-title: Learning resources
+title: Resources
 draft: false
 tags:
   - resources

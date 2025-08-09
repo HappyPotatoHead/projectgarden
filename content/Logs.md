@@ -4,6 +4,10 @@ draft: false
 tags: 
 description:
 ---
+# 9th August 2025
+
+- Added [[Imposter Syndrome]]
+- Added [[Project Ideas]]
 # 2nd August 2025
 
 - Overhauled index file
