@@ -5,46 +5,49 @@ tags:
   - resources
 description:
 ---
-# Programming Languages
-## C++
+# Data Structure and Algorithm
 
-| Name                                                                 | Link                                                                                                                               | Description                                |
-| -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| Learn C++                                                            | https://www.learncpp.com/                                                                                                          | Teaches how to code, not how to program    |
-| Order of Items in Classes: Fields, Properties, Constructors, Methods | [Stack Overflow Link](https://stackoverflow.com/questions/150479/order-of-items-in-classes-fields-properties-constructors-methods) | Best practice in ordering items in classes |
-## Python
-| Name                       | Link                                                           | Description                                      |
-| -------------------------- | -------------------------------------------------------------- | ------------------------------------------------ |
-| Brocode                    | https://youtu.be/XKHEtdqhLK8                                   | Introductory course                              |
-| Github  Python Study Guide | https://github.com/huangsam/ultimate-python?tab=readme-ov-file | Websites, books, and videos on everything python |
+| Name                        | Link                                                   | Description                               |
+| --------------------------- | ------------------------------------------------------ | ----------------------------------------- |
+| Coding Interview Univeristy | https://github.com/jwasham/coding-interview-university | Resources to learn DSA                    |
+| The Algorithms              | https://the-algorithms.com/                            | Open-source collection of algorithm codes |
+
+# Data Science
+
+| Name                    | Link                    | Description  |
+| ----------------------- | ----------------------- | ------------ |
+| R for Data Science (2e) | https://r4ds.hadley.nz/ | A holy grail |
 
 # Front End Web Development
+
 ## HTML
+
 | Name         | Link                                 | Description                                                              |
 | ------------ | ------------------------------------ | ------------------------------------------------------------------------ |
 | MDN Web Docs | https://developer.mozilla.org/en-US/ | Details about Open Web technologies, which encompass HTML, CSS, and APIs |
+
 ## JavaScript
 
 | Name                           | Link                     | Description        |
 | ------------------------------ | ------------------------ | ------------------ |
 | The Modern JavaScript Tutorial | https://javascript.info/ | Vanilla JavaScript |
 
-# Data Structure and Algorithm
-| Name                        | Link                                                   | Description                               |
-| --------------------------- | ------------------------------------------------------ | ----------------------------------------- |
-| Coding Interview Univeristy | https://github.com/jwasham/coding-interview-university | Resources to learn DSA                    |
-| The Algorithms              | https://the-algorithms.com/                            | Open-source collection of algorithm codes |
-# Data Science
+# Programming Languages
 
-| Name               | Link                    | Description |
-| ------------------ | ----------------------- | ----------- |
-| R for Data Science | https://r4ds.hadley.nz/ | Holy grail  |
+## C++
 
-# Machine Learning, Deep Learning, and Artificial Intelligence
+| Name                                                                 | Link                                                                                                                               | Description                                |
+| -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| Learn C++                                                            | https://www.learncpp.com/                                                                                                          | Teaches how to code, not how to program    |
+| Order of Items in Classes: Fields, Properties, Constructors, Methods | [Stack Overflow Link](https://stackoverflow.com/questions/150479/order-of-items-in-classes-fields-properties-constructors-methods) | Best practice in ordering items in classes |
 
-| Name                                                            | Link                                                                          | Description                            |
-| --------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------------- |
-| Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow | https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/ | Appropriate for all level of expertise |
+## Python
+
+| Name                       | Link                                        | Description                                      |
+| -------------------------- | ------------------------------------------- | ------------------------------------------------ |
+| Brocode                    | https://youtu.be/XKHEtdqhLK8                | Introductory course                              |
+| Github  Python Study Guide | https://github.com/huangsam/ultimate-python | Websites, books, and videos on everything python |
+
 # Game Development
 
 ## Godot
@@ -54,7 +57,41 @@ description:
 | Godot       | https://docs.godotengine.org/en/stable/ | Official Godot documentation |
 | uHeartBeast | https://www.youtube.com/@uheartbeast    | -                            |
 
-# Tools
+# Machine Learning, Deep Learning, and Artificial Intelligence
+
+| Name                                                            | Link                                                                          | Description                            |
+| --------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------------- |
+| Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow | https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/ | Appropriate for all level of expertise |
+
+# Tools (Free)
+
+## Converters
+
+| Name    | Link                            | Description             |
+| ------- | ------------------------------- | ----------------------- |
+| Cobalt  | https://cobalt.tools/           | Link to mp4, mp3, etc.. |
+| DocuPub | https://docupub.com/pdfconvert/ | Convert files to pdf    |
+
+## Game Engine
+
+| Name  | Link                     | Description             |
+| ----- | ------------------------ | ----------------------- |
+| Godot | https://godotengine.org/ | Open-source game engine |
+
+## Note Taking
+
+| Name     | Link                     | Description           |
+| -------- | ------------------------ | --------------------- |
+| Obsidian | https://obsidian.md/     | Local note-taking app |
+| OneNote  | https://www.onenote.com/ | Works well on tablets |
+
+## Photos/Drawings
+
+| Name     | Link                  | Description                     |
+| -------- | --------------------- | ------------------------------- |
+| Gimp     | https://www.gimp.org/ | Open-source photo editor        |
+| Krita    | https://krita.org/en/ | Open-source drawing application |
+| InkScape | https://inkscape.org/ | Open-source SVG editor          |
 
 ## Videos
 
@@ -63,15 +100,8 @@ description:
 | Handbrake | https://handbrake.fr/     | Open-source transcoder   |
 | Openshot  | https://www.openshot.org/ | Open-source video editor |
 
-## Photos / Drawings
 
-| Name  | Link                  | Description                     |
-| ----- | --------------------- | ------------------------------- |
-| Gimp  | https://www.gimp.org/ | Open-source photo editor        |
-| Krita | https://krita.org/en/ | Open-source drawing application |
 
-## Game Engine
 
-| Name  | Link                     | Description             |
-| ----- | ------------------------ | ----------------------- |
-| Godot | https://godotengine.org/ | Open-source game engine |
+
+

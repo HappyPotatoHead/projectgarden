@@ -13,12 +13,14 @@ description:
 
 I might have a *tad* problem.
 
-## First
+## First Attempt
 
 ![[fern.png]]
 ![[fern_rice.png]]
 
-## Second 
+Looking at this for extended periods of time hurt my eyes.
+
+## Second Attempt
 
 ![[fern_two.png]] ^89dd04
 
