@@ -64,18 +64,19 @@ export const defaultContentPageLayout: PageLayout = {
         { 
           Component: Component.Darkmode()
         },
-        { Component: Component.ReaderMode(), 
+        { 
+            Component: Component.DesktopOnly(Component.ReaderMode()), 
           align:"start"
         },
       ],
       gap:"0.5rem",
     }),
     Component.DesktopOnly(    
-      Component.ConditionalRender({
-        component: Component.TableOfContents(),
-        condition: (page) => page.fileData.slug !== "index"
-    })
-  ),
+        Component.ConditionalRender({
+            component: Component.TableOfContents(),
+            condition: (page) => page.fileData.slug !== "index"
+        })
+    ),
     // Component.TableOfContents()),
     Component.ConditionalRender({
       component: Component.Explorer({folderDefaultState: "open"}),
