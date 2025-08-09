@@ -6,27 +6,27 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
-    Component.ConditionalRender({
-      component: Component.Comments({
-        provider: 'giscus',
-        options: {
-          // from data-repo
-          repo: 'HappyPotatoHead/projectgarden',
-          // from data-repo-id
-          repoId: 'R_kgDOOYwR8g',
-          // from data-category
-          category: 'Announcements',
-          // from data-category-id
-          categoryId: 'DIC_kwDOOYwR8s4CpDaN',
-          mapping: "specific",
-          reactionsEnabled: false,
-          inputPosition: "top",
-          lightTheme: "light",
-          darkTheme: "dark"
-        }
-      }),
-      condition: (page) => page.fileData.slug === "index"
-    })
+    // Component.ConditionalRender({
+    //   component: Component.Comments({
+    //     provider: 'giscus',
+    //     options: {
+    //       // from data-repo
+    //       repo: 'HappyPotatoHead/projectgarden',
+    //       // from data-repo-id
+    //       repoId: 'R_kgDOOYwR8g',
+    //       // from data-category
+    //       category: 'Announcements',
+    //       // from data-category-id
+    //       categoryId: 'DIC_kwDOOYwR8s4CpDaN',
+    //       mapping: "specific",
+    //       reactionsEnabled: false,
+    //       inputPosition: "top",
+    //       lightTheme: "light",
+    //       darkTheme: "dark"
+    //     }
+    //   }),
+    //   condition: (page) => page.fileData.slug === "index"
+    // })
 
   ],
   footer: Component.Footer({
