@@ -14,7 +14,8 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: "goatcounter",
+      websiteId: '9719'
     },
     locale: "en-US",
     baseUrl: "happypotatohead.github.io/projectgarden",
