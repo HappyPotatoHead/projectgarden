@@ -9,7 +9,7 @@ Hello! Welcome to my garden.
 
 This started out as a place for my CS degree notes and has since become a space where I share whatever I’m up to. It's mostly Data Science, with a couple of *funsies* and other things I find interesting.
 
->[!QUOTE] It's fun to click on these
+>[!QUOTE] It's fun to click these
 >```telescopic
 >* <em>Forever and always, in every universe, wherever you are </em>
 >	* <em>Knowledge is not a reservoir to be hoarded but a river to be shared</em>
