@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0 # Fetch all history for git info
       - uses: actions/setup-node@v4
@@ -36,7 +36,7 @@ jobs:
         # run: |
         #   echo "GOATCOUNTER_WEBSITE_ID=${{ secrets.GOATCOUNTER_WEBSITE_ID }}" >> $GITHUB_ENV
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: public
  
