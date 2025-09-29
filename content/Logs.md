@@ -4,6 +4,12 @@ draft: false
 tags: 
 description:
 ---
+# 29th September 2025
+
+*I've been really busy lately*
+
+- Added [[100 Notes]]
+
 # 9th August 2025
 
 - Added [[Imposter Syndrome]]
