@@ -21,6 +21,9 @@ Life's greatest pleasure is creation.
 
 ![[hello_goodbye_dark.png]]
 
+**Notes:**
+
+1. [hello: goodbye.](https://100notes.surge.sh/posts/hello_goodbye.html)
 # How it's Made
 
 No fancy tools or frameworks were used to make this, just vanilla JavaScript and [Tailwind CSS](https://tailwindcss.com/). 

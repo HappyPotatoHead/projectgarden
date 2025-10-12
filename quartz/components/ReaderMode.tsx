@@ -2,9 +2,10 @@
 import readerModeScript from "./scripts/readermode.inline"
 import styles from "./styles/readermode.scss"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
+import { i18n } from "../i18n"
 import { classNames } from "../util/lang"
 
-const ReaderMode: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
+const ReaderMode: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
   return (
     <button class={classNames(displayClass, "readermode")}>
       <svg
@@ -14,7 +15,7 @@ const ReaderMode: QuartzComponent = ({ displayClass }: QuartzComponentProps) => 
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
+        stroke-width="0.2"
         stroke-linecap="round"
         stroke-linejoin="round"
         class="lucide lucide-book-open-text-icon lucide-book-open-text"
