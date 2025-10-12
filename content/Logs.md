@@ -4,6 +4,10 @@ draft: false
 tags: 
 description:
 ---
+# 12th October 2025
+
+- Updated [[100 Notes]]
+	- Added notes
 # 29th September 2025
 
 *I've been really busy lately*

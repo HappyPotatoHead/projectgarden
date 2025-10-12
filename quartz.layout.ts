@@ -65,7 +65,7 @@ export const defaultContentPageLayout: PageLayout = {
         },
         { 
             Component: Component.DesktopOnly(Component.ReaderMode()), 
-          align:"start"
+            align:"center"
         },
       ],
       gap:"0.5rem",

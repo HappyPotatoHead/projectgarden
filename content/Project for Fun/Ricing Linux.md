@@ -9,18 +9,40 @@ tags:
   - i3wm
 description:
 ---
-# I went down a rabbit hole...
 
-I might have a *tad* problem.
+I have an addiction
 
-## First Attempt
+# Hyprland
+
+# First Rice
+
+> I am also really bad at designing
+
+![[homepage.png]]
+
+![[launcher_menu.png]]
+
+![[power_menu.png]]
+
+![[chasing_clout.png]]
+
+# How it's made
+- Distro: i use arch btw
+- WM: [hyprland](https://hypr.land/) 
+- Music Visualiser: [cava](https://github.com/karlstav/cava)
+- Bar: [waybar](github.com/Alexays/Waybar)
+- Wallpaper: [i got it here](https://wallhaven.cc/w/p8zo6m) 
+
+# i3WM
+
+## First Rice
 
 ![[fern.png]]
 ![[fern_rice.png]]
 
-Looking at this for extended periods of time hurt my eyes.
+Looking at this hurt hurt my eyes.
 
-## Second Attempt
+## Second Rice
 
 ![[fern_two.png]] ^89dd04
 

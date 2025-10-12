@@ -12,6 +12,7 @@ description:
 ### Peripherals
 
 - Samsung 24" S36C Curved Monitor
+- Xiaomi Monitor A24i
 - Aula F75 Keyboard
 - Moondrop Space Travel
 - Creative Pebble
