@@ -1,3 +1,9 @@
+---
+title: Self-Hosting
+draft: false
+tags:
+description:
+---
 *Doing everything **BUT** my fyp part 1*
 
 I started homelabbing! *or self-hosting*
@@ -8,7 +14,8 @@ I refuse to pay 70 bucks a year just for 100 GB; I can get 1TB or more with the 
 
 ![[google_drive_pricing.png]]
 
-Thus, my self-hosting/homelabbing journey began. It started with [[NextCloud]]. Once I have made my cloud storage, I moved on to my own [[Navidrome|music streaming server]]. But I was still oblivious to the number of features that [[Tailscale]] really has, so I was connecting to my servers in a less secure way (*It was still secure since it's a VPN, but I was exposing more ports than I had to and I didn't have https*)
+Th
+us, my self-hosting/homelabbing journey began. It started with [[NextCloud]]. Once I have made my cloud storage, I moved on to my own [[Navidrome|music streaming server]]. But I was still oblivious to the number of features that [[Tailscale]] really has, so I was connecting to my servers in a less secure way (*It was still secure since it's a VPN, but I was exposing more ports than I had to and I didn't have https*)
 
 So after the [[Reverse Proxy with Nginx|nginx]] configuration was done, I now have a complete cloud server and music streaming server! 
 

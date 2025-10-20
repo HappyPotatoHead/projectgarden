@@ -1,3 +1,10 @@
+---
+title: Tailscale
+draft: false
+tags:
+description:
+---
+
 Initially, I wanted to lean into my masochistic nature and configure my own VPN protocols with [pfsense](https://www.pfsense.org/), but I only have one router and I didn't want to fuck it up. 
 
 So, I opted for the simpler, quicker VPN setup - [Tailscale](https://tailscale.com/kb). It's so easy that all you have to do is make an account, add your machine, click a couple of buttons for magic DNS, and you're golden. It's just that simple (*because I have not set up reverse proxy thing*)
