@@ -4,6 +4,15 @@ draft: false
 tags: 
 description:
 ---
+# 20th October 2025
+
+- Added self-hosting pages! Check them out!
+	- [[Self-Hosting]]
+	- [[NextCloud]]
+	- [[Tailscale]]
+	- [[Navidrome]]
+	- [[Reverse Proxy with Nginx]]
+
 # 12th October 2025
 
 - Updated [[100 Notes]]
