@@ -18,7 +18,7 @@ There are two ways to set up Nextcloud in Docker:
 1. [All-in-One](https://nextcloud.com/blog/how-to-install-the-nextcloud-all-in-one-on-linux/)
 2. Manual approach[^1]
 
-![[Nextcloud_logo.jpg]]
+![[nextcloud_logo.jpg]]
 
 I opted for the more manual approach since I believe that I would learn more.  ^22dd81
 
