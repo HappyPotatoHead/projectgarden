@@ -4,6 +4,11 @@ draft: false
 tags: 
 description:
 ---
+# 8th December 2025
+
+- Updated index
+- Changed colour palette to [flexoki](https://stephango.com/flexoki)
+
 # 20th October 2025
 
 - Added self-hosting pages! Check them out!

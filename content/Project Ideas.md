@@ -1,6 +1,6 @@
 ---
 title: Project Ideas
-draft: true
+draft: false
 tags:
 description:
 ---

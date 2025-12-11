@@ -10,7 +10,7 @@ tags:
 description:
 ---
 
-I have an addiction
+> I might have a problem
 
 # Hyprland
 

@@ -4,7 +4,9 @@ draft: false
 tags: 
 description:
 ---
->Check it out: [Click me!](https://github.com/HappyPotatoHead/Signature-Verification-Model)
+> It's time I update this again! 
+
+>Check it out: [Click me!](https://github.com/HappyPotatoHead/signature-verification-sct-plus)
 
 # Project Overview
 
