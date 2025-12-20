@@ -4,9 +4,6 @@ draft: false
 tags: 
 description:
 ---
->[!INFO] IM BACK
->I've been busy with my final year project, but I'm back
-
 Hello! Welcome to my garden. 
 
 This started out as a place for my CS degree notes and has since become a space where I share whatever I’m up to. It's mostly Data Science, with a couple of *funsies* and other things I find interesting.
@@ -47,7 +44,7 @@ Check out these pages:
 To-do (Eventually):
 - Fix the table of contents
 - ~~Post on linkedIn~~
-- *~~I really should fill [[QS Ranking Analysis]]~~* I am definitely not filling up [[QS Ranking Analysis]]
+- *~~I really should fill [[QS Ranking Analysis]]~~* ~~I am definitely not filling up [[QS Ranking Analysis]]~~ One of these days
 
 *View changes at: [[Logs]]*
 
@@ -55,5 +52,3 @@ Gardens that I shamelessly copy from:
 - [# Eilleen's (online!) Everything Notebook](https://quartz.eilleeenz.com/)
 - [Aaron Pham](https://aarnphm.xyz/)
 - [hyphen](https://hyphenbycole.substack.com/)
-
-> I want to work with someone from a different field. 

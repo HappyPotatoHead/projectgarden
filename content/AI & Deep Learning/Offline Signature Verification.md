@@ -1,12 +1,13 @@
 ---
 title: Offline Signature Verification
 draft: false
-tags: 
+tags:
 description:
 ---
 > It's time I update this again! 
+> This is old and outdated
 
->Check it out: [Click me!](https://github.com/HappyPotatoHead/signature-verification-sct-plus)
+>Check it out: [Click me!](https://github.com/HappyPotatoHead/signature-verification-sct-plus) (this is new)
 
 # Project Overview
 
