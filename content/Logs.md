@@ -4,6 +4,10 @@ draft: false
 tags: 
 description:
 ---
+# 4th January 2026
+
+- Updated [[Offline Signature Verification]]
+
 # 8th December 2025
 
 - Updated index
