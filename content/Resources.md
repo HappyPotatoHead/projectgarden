@@ -63,6 +63,13 @@ description:
 | --------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------------- |
 | Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow | https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/ | Appropriate for all level of expertise |
 
+# Freebie
+
+| Name                                                            | Link                                                                          | Description                            |
+| --------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------------- |
+| Free for dev | https://free-for.dev/#/ | Free things for broke devs |
+
+
 # Tools (Free)
 
 ## Converters
