@@ -4,9 +4,9 @@ draft: false
 tags: 
 description:
 ---
-Hello! Welcome to my garden. 
+<span style="font-size:1rem">Hello!</span> 
 
-This started out as a place for my CS degree notes and has since become a space where I share whatever I’m up to. It's mostly Data Science, with a couple of *funsies* and other things I find interesting.
+This started out as a place for my CS degree notes and has since become a space where I share whatever I’m up to. It's mostly Data Science, with a couple of *funsies* and other things I find interesting
 
 >[!QUOTE] It's fun to click these
 >```telescopic
