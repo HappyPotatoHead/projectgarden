@@ -8,7 +8,9 @@ description:
 
 I started homelabbing! *or self-hosting*
 
-Are you tired of the overwhelming and uncomfortably intrusive ads that companies are incessantly pushing towards you. Every major tech companies are being sued; if not for monopolising the market, it's breach of data privacy.[^1][^2][^3] Also, these companies KNOW that they're the major players in the market; who else are we going to rely on? So, they charge an exorbitant amount for their services. 
+> Are you tired of the overwhelming and uncomfortably intrusive ads that companies are incessantly pushing towards you?
+
+Every major tech companies are being sued; if not for monopolising the market, it's breach of data privacy.[^1][^2][^3] Also, these companies KNOW that they're the major players in the market; who else are we going to rely on? So, they charge an exorbitant amount for their services. 
 
 I refuse to pay 70 bucks a year just for 100 GB; I can get 1TB or more with the same price. 
 

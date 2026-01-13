@@ -15,6 +15,7 @@ export const ClickableImages: QuartzTransformerPlugin = () => {
                 // Get the current img src which should already be resolved
                 const originalSrc = node.properties?.src
                 const originalAlt = node.properties?.alt || ""
+                node.properties["data-caption"] = originalAlt
                 
                 if (!originalSrc) return
 
@@ -49,6 +50,16 @@ export const ClickableImages: QuartzTransformerPlugin = () => {
           {
             inline: true,
             content: `
+            .lightbox-caption {
+              margin-top: 14px;
+              color: rgba(255, 255, 255, 0.85);
+              font-size: 0.95rem;
+              line-height: 1.4;
+              display: flex;
+              text-align: center;
+              max-width: 90vw;
+            }
+
             /* Lightbox Image Styles */
 
             .lightbox-wrapper {
@@ -85,6 +96,7 @@ export const ClickableImages: QuartzTransformerPlugin = () => {
                 background: rgba(0, 0, 0, 0.6);
                 z-index: 1000;
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 opacity: 0;
@@ -183,14 +195,23 @@ export const ClickableImages: QuartzTransformerPlugin = () => {
                 
                 const img = document.createElement('img');
                 img.style.display = 'none';
+
+                const captionEl = document.createElement('div');
+                captionEl.className = 'lightbox-caption';
                 
                 modal.appendChild(closeBtn);
                 modal.appendChild(img);
+                modal.appendChild(captionEl);
+                // document.body.appendChild(modal);
                 document.body.appendChild(modal);                // Function to open lightbox
-                function openLightbox(imageSrc, imageAlt, originalImg) {
+                // function openLightbox(imageSrc, imageAlt, originalImg) {
+                function openLightbox(imageSrc, caption, originalImg) {
                   img.src = imageSrc;
-                  img.alt = imageAlt || '';
+                  // img.alt = imageAlt || '';
+                  img.alt = caption || '';
                   img.style.display = 'block';
+                  captionEl.textContent = caption;
+                  captionEl.style.display = caption ? 'block' : 'none';
                   modal.classList.add('active');
                   document.body.classList.add('lightbox-open');
                   
@@ -242,6 +263,7 @@ export const ClickableImages: QuartzTransformerPlugin = () => {
 
                 // Function to close lightbox
                 function closeLightbox() {
+                  captionEl.textContent = '';
                   modal.classList.remove('active');
                   document.body.classList.remove('lightbox-open');
                   setTimeout(() => {
@@ -272,8 +294,10 @@ export const ClickableImages: QuartzTransformerPlugin = () => {
                     const img = wrapper.querySelector('.lightbox-image');
                     if (img) {
                       const src = img.getAttribute('data-src') || img.src;
-                      const alt = img.getAttribute('data-alt') || img.alt;
-                      openLightbox(src, alt, img);
+                      // const alt = img.getAttribute('data-alt') || img.alt;
+                      const caption = img.getAttribute('data-caption') || '';
+                      // openLightbox(src, alt, img);
+                      openLightbox(src, caption, img);
                     }
                   });
                 });

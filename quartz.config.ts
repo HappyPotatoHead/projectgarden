@@ -25,9 +25,9 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Literata",
-        body: "PT Serif",
-        code: "Source Code Pro",
+        header: "Droid Serif",
+        body: "Roboto",
+        code: "Fira Code",
       },
       colors: {
         lightMode: {
@@ -77,6 +77,7 @@ const config: QuartzConfig = {
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
       Plugin.ClickableImages(),
+      Plugin.Carousel({showDots: true}),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [

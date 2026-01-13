@@ -4,6 +4,13 @@ draft: false
 tags: 
 description:
 ---
+
+# 14th January 2026
+
+- Updated index page
+- To-do (Eventually):
+	- *~~I really should fill [[QS Ranking Analysis]]~~* ~~I am definitely not filling up [[QS Ranking Analysis]]~~ One of these days
+
 # 4th January 2026
 
 - Updated [[Offline Signature Verification]]
