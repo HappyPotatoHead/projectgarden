@@ -13,7 +13,7 @@ I’m a final-year CS undergraduate exploring machine learning, deep learning, a
 
 ### Selected Work
 
-- **[[Offline Signature Verification]]** - ML research, Deep metic leraning, PyTorch
+- **[[Offline Signature Verification]]** - ML research, Deep metric learning, PyTorch
 - **[[Self-Hosting]]** - Exploring Linux, Docker, home servers, data ownership
 - **[[Cardiovascular Risk Analysis]]** - ML pipeline, feature engineering, evaluation
 
