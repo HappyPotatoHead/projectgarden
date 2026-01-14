@@ -5,26 +5,30 @@ tags:
 description:
 ---
 
-I just want an ad-free music listening experience on my phone - is that too much to ask for. I heard about [navidrome](https://www.navidrome.org/) from this [video](https://youtu.be/cMVcclMkp7g?si=HxVnNkUfsyelMVQX). It's simple and really easy to setup. 
+# What I used
 
-![[navidrome_logo.png]]
+I heard about [Navidrome](https://www.navidrome.org/) from this [video](https://youtu.be/cMVcclMkp7g?si=HxVnNkUfsyelMVQX), and it immediately attracted me. It's simple, easy to setup, and fulfills all my requirements for a music streaming service. 
 
-The documentation even provides a [docker-compose file](https://www.navidrome.org/docs/installation/docker/) for me to paste. It's literally just that simple. 
+![[navidrome_logo.png|250]]
 
-But, the harder part is downloading music *legally*. (**ALL MY METHODS ARE LEGAL**). After searching online on how people download their music, I decided to go for [`yt-dlp`](https://github.com/yt-dlp/yt-dlp). It's basically a package that lets you download videos from YouTube in the command line. This works because YouTube does not enforce DRM. 
+# How I Set it Up
 
-However, this also brings about a challenge - metadata. Because YouTube isn't a music streaming site, the metadata of albums, songs, and artists are not available. So, I would have to do these manually. (*Well, not really manual; I wrote a script*)
+The developers over at Navidrome provided a [docker-compose file](https://www.navidrome.org/docs/installation/docker/) for anyone looking to self-host their server in docker. 
 
-After downloading these songs *legally*, I now have my very own **ad-free** music streaming experience. 
+# Results
 
-![[navidrome_vertical.png]]
+## Navidrome Browser Experience
+After downloading these songs **legally**, I now have my very own **ad-free**, **personal** music streaming experience. 
 
-![[you.png]]
+<Carousel>
+<img src = "Project for Fun/images/self_hosting/navidrome_vertical.png">
+<img src = "Project for Fun/images/self_hosting/you.png">
+</Carousel>
 
-To use this server on my phone, I downloaded [Symfonium](https://symfonium.app/) and use OpenSubsonic from Navidrome to connect to the server. It has no subscription and no ads. Just a one-time purchase of its license and it's mine. Also, side note, it. looks. amazing.
+## Mobile Client
 
-I've been using for a couple of days now, and it's been a great experience - it's smooth; it's seamless; it's very customisable; overall, it's been great. 
+There are a lot of mobile clients that support the OpenSubsonic API, but I went with [Symfonium](https://symfonium.app/). It offers a lot of features without requiring a subscription. It's smooth, seamless, highly customisable, and overall pretty great. 
 
-![[symfonium.jpg]]
+![[symfonium.jpg|250]]
 
-![[you_phone.jpg]]
+> This isn't to say that I've completely abandoned conventional streaming services. I do enjoy the benefits of accessing a vast music library filled with hidden gems waiting to be discovered, but I dislike the opaque practices surrounding something personal that I enjoy in my day-to-day life.

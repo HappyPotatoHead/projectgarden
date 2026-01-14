@@ -1,34 +1,42 @@
 ---
 title: Self-Hosting
 draft: false
-tags:
+tags: linux, docker, self-hosting, data ownership
 description:
 ---
 *Doing everything **BUT** my fyp part 1*
 
-I started homelabbing! *or self-hosting*
+I started homelabbing!
 
-> Are you tired of the overwhelming and uncomfortably intrusive ads that companies are incessantly pushing towards you?
+# Why I started self-hosting 
 
-Every major tech companies are being sued; if not for monopolising the market, it's breach of data privacy.[^1][^2][^3] Also, these companies KNOW that they're the major players in the market; who else are we going to rely on? So, they charge an exorbitant amount for their services. 
+I've been seeing more and more discussions about intrusive ads, questionable and unwanted features, and actions that major companies, both inside and outside of tech. Every major tech company seems to be facing lawsuits; if not for monopolising the market, then for breaches of data privacy.[^1][^2][^3] These companies are _likely_ aware they're the dominant players, so who else are we supposed to rely on?
+
+One answer is to self-host our own services. 
 
 I refuse to pay 70 bucks a year just for 100 GB; I can get 1TB or more with the same price. 
 
-![[google_drive_pricing.png]]
+![[google_drive_pricing.png|400]]
 
-Thus, my self-hosting/homelabbing journey began. It started with [[NextCloud]], then my own [[Navidrome|music streaming server]]. But I was still oblivious to the number of features that [[Tailscale]] really has, so I was connecting to my servers in a less secure way (*It was still secure since it's a VPN, but I was exposing more ports than I had to and I didn't deploy https*)
+# What I set up
 
-Once the [[Reverse Proxy with Nginx|nginx]] configuration was done, I have a complete cloud server and music streaming server! 
+Thus, my self-hosting journey began. It started with [[NextCloud|Nextcloud]], then my own [[Navidrome|music streaming server]]. Initially, I was oblivious to the number of features [[Tailscale]] offers, so I wasn't able to take full advantage of the tool. 
 
-There are other things that I wish to change or do - switching to [wireguard](https://www.wireguard.com/), using [open mediavault](https://www.openmediavault.org/) as an OS, hosting more servers, configuring remote access, and so much more. But, for now, I think I will just focus on learning the existing tool and optimising them as much as possible. 
+> _For a time, I was accessing my servers with port numbers rather than names, but I got it figured out in [[Reverse Proxy with Nginx|Nginx]]_
 
-*Todo:*
-1. Learn more about tailscale
+# What's next
+
+There are still things I'd like to change or try - switching to [WireGuard](https://www.wireguard.com/), using [OpenMediaVault](https://www.openmediavault.org/) as an OS, hosting more servers, configuring remote access more extensively, and much more. But, for now, I'll focus on learning the existing tools and optimising them as much as possible. 
+
+## **Todo:**
+1. Learn more about Tailscale
 2. Make my servers fault tolerant
 3. Make my servers distributed
 	- Can I have multiple containers across different devices that access the same server?
 
-I definitely recommend everyone to try self-hosting at least once; you learn a lot, and if it's not for you, just take everything down. 
+# Verdict 
+
+Although not everyone has the privilege to explore and break their machines, I definitely recommend everyone try self-hosting at least once. You'll learn a lot, and if it's not for you, taking everything down is just as easy. 
 
 [^1]: https://www.bbc.com/news/articles/c3dr91z0g4zo
 [^2]: https://www.theguardian.com/technology/2025/sep/03/google-monopoly-case-ruling

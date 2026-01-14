@@ -1,11 +1,13 @@
 ---
 title: Offline Signature Verification
 draft: false
-tags:
+tags: deep metric learning, cnn, loss function, python
 description:
 ---
 
->[Source code](https://github.com/HappyPotatoHead/signature-verification-sct-plus) 
+>[Github](https://github.com/HappyPotatoHead/signature-verification-sct-plus) 
+>
+> *[[Offline Signature Verification#Results|Skip to Result]]*
 
 # Project Overview
 

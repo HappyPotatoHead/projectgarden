@@ -1,51 +1,56 @@
 ---
-title: NextCloud
+title: Nextcloud
 draft: false
-tags:
+tags: self-hosting, Nextcloud, docker
 description:
 ---
 
-The first thing I replaced was Google Drive; I switched to Nextcloud. Initially, I wanted to use OpenMediaVault on my laptop to host a NAS and build Nextcloud on top of it, but I discovered that it's an operating system rather than just a software. That would have required dual booting or virtualisation, which felt like a hassle. Instead, I decided to host Nextcloud in Docker. (*Partly because I wanted to learn more about docker anyway*).
+![[Nextcloud_logo.jpg|250]]
 
->[!NOTE] Future
->The real plan is to get a dedicated workstation to host OMV
+# What I Used
 
-Setting up Nextcloud in Docker (*or anything in Docker*) is, surprisingly, really simple. 
+One major change I made was replacing Google Drive with Nextcloud. Initially, I wanted to use OpenMediaVault on my laptop to host a NAS and build Nextcloud on top of it, but I discovered that OpenMediaVault is an operating system rather than just software and the two serve completely different purposes. Setting OpenMediaVault up would have required dual booting or virtualisation, and since I still use the laptop as a mobile workstation, it felt like I would be placing unnecessary strain on the machine. 
 
-> *It was simple because I followed a tutorial, but upon introspection, writing a docker compose file isn't complex*
+Instead, I opted for Docker to host Nextcloud.
+
+> *Partly because I wanted to learn more about docker anyway.*
+
+>[!INFO] Future
+>My long-term plan is to set up a dedicated workstation to host OMV
+
+# How I Set it Up
+
+Setting up Nextcloud, or really any application, in Docker is, surprisingly, really simple. 
 
 There are two ways to set up Nextcloud in Docker:
-1. [All-in-One](https://nextcloud.com/blog/how-to-install-the-nextcloud-all-in-one-on-linux/)
-2. Manual approach[^1]
+1. [All-in-One](https://Nextcloud.com/blog/how-to-install-the-Nextcloud-all-in-one-on-linux/)
+2. [Manually](https://hostman.com/tutorials/how-to-install-Nextcloud-with-docker/)
 
-![[nextcloud_logo.jpg]]
+Wanting to learn more about Docker and its container ecosystem, I decided that the manual approach would be a better fit. 
 
-I opted for the more manual approach since I believe that I would learn more.  ^22dd81
+I initially skipped the section on setting up reverse proxy in the [guide](https://hostman.com/tutorials/how-to-install-Nextcloud-with-docker/) I followed, because I thought it would require spending cold, hard cash, not realising that [[Tailscale]] provides both DNS name and TLS certificates completely **free**. 
 
-When I was *referring* to [^1], I skipped the *setting up reverse proxy* section since I thought I would have to spend some cold-hard cash (domain name costs money). I wasn't wrong, but I didn't realise that [[Tailscale]] provides both DNS name and TLS certificates for FREE.  ^a6575e
+# Results 
 
-After some tinkering with NextCloud, these are the results, 
+After some tinkering with Nextcloud's settings, these are the results, 
 
-![[dashboard_browser.png]]
+<Carousel>
+<img src = "Project for Fun/images/self_hosting/files_page.png">
+<img src = "Project for Fun/images/self_hosting/dashboard_browser.png">
+</Carousel>
 
-![[dashboard_browser_vertical.png]]
+Nextcloud also offers a mobile client,   
 
-![[files_page.png]]
+| Mobile Dashboard              | Mobile Sidebar              |
+|-------------------------------|-----------------------------|
+| ![[mobile_dashboard.jpg|300]] | ![[mobile_sidebar.jpg|300]] |
 
-Once I got it up and running, I decided to configure [[Tailscale]] next for remote access. (*No TSL or reverse proxy yet, because I'm an idiot*). 
+Personally, uploading from mobile to Nextcloud is also much more user-friendly and intuitive compared to Google Drive. 
 
-There is also a mobile client,   
+# Updates
+## 19/10/2025
 
-![[mobile_dashboard.jpg]]
-
-![[mobile_sidebar.jpg]]
-
-Uploading from mobile to Nextcloud is also much more user-friendly and intuitive compared to Google cloud. 
-
-
-# 19/10/2025
-
-Once I realise I can create a much more secure connection with Tailscale, I used [[Reverse Proxy with Nginx|Nginx]] to create a reverse proxy. Check out [[Reverse Proxy with Nginx|this page]] to learn more!
+I realised that implementing reverse proxy with Tailscale is completely free and far less complicated than I expected. [[Reverse Proxy with Nginx|Check it out!]]
 
 
-[^1]: https://hostman.com/tutorials/how-to-install-nextcloud-with-docker/
+[^1]: https://hostman.com/tutorials/how-to-install-Nextcloud-with-docker/

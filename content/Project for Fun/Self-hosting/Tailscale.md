@@ -1,26 +1,22 @@
 ---
 title: Tailscale
 draft: false
-tags:
+tags: self-hosting, vpn, remote acccess
 description:
 ---
 
-Initially, I wanted to lean into my masochistic nature and configure my own VPN protocols with [pfsense](https://www.pfsense.org/), but I only have one router and I didn't want to fuck it up. 
+Initially, I wanted to configure my own VPN protocols with [pfsense](https://www.pfsense.org/), but since I only have one router, I didn't want to risk messing it up. 
 
-So, I opted for the simpler, quicker VPN setup - [Tailscale](https://tailscale.com/kb). It's absurdly simple - all you have to do is make an account, add your machine (s), click a couple of buttons for magic DNS, and you're golden. 
+Instead, I opted for the simpler, quicker VPN setup with [Tailscale](https://tailscale.com/kb). It's absurdly simple; just create an account, add your machine(s), click a couple of buttons for Magic DNS, and you're all set. If you wish to share your machine(s) with other people, that's also [possible](https://tailscale.com/kb/1084/sharing) 
 
-# 19/10/2025
+# Updates
+## 19/10/2025
 
-> Why did I torture myself. 
+> _Why did I torture myself._ 
 
-It was worth it, though, since my connection is much more secure now. It turns out I had been exposing my [[Navidrome]], which I should have noticed much, much earlier. 
+I decided to [[Reverse Proxy with Nginx|configure a reverse proxy with Nginx]], but I was stuck wondering what to do after generating the certification and key. The Tailscale documentation doesn't really explain much beyond the command to generate the TLS certification and key. [^1]
 
-Also, I was stuck wondering what I should do after generating the certification and key. The Tailscale documentation doesn't really tell me anything other than the command to generate the TLS certification and key. [^1]
-
-So, I wasted even more time, REFERRING TO ANOTHER SOURCE, [^2] when I could have just referred to an [[NextCloud#^a6575e|old source]]. 
-
-Regardless, this deserves it's own [[Reverse Proxy with Nginx|topic]].
-
+Having forgotten that I had an [[NextCloud#^a6575e|old source]] explaining how to set it up, I spent quite a while confused, relying instead to another source [^2] that doesn't explain any of the lines written. 
 
 [^1]: https://tailscale.com/kb/1153/enabling-https
 [^2]: https://medium.com/@TomVance/local-domains-with-https-469036775818

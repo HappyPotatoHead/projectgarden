@@ -1,6 +1,6 @@
 ---
 title: 100 notes
-draft: false
+draft: true
 tags:
   - 100notes
 description:
