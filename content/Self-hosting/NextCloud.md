@@ -35,8 +35,8 @@ I initially skipped the section on setting up reverse proxy in the [guide](https
 After some tinkering with Nextcloud's settings, these are the results, 
 
 <Carousel>
-<img src = "Project for Fun/images/self_hosting/files_page.png">
-<img src = "Project for Fun/images/self_hosting/dashboard_browser.png">
+<img src = "Self-hosting/images/files_page.png">
+<img src = "Self-hosting/images/dashboard_browser.png">
 </Carousel>
 
 Nextcloud also offers a mobile client,   

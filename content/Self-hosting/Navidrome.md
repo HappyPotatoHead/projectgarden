@@ -21,8 +21,8 @@ The developers over at Navidrome provided a [docker-compose file](https://www.na
 After downloading these songs **legally**, I now have my very own **ad-free**, **personal** music streaming experience. 
 
 <Carousel>
-<img src = "Project for Fun/images/self_hosting/navidrome_vertical.png">
-<img src = "Project for Fun/images/self_hosting/you.png">
+<img src = "Self-hosting/images/navidrome_vertical.png">
+<img src = "Self-hosting/images/you.png">
 </Carousel>
 
 ## Mobile Client

@@ -19,7 +19,7 @@ I’m a final-year CS undergraduate exploring machine learning, deep learning, a
 
 ### Fun Projects & Experiments
 - [[Bongo Animals]] - Bongo with a shark and a dog
-- [[How To - Set Up Arch Linux.md]]
+- [[How To - Set Up Arch Linux|How To: Set Up Arch Linux]]
 
 ### Other Fun things! 
 - [Books, articles, curated notes](<Hobbies/What I read/index.md>)
