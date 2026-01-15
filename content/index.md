@@ -16,6 +16,7 @@ I’m a final-year CS undergraduate exploring machine learning, deep learning, a
 - **[[Offline Signature Verification]]** - ML research, Deep metric learning, PyTorch
 - **[[Self-Hosting]]** - Exploring Linux, Docker, home servers, data ownership
 - **[[Cardiovascular Risk Analysis]]** - ML pipeline, feature engineering, evaluation
+- **[audio-dl](https://github.com/HappyPotatoHead/audio-dl)** - Streamline YouTube audio archiving 
 
 ### Fun Projects & Experiments
 - [[Bongo Animals]] - Bongo with a shark and a dog
