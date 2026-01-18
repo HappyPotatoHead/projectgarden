@@ -5,7 +5,7 @@ tags: self-hosting, Nextcloud, docker
 description:
 ---
 
-![[Nextcloud_logo.jpg|250]]
+![[nextcloud_logo.jpg|250]]
 
 # What I Used
 
