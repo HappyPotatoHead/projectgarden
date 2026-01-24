@@ -11,8 +11,7 @@ description:
 *"It sounds really boring."* 
 It is. But hear me out.
 
-This is an ***offline* budget planner** that combines a semantic model with a machine learning model to help yo
-u understand and manage your money. Since it's offline, there's no data leak and everything is local. 
+This is an ***offline* budget planner** that combines a semantic model with a machine learning model to help you understand and manage your money. Since it's offline, there's no data leak and everything is local. 
 
 ## **Semantic Model**
 
