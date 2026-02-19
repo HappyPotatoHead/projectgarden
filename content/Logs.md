@@ -4,6 +4,11 @@ draft: false
 tags: 
 description:
 ---
+# 19th February 2026
+
+- [[Jane Doe]]
+- [[something about letting go]]
+
 # 16th February 2026
 
 - Minor life updates
@@ -34,13 +39,13 @@ description:
 
 # 12th October 2025
 
-- Updated [[100 Notes]]
+- Updated ~~[[100 Notes]]~~ [[Jane Doe]]
 	- Added notes
 # 29th September 2025
 
 *I've been really busy lately*
 
-- Added [[100 Notes]]
+- Added ~~[[100 Notes]]~~ [[Jane Doe]]
 
 # 9th August 2025
 
@@ -49,7 +54,7 @@ description:
 # 2nd August 2025
 
 - Overhauled index file
-- Changed the folder page of **What I Read**
+- Changed the index page of **What I Read**
 
 # 12th June 2025
 

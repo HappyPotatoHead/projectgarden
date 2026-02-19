@@ -1,5 +1,5 @@
 ---
-title: Twenty Something
+title: twenty something
 draft:
 tags:
 description:
@@ -16,8 +16,8 @@ description:
 >- [ ] View the Southern Lights
 >	- 22nd October 2030
 >- [ ] Trekking
->- [ ] Learn a New Language
->- [ ] Cooking
+>- [x] Learn a New Language
+>- [x] Cooking
 >- [ ] Gardening
 >- [ ] Migration
 
@@ -62,6 +62,7 @@ Date: 20th March 2028
 # View the Southern Lights
 
 ![[southern_lights.png|the southern lights]]
+
 *source: [travel and leisure asia](https://www.travelandleisureasia.com/my/travel-tips/trip-planning/all-about-southern-lights-the-counterpart-of-northern-lights)*
 
 It's only right I visit the other half **and sleep under the stars**.

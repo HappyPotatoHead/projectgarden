@@ -15,6 +15,7 @@ description:
 - Xiaomi Monitor A24i
 - Aula F75 Keyboard
 - Moondrop Space Travel
+- Creative Zen Hybrid GEN 2
 - Creative Pebble
 - 8BitDo Ultimate 2c
 - HUION HS64 
@@ -22,7 +23,7 @@ description:
 ### Accessories 
 
 - Random black deskmat
-- Random monitor stand
+- Random monitor stands
 
 ## On The Go
 
@@ -41,6 +42,7 @@ description:
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/)
 - [Docker](https://www.docker.com/)
+- [LazyVim](https://www.lazyvim.org/)
 
 ## Creative
 
