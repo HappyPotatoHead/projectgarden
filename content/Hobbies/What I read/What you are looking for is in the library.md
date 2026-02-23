@@ -41,9 +41,9 @@ This chapter follows Tomoka, a 21-year-old woman, working as a sales assistant, 
 
 Society is moving faster than ever; so much so that a lot of people are struggling to keep up. The quote by Leon C. Megginson, 
 
-_According to Darwin's Origin of Species, it is not the most intellectual of the species that survives; it is not the strongest that survives; but the species that survives is the one that is able best to adapt and adjust to the changing environment in which it finds itself._
+> _According to Darwin's Origin of Species, it is not the most intellectual of the species that survives; it is not the strongest that survives; but the species that survives is the one that is able best to adapt and adjust to the changing environment in which it finds itself._
 
-, is often spoken to warn or to justify the need to push people to their limits, but shouldn't there also be a limit as to how much we should push people? The youth, such as myself, often struggle with the past, the present, and the future. It also doesn't help if the person has an overthinking tendency. Often time, the thought that plagues most youths is whether it is all worth it because prospects have been bleak lately [^1][^2][^3][^4].  It also doesn't help that social paints places and success as this *haven* where one gets to do anything once they reached these impossible goals set by society. Such thought festers, leading a whole host of complications and issues;  whenever they pursue any forms of activities or ventures, they're not satisfied. 
+It is often spoken to warn or to justify the need to push people to their limits, but shouldn't there also be a limit as to how much we should push people? The youth, such as myself, often struggle with the past, the present, and the future. It also doesn't help if the person has an overthinking tendency. Often time, the thought that plagues most youths is whether it is all worth it because prospects have been bleak lately [^1][^2][^3][^4].  It also doesn't help that social paints places and success as this *haven* where one gets to do anything once they reached these impossible goals set by society. Such thought festers, leading a whole host of complications and issues;  whenever they pursue any forms of activities or ventures, they're not satisfied. 
 
 We seem to have forgotten that the meaning of each of our lives stem from ourselves, not the perception pushed upon us. The failure to teach the youths this has led to a pandemic of youths struggling to pursue anything, ultimately leading to impostor syndrome, misplaced egos, and dissatisfaction with life. At the start of the chapter, we can notice that Tomoka struggled with this; having no particular *money making life-skills* and thinking that she inherently couldn't make the effort. 
 
@@ -51,9 +51,15 @@ One day, she came across an advertisement advertising a computer class teaching 
 
 The book told a tale of two rats who were struggling to carry a giant egg back home, but eventually succeeded after countless attempts. This book (and this chapter) delivers a lesson of trying multiple things multiple times because eventually, you will see the light on the other end of the tunnel. You are only truly stuck when you decide to stop. Tomoka puts it perfectly at the end of the chapter, 
 
-_I think that I might be just entering the forest. I still don’t know what I want to do, or what I can do. What I do know is that there’s no need to panic, or do more than I can cope with right now. For the time being, I plan to simply get my life in order and learn some new skills, choosing from what’s available. I’ll prepare myself, like Guri and Gura gathering chestnuts in the forest.
-
-Because I never know when I might find my own giant egg._  
+> _I think that I might be just entering the forest._ 
+>
+>_I still don’t know what I want to do, or what I can do. What I do know is that there’s no need to panic, or do more than I can cope with right now._
+>
+>_For the time being, I plan to simply get my life in order and learn some new skills, choosing from what’s available._
+>
+>_I’ll prepare myself, like Guri and Gura gathering chestnuts in the forest._
+>
+_Because I never know when I might find my own giant egg._  
 
 ## Chapter 2 - False Dilemma 
 
@@ -73,14 +79,14 @@ We seem to have forgotten that we do not have to abandon one for the other; our 
 
 There is a beautiful passage in this chapter, 
 
-_Only ever a dream …’ She tilts her head to one side
-inquiringly. ‘Is that what you think? That it will only ever be a
-dream? As long as you continue to say the words “one day”,
-the dream is not over. Maybe it will simply remain a beautiful
-dream. It may never come true. But that is one way to live,
-in my opinion. The days go by more happily when you have
-something to dream about. It’s not always a bad thing to
-have a dream, with no plan for ever carrying it out.
+_Only ever a dream …’ She tilts her head to one side <br>
+inquiringly. ‘Is that what you think? That it will only ever be a <br>
+dream? As long as you continue to say the words “one day”, <br>
+the dream is not over. Maybe it will simply remain a beautiful <br>
+dream. It may never come true. But that is one way to live, <br>
+in my opinion. The days go by more happily when you have <br>
+something to dream about. It’s not always a bad thing to <br>
+have a dream, with no plan for ever carrying it out. <br>_
 
 There are real world studies that mirror this:
 1. https://psycnet.apa.org/record/1974-10497-001
@@ -103,14 +109,14 @@ She realised that a lot of things in her life could not be controlled, just as m
 
 A conversation between Nastumi and another character beautifully reflects this, 
 
-_Life is one revelation after another. Things don’t always go
-to plan, no matter what your circumstances. But the flip side
-is all the unexpected, wonderful things that you could never
-have imagined happening. Ultimately it’s all for the best that
-many things don’t turn out the way we hoped. Try not to
-think of upset plans or schedules as personal failure or bad
-luck. If you can do that, then you can change, in your own
-self and in your life overall._
+_Life is one revelation after another. Things don’t always go <br>
+to plan, no matter what your circumstances. But the flip side <br>
+is all the unexpected, wonderful things that you could never <br>
+have imagined happening. Ultimately it’s all for the best that <br>
+many things don’t turn out the way we hoped. Try not to <br>
+think of upset plans or schedules as personal failure or bad <br>
+luck. If you can do that, then you can change, in your own <br>
+self and in your life overall. <br>_
 
 ## Chapter 4 - Finding Our Shell
 
