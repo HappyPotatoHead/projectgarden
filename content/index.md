@@ -40,9 +40,15 @@ I’m a final-year CS undergraduate exploring machine learning, deep learning, a
 >							* <em>Tiny steps, big results </em>
 >```
 
+<Carousel>
+<img src = "images/recent_happenings/car_on_car.jpeg">
+<img src = "images/recent_happenings/lizard.jpeg">
+<img src = "images/recent_happenings/doggo.jpeg">
+<img src = "images/recent_happenings/setup_work.jpeg">
+<img src = "images/recent_happenings/setup.jpeg">
+</Carousel>
 
-![[lightning.jpg|Can't be an index page without an image]]
-*psst! you can click on me!*
+*- Recent happenings*
 
 *View changes at: [[Logs]]*
 ### Interesting pages that you should check out!

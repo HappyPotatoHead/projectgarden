@@ -4,7 +4,7 @@ draft: false
 tags:
 description: 100 love letters
 ---
-100 unsent love letters
+100 unsent letters
 
 1. [hello: goodbye](https://janedoe.surge.sh/posts/hello_goodbye.html)
 2. [northern lights](https://janedoe.surge.sh/posts/northern_light.html)

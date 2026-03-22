@@ -6,4 +6,4 @@ description:
 ---
 there is something about letting go
 
-[the only way to break the loop is to simply stop](https://lettingo.surge.sh)
+[the only way to break the loop is to simply stop.](https://lettingo.surge.sh)
