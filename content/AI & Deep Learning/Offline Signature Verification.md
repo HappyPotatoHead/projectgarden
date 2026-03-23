@@ -494,9 +494,9 @@ Fortunately, this is not consistent across every signature.
 
 | Signer 52  | Signer 21  |
 | - | - |
-| ![[signer_52_tp.png]] |![[signer_21_tp.png]]|
+| ![[signer_52_tp.png]] |![[signer_19.png]]|
 
-## Similar and Dissimilar
+<!-- ## Similar and Dissimilar
 
 By calculating, visualising, and comparing the heatmap of a reference signature to an input signature, I can deduce a conjecture of how the model differentiates a forged signature from a genuine one. 
 
@@ -515,7 +515,7 @@ However, there also seems to be a wide margin of tolerance rather than hard rule
 | --------------------- | -------------------- |
 | ![[signer_52_fp.png]] | ![[signer_8_fn.png]] |
 
-I believe it is very likely that the feature extraction played the biggest role, hence saving these cases. 
+I believe it is very likely that the feature extraction played the biggest role, hence saving these cases.  -->
 
 # Implementation and Deployment
 
