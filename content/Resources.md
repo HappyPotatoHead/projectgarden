@@ -11,12 +11,13 @@ description:
 | --------------------------- | ------------------------------------------------------ | ----------------------------------------- |
 | Coding Interview Univeristy | https://github.com/jwasham/coding-interview-university | Resources to learn DSA                    |
 | The Algorithms              | https://the-algorithms.com/                            | Open-source collection of algorithm codes |
+| NeetCode 150                | https://neetcode.io/roadmap                            | Build your LeetCode foundation            |
 
 # Data Science
 
-| Name                    | Link                    | Description  |
-| ----------------------- | ----------------------- | ------------ |
-| R for Data Science (2e) | https://r4ds.hadley.nz/ | A holy grail |
+| Name                    | Link                    | Description                   |
+| ----------------------- | ----------------------- | ----------------------------- |
+| R for Data Science (2e) | https://r4ds.hadley.nz/ | A holy grail for data science |
 
 # Front End Web Development
 

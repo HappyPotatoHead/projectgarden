@@ -29,6 +29,10 @@ I’m a final-year CS undergraduate exploring machine learning, deep learning, a
 - [Books, articles, curated notes](<Hobbies/What I read/index.md>)
 - [[Project Ideas|Project Ideas / Brainstorming]]
 
+#### Resources
+
+- [[Resources]]
+
 > [!QUOTE] It's fun to click these
 >
 > ```telescopic
