@@ -1,9 +1,17 @@
 ---
 title: Logs
 draft: false
-tags: 
+tags:
 description:
 ---
+
+# 20th April 2026
+
+- Added more resources
+- [[Contains Duplicate]]
+- [[Name Prefixes]]
+- [[Valid Anagram]]
+
 # 19th February 2026
 
 - [[Jane Doe]]
@@ -17,7 +25,7 @@ description:
 
 - Updated index page
 - To-do (Eventually):
-	- *~~I really should fill [[QS Ranking Analysis]]~~* ~~I am definitely not filling up [[QS Ranking Analysis]]~~ One of these days
+  - _~~I really should fill [[QS Ranking Analysis]]~~_ ~~I am definitely not filling up [[QS Ranking Analysis]]~~ One of these days
 
 # 4th January 2026
 
@@ -31,19 +39,20 @@ description:
 # 20th October 2025
 
 - Added self-hosting pages! Check them out!
-	- [[Self-Hosting]]
-	- [[NextCloud]]
-	- [[Tailscale]]
-	- [[Navidrome]]
-	- [[Reverse Proxy with Nginx]]
+  - [[Self-Hosting]]
+  - [[NextCloud]]
+  - [[Tailscale]]
+  - [[Navidrome]]
+  - [[Reverse Proxy with Nginx]]
 
 # 12th October 2025
 
 - Updated ~~[[100 Notes]]~~ [[Jane Doe]]
-	- Added notes
+  - Added notes
+
 # 29th September 2025
 
-*I've been really busy lately*
+_I've been really busy lately_
 
 - Added ~~[[100 Notes]]~~ [[Jane Doe]]
 
@@ -51,6 +60,7 @@ description:
 
 - Added [[Imposter Syndrome]]
 - Added [[Project Ideas]]
+
 # 2nd August 2025
 
 - Overhauled index file
@@ -67,26 +77,32 @@ description:
 # 11th June 2025
 
 - Updated [[Offline Signature Verification]]
+
 # 10th June 2025
 
 - Uploaded [updated model notebook](https://github.com/HappyPotatoHead/Signature-Verification-Model)
+
 # 1st June 2025
 
 - Added [[Ricing Linux]]
+
 # 14th May 2025
 
 - Modified the index page
 - Removed social science contents
+
 # 10th May 2025
 
 - Added [[Offline Signature Verification]] GitHub repository
+
 # 25th April 2025
 
 - Added [[Offline Signature Verification]]
+
 # 19th April 2025
 
 - Made table of content collapsible on mobile
-	- Idea from [here!](https://quartz.eilleeenz.com/Quartz-customization-log#making-a-second-table-of-contents-component)
+  - Idea from [here!](https://quartz.eilleeenz.com/Quartz-customization-log#making-a-second-table-of-contents-component)
 - Added [[The Anchor Bias, Hasty Generalisation, & Loss Aversion]]
 
 # 15th April 2025

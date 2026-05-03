@@ -5,6 +5,7 @@ tags:
   - resources
 description:
 ---
+
 # Data Structure and Algorithm
 
 | Name                        | Link                                                   | Description                               |
@@ -44,10 +45,10 @@ description:
 
 ## Python
 
-| Name                       | Link                                        | Description                                      |
-| -------------------------- | ------------------------------------------- | ------------------------------------------------ |
-| Brocode                    | https://youtu.be/XKHEtdqhLK8                | Introductory course                              |
-| Github  Python Study Guide | https://github.com/huangsam/ultimate-python | Websites, books, and videos on everything python |
+| Name                      | Link                                        | Description                                      |
+| ------------------------- | ------------------------------------------- | ------------------------------------------------ |
+| Brocode                   | https://youtu.be/XKHEtdqhLK8                | Introductory course                              |
+| Github Python Study Guide | https://github.com/huangsam/ultimate-python | Websites, books, and videos on everything python |
 
 # Game Development
 
@@ -66,12 +67,11 @@ description:
 
 # Freebie
 
-| Name                                                            | Link                                                                          | Description                            |
-| --------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------------- |
+| Name         | Link                    | Description                |
+| ------------ | ----------------------- | -------------------------- |
 | Free for dev | https://free-for.dev/#/ | Free things for broke devs |
 
-
-# Tools (Free)
+# Tools
 
 ## Converters
 
@@ -107,9 +107,3 @@ description:
 | --------- | ------------------------- | ------------------------ |
 | Handbrake | https://handbrake.fr/     | Open-source transcoder   |
 | Openshot  | https://www.openshot.org/ | Open-source video editor |
-
-
-
-
-
-
