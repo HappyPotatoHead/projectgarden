@@ -6,6 +6,18 @@ tags:
 description:
 ---
 
+# Self-hosting
+
+> My new love
+
+## Network and Connectivity
+
+| Name                        | Link                                                   | Description                               |
+| --------------------------- | ------------------------------------------------------ | ----------------------------------------- |
+| Coding Interview Univeristy | https://github.com/jwasham/coding-interview-university | Resources to learn DSA                    |
+| The Algorithms              | https://the-algorithms.com/                            | Open-source collection of algorithm codes |
+| NeetCode 150                | https://neetcode.io/roadmap                            | Build your LeetCode foundation            |
+
 # Data Structure and Algorithm
 
 | Name                        | Link                                                   | Description                               |
