@@ -12,11 +12,11 @@ description:
 
 ## Network and Connectivity
 
-| Name                        | Link                                                   | Description                               |
-| --------------------------- | ------------------------------------------------------ | ----------------------------------------- |
-| Coding Interview Univeristy | https://github.com/jwasham/coding-interview-university | Resources to learn DSA                    |
-| The Algorithms              | https://the-algorithms.com/                            | Open-source collection of algorithm codes |
-| NeetCode 150                | https://neetcode.io/roadmap                            | Build your LeetCode foundation            |
+| Name          | Link                            | Description                           |
+| ------------- | ------------------------------- | ------------------------------------- |
+| Tailscale VPN | https://tailscale.com/          | Built on top of wireguard             |
+| NextCloud     | https://docs.nextcloud.com/     | Self-host your own google drive       |
+| Navidrome     | https://www.navidrome.org/docs/ | Host your own music streaming service |
 
 # Data Structure and Algorithm
 

@@ -10,6 +10,8 @@ tags:
 description:
 ---
 
+> 01/06/2026 -> this is outdated, I will update it soon!
+
 > I might have a problem
 
 # Hyprland
@@ -27,11 +29,12 @@ description:
 ![[chasing_clout.png]]
 
 # How it's made
+
 - Distro: i use arch btw
-- WM: [hyprland](https://hypr.land/) 
+- WM: [hyprland](https://hypr.land/)
 - Music Visualiser: [cava](https://github.com/karlstav/cava)
 - Bar: [waybar](github.com/Alexays/Waybar)
-- Wallpaper: [i got it here](https://wallhaven.cc/w/p8zo6m) 
+- Wallpaper: [i got it here](https://wallhaven.cc/w/p8zo6m)
 
 # i3WM
 
@@ -49,13 +52,12 @@ Looking at this hurt hurt my eyes.
 ![[fern_neo.png]]
 
 # How it's made
+
 - Distro: Linux Mint
 - WM: i3wm
 - Compositor: picom
 - Music Visualiser: [cava](https://github.com/karlstav/cava)
 - Clock: [tty-clock](https://github.com/xorg62/tty-clock)
 - Bar: [polybar](https://github.com/polybar/polybar)
-- Wallpaper: [Fern](https://x.com/inoitoh/status/1716292255437459877) by [inoitoh](https://x.com/inoitoh) 
-- GTK Theme:  [Orchis Purple Dark](https://github.com/vinceliuice/Orchis-theme)
-
-
+- Wallpaper: [Fern](https://x.com/inoitoh/status/1716292255437459877) by [inoitoh](https://x.com/inoitoh)
+- GTK Theme: [Orchis Purple Dark](https://github.com/vinceliuice/Orchis-theme)
