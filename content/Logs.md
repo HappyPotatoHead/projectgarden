@@ -2,8 +2,18 @@
 title: Logs
 draft: false
 tags:
-description:
+description: Tracking changes made to the site
 ---
+
+# 02/06/2026
+
+- New:
+  - [[Cross-Dataset Generalisation]]
+  - Sources in [[Resources|resources]]
+  - GitHub repository link in [[QS Ranking Analysis]]
+- Changes:
+  - Specifications and tools in [[What I Use]]
+  - [[index]]
 
 # 20th April 2026
 

@@ -1,31 +1,36 @@
 ---
 title: What I Use
 draft: false
-tags: 
+tags:
 description:
 ---
 
 # Workstation
 
-## Desktop
+## Specifications
 
-### Peripherals
+- Processors: i7-14700K (_You absolutely do not need this_)
+- Memory: 32 GiB RAM
+- Graphics Processor 1: GeForce RTX 4070 SUPER
+- Graphics Processor 2: Integrated GPU
+- Motherboard: Gigabyte Z790 UD AX
 
-- Samsung 24" S36C Curved Monitor
+## Peripherals
+
 - Xiaomi Monitor A24i
 - Aula F75 Keyboard
 - Moondrop Space Travel
 - Creative Zen Hybrid GEN 2
 - Creative Pebble
 - 8BitDo Ultimate 2c
-- HUION HS64 
+- HUION HS64
 
-### Accessories 
+## Accessories
 
 - Random black deskmat
 - Random monitor stands
 
-## On The Go
+# On The Go
 
 - Redmi Pad Pro
 - Dell Latitude 3410
@@ -35,14 +40,15 @@ description:
 ## Note Taking
 
 - [Obsidian](https://obsidian.md/)
-- [Microsoft's OneNote](https://www.onenote.com/) 
+- [Microsoft's OneNote](https://www.onenote.com/)
 
 ## Programming
 
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/)
+- [Zed](https://zed.dev/)
+- [nvim](https://neovim.io/)
 - [Docker](https://www.docker.com/)
-- [LazyVim](https://www.lazyvim.org/)
+- [kickstarter](https://github.com/nvim-lua/kickstart.nvim)
 
 ## Creative
 
@@ -52,13 +58,8 @@ description:
 - [Gimp](https://www.gimp.org/)
 - [InkScape](https://inkscape.org/)
 
-### Video editing
+### Video and Audio editing
 
 - [ShotCut](https://www.shotcut.org/)
 - [OBS](https://obsproject.com/)
-
-### Audio editing
-
 - [Audacity](https://www.audacityteam.org/)
-
-
