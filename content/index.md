@@ -5,7 +5,7 @@ tags:
 description:
 ---
 
-> I'm unemployed
+> Currently between adventures
 
 <span style="font-size:1.25rem">Welcome! I am Jimmy Ding</span>
 
@@ -25,6 +25,8 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 
 ### Selected Work
 
+> the big trees
+
 - [[Cross-Dataset Generalisation]] - DL research, data augmentation, cross-dataset generalisation, PyTorch ✨✨
 - [[Offline Signature Verification]] - DL research, Deep metric learning, PyTorch ✨✨
 - [[Cardiovascular Risk Analysis]] - ML pipeline, feature engineering, evaluation
@@ -32,7 +34,7 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 
 ### Fun && Artistic Projects
 
-> Showing off my artistic flair
+> small, strange flowers and mushrooms
 
 - [[Bongo Animals]] - Bongo with a shark and a dog
 - [[something about letting go]] - there's something about letting go
@@ -40,16 +42,17 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 
 ### Side Quests
 
+> small trails that we can follow
+
 - [[Self-Hosting]] - Exploring Linux, Docker, home servers, data ownership
 - [[How To - Set Up Arch Linux|How To: Set Up Arch Linux]]
 
-### Other Fun things!
+### Notes and Resources
+
+> seeds, clippings, and other things worth sharing
 
 - [[Hobbies/What I read/index|Books, articles, curated notes]]
 - [[Project Ideas|Project Ideas / Brainstorming]]
-
-### Resources
-
 - [[Resources]]
 
 > [!QUOTE] Click me!
