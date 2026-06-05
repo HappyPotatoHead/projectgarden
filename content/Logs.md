@@ -5,6 +5,12 @@ tags:
 description: Tracking changes made to the site
 ---
 
+# 05/06/2026
+
+- New:
+  - Added Fedora KDE rice in [[Ricing Linux]]
+  - Updated [Arch Linux dot files](https://github.com/HappyPotatoHead/dotfiles)
+
 # 02/06/2026
 
 - New:

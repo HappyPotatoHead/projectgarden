@@ -10,9 +10,15 @@ tags:
 description:
 ---
 
-> 01/06/2026 -> this is outdated, I will update it soon!
+# Fedora KDE
 
-> I might have a problem
+I'm actually driving Fedora KDE on my main desktop now! It's not as _riceable_ as _hyprland_, but I still manage it to make customise it to my liking.
+
+I've also updated the [dotfiles](https://github.com/HappyPotatoHead/dotfiles) used on my Arch laptop. Check it out!
+
+![[desktop.png]]
+
+![[fedora_nvim.png]]
 
 # Hyprland
 
