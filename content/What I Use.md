@@ -1,8 +1,9 @@
 ---
-title: What I Use
+id: What I Use
+aliases: []
+tags: []
 draft: false
-tags:
-description:
+title: What I Use
 ---
 
 # Workstation
@@ -24,6 +25,7 @@ description:
 - Creative Pebble
 - 8BitDo Ultimate 2c
 - HUION HS64
+- Ugreen Vertical Mouse (I had a BOW one, but alas, it was too big for my hand)
 
 ## Accessories
 
