@@ -1,9 +1,16 @@
 ---
-title: Logs
-draft: false
-tags:
+id: Logs
+aliases: []
+tags: []
 description: Tracking changes made to the site
+draft: false
+title: Logs
 ---
+
+# 17/06/2026
+
+- New:
+  - [mediadl](https://github.com/HappyPotatoHead/mediadl)
 
 # 05/06/2026
 
