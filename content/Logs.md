@@ -7,6 +7,12 @@ draft: false
 title: Logs
 ---
 
+# 18/06/2026
+
+- Changes:
+  - Updated [[Offline Signature Verification]]
+  - Made [[index|updates]] less intrusive]]
+
 # 17/06/2026
 
 - New:

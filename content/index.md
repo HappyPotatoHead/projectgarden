@@ -18,7 +18,7 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 
 > If you want the projects -> [pinned](https://pinned.surge.sh)
 
-> [!announcement] Updates
+> [!announcement]- Updates
 > I am currently learning [rust](https://rust-lang.org)!
 >
 > Check out what I made while learning rust!
@@ -33,10 +33,10 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 
 > the big trees
 
-- [[Cross-Dataset Generalisation]] - DL research, data augmentation, cross-dataset generalisation, PyTorch ✨✨
 - [[Offline Signature Verification]] - DL research, Deep metric learning, PyTorch ✨✨
+- [[Cross-Dataset Generalisation]] - DL research, data augmentation, cross-dataset generalisation, PyTorch ✨✨
 - [mediadl](https://github.com/HappyPotatoHead/mediadl) - Streamline YouTube audio archiving ✨✨
-  - [audio-dl](https://github.com/HappyPotatoHead/audio-dl) is deprecated
+  - [audio-dl](https://github.com/HappyPotatoHead/audio-dl) is now a public archive
 - [[Cardiovascular Risk Analysis]] - ML pipeline, feature engineering, evaluation
 
 ### Fun && Artistic Projects
@@ -74,6 +74,9 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 > 					* <em>Set me like a seal upon thy heart, love is as strong as death </em>
 > 						* <em>Do what you can, with what you have, where you are. </em><br><br> - Theodore Roosevelt
 > 							* <em>Tiny steps, big results </em>
+>                               * <em>As long as you continue to say the words <b>one day</b>, the dream is not over</em>
+>                                   * <em>It's not alawys a bad thing to have a dream, with no plan for ever carrying it out</em>
+>
 > ```
 
 <span style='font-size: 1.5em; font-weight:1000;'>Recent Happenings</span>
@@ -87,3 +90,4 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 Since you have reached this far, check out her channel!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VHS8VT6ycYI" title="Lessons From My 20s" frameborder="50" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" style="border-color: #4385BE" allowfullscreen></iframe>
+```
