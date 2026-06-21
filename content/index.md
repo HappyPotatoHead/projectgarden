@@ -90,4 +90,3 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 Since you have reached this far, check out her channel!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VHS8VT6ycYI" title="Lessons From My 20s" frameborder="50" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" style="border-color: #4385BE" allowfullscreen></iframe>
-```
