@@ -13,4 +13,3 @@ export type { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps 
 
 export { Head, Spacer, DesktopOnly, MobileOnly, NotFound, Flex, ConditionalRender }
 
-export { default as SidebarImage } from "./SidebarImage"

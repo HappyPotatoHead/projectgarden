@@ -2,28 +2,25 @@
 id: Offline Signature Verification
 aliases: []
 tags:
-- deep
-- metric
-- learning,
+- deep-metric-learning,
 - cnn,
-- loss
-- function,
+- loss-function,
 - python
 draft: false
 title: Offline Signature Verification
 ---
 
-> [Demo site](https://sct-signature-demo.streamlit.app/)
->
-> [Source Code](https://github.com/HappyPotatoHead/signature-verification-sct-plus)
->
-> _[[Offline Signature Verification#Results|Skip to Result]]_
->
+<div class="page-links">
+    <a href="https://sct-signature-demo.streamlit.app/" target="_blank" rel="noopener noreferrer" style="color:#92BFDB"> demo site </a>
+    <a href = "https://github.com/HappyPotatoHead/signature-verification-sct-plus" target="_blank" rel="noopener noreferrer"style="color:#92BFDB"> source code </a>
+</div>
+
 > This project has come to an end as I pursue other endeavours - 18/06/2026
 >
 > Maybe I'll return and expand upon on this in the future.
 >
 > My university publishes students' fyp in its institutional repository, I will link it when it's added
+> _[[Offline Signature Verification#Results|Skip to Result]]_
 
 # Project Overview
 

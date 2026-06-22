@@ -38,7 +38,7 @@ configuration:
         darkgray: "#cecdc3"
         dark: "#cecdc3"
         secondary: "#4385be"
-        tertiary: "#205ea6"
+        tertiary: "#92BFDB"
         highlight: "#cecdc3"
         textHighlight: "#878580"
 plugins:
@@ -197,6 +197,7 @@ plugins:
     layout:
       position: beforeBody
       priority: 20
+      condition: not-index
   - source: github:quartz-community/tag-list
     enabled: true
     layout:
@@ -220,7 +221,7 @@ plugins:
       priority: 35
       group: toolbar
   - source: github:quartz-community/breadcrumbs
-    enabled: true
+    enabled: false
     layout:
       position: beforeBody
       priority: 5
