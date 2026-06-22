@@ -8,7 +8,7 @@ configuration:
     provider: goatcounter
     websiteId: 9719
   locale: en-US
-  baseUrl: happypotatohead.github.io/projectgarden
+  baseUrl: jimmyding.dev
   ignorePatterns:
     - private
     - templates
