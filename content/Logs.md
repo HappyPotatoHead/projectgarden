@@ -7,11 +7,18 @@ draft: false
 title: Logs
 ---
 
+# 21/06/2026
+
+- Changes:
+  - Changes the notes surrounding LeetCode
+    - They will focus more on patterns and templates.
+      - [[Array and Hashing.md]]
+
 # 18/06/2026
 
 - Changes:
   - Updated [[Offline Signature Verification]]
-  - Made [[index|updates]] less intrusive]]
+  - Made [[index|updates]] less intrusive
 
 # 17/06/2026
 
@@ -54,7 +61,7 @@ title: Logs
 
 - Updated index page
 - To-do (Eventually):
-  - _~~I really should fill [[QS Ranking Analysis]]~~_ ~~I am definitely not filling up [[QS Ranking Analysis]]~~ One of these days
+  - _~~I really should fill [[QS Ranking Analysis]]~~_ <br> ~~I am definitely not filling up [[QS Ranking Analysis]]~~ One of these days
 
 # 4th January 2026
 
