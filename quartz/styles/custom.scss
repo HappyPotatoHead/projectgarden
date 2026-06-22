@@ -52,10 +52,44 @@ article a.external {
   color: var(--secondary);
 }
 
-article a.external .external-icon,
-article a.external svg,
-article a.external::after {
-  display: none;
+/* Keep this specific blockquote/social row usable */
+blockquote a.external {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  background: transparent;
+  padding: 0;
 }
 
+/* Show your actual social SVGs */
+blockquote a.external > svg:not(.external-icon) {
+  display: inline-block !important;
+  width: 1.25rem;
+  height: 1.25rem;
+  max-width: none;
+  max-height: none;
+  vertical-align: middle;
+}
 
+/* Hide only Quartz's tiny external-link arrow icon */
+blockquote a.external .external-icon {
+  display: none !important;
+}
+
+.page-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+.page-footer > * {
+  min-width: 0;
+}
+
+@media all and (max-width: 900px) {
+  .page-footer{
+    grid-template-columns: 1fr;
+  }
+}

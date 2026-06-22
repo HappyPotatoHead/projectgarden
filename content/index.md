@@ -6,6 +6,8 @@ draft: false
 title: Where Ideas Grow
 ---
 
+<!-- <img src="/images/meh.jpg" class="index-image" alt="Digital garden illustration"> -->
+
 > im unemployed, pls help
 
 <span style="font-size:1.25rem">Welcome!</span>

@@ -170,8 +170,9 @@ plugins:
   - source: github:quartz-community/graph
     enabled: true
     layout:
-      position: right
+      position: afterBody
       priority: 10
+      condition: not-index
   - source: github:quartz-community/search
     enabled: true
     layout:
@@ -183,8 +184,9 @@ plugins:
   - source: github:quartz-community/backlinks
     enabled: true
     layout:
-      position: right
-      priority: 50
+      position: afterBody
+      priority: 20
+      condition: not-index
   - source: github:quartz-community/article-title
     enabled: true
     layout:
@@ -232,11 +234,10 @@ plugins:
       position: afterBody
       priority: 10
   - source: github:quartz-community/footer
-    enabled: true
+    enabled: false
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        GitHub: https://github.com/HappyPotatoHead
   - source: github:quartz-community/recent-notes
     enabled: false
   - source: github:quartz-community/spacer
@@ -268,13 +269,13 @@ plugins:
       position: beforeBody
       priority: 15
       display: all
-  # - source:
-  #     name: quartz-themes
-  #     repo: github:saberzero1/quartz-themes
-  #     subdir: plugin
-  #   enabled: true
-  #   options:
-  #     theme: default
+  - source:
+      name: quartz-themes
+      repo: github:saberzero1/quartz-themes
+      subdir: plugin
+    enabled: false
+    options:
+      theme: default
   - source: github:quartz-community/obsidian-plugin-excalidraw
     enabled: true
     options:
