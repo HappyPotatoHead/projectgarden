@@ -75,6 +75,9 @@ blockquote a.external > svg:not(.external-icon) {
 blockquote a.external .external-icon{
   display: none !important;
 }
+a.external .external-icon{
+  display: none !important;
+}
 
 .page-footer {
   display: grid;
@@ -176,7 +179,7 @@ body[data-slug=""] .right.sidebar {
 // }
 //
 .page-links a {
-  color: var(--tertiary);
+  color: var(--tertiary) !important;
   background: transparent;
   padding: 0;
   text-decoration: none;

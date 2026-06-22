@@ -7,9 +7,9 @@ title: Where Ideas Grow
 ---
 
 <div class="page-links">
-    <a href="https://www.linkedin.com/in/jimmy-ding/" target="_blank" rel="noopener noreferrer" style="color:#92BFDB"> linkedin </a>
-    <a href = "https://github.com/HappyPotatoHead" target="_blank" rel="noopener noreferrer"style="color:#92BFDB"> github </a>
-    <a href = "https://www.instagram.com/jmmyd_/" target="_blank" rel="noopener noreferrer"style="color:#92BFDB">instagram</a>
+    <a href="https://www.linkedin.com/in/jimmy-ding/" target="_blank" rel="noopener noreferrer"> linkedin </a>
+    <a href = "https://github.com/HappyPotatoHead" target="_blank" rel="noopener noreferrer"> github </a>
+    <a href = "https://www.instagram.com/jmmyd_/" target="_blank" rel="noopener noreferrer">instagram</a>
 </div>
 
 <!-- <a href="https://www.linkedin.com/in/jimmy-ding/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin-icon lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a> -->
