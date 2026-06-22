@@ -138,6 +138,13 @@ body[data-slug=""] .right.sidebar {
   }
 }
 
+@media all and (max-width: 900px) {
+  body[data-slug="index"] .right.sidebar::after,
+  body[data-slug=""] .right.sidebar::after {
+    display: none;
+  }
+}
+
 .page-links {
   display: flex;
   flex-wrap: wrap;
