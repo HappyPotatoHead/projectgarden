@@ -1,1 +1,1 @@
-export {}
+export { TelescopicText } from './_telescopic'
