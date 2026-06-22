@@ -1,17 +1,11 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
 .callout {
-
     --callout-icon-history: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWhpc3RvcnktaWNvbiBsdWNpZGUtaGlzdG9yeSI+PHBhdGggZD0iTTMgMTJhOSA5IDAgMSAwIDktOSA5Ljc1IDkuNzUgMCAwIDAtNi43NCAyLjc0TDMgOCIvPjxwYXRoIGQ9Ik0zIDN2NWg1Ii8+PHBhdGggZD0iTTEyIDd2NWw0IDIiLz48L3N2Zz4=");
     --callout-icon-book-a: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path></svg>');
     --callout-icon-thumbs-up: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXRodW1icy11cC1pY29uIGx1Y2lkZS10aHVtYnMtdXAiPjxwYXRoIGQ9Ik03IDEwdjEyIi8+PHBhdGggZD0iTTE1IDUuODggMTQgMTBoNS44M2EyIDIgMCAwIDEgMS45MiAyLjU2bC0yLjMzIDhBMiAyIDAgMCAxIDE3LjUgMjJINGEyIDIgMCAwIDEtMi0ydi04YTIgMiAwIDAgMSAyLTJoMi43NmEyIDIgMCAwIDAgMS43OS0xLjExTDEyIDJhMy4xMyAzLjEzIDAgMCAxIDMgMy44OFoiLz48L3N2Zz4=');
     --callout-icon-megaphone: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLW1lZ2FwaG9uZS1pY29uIGx1Y2lkZS1tZWdhcGhvbmUiPjxwYXRoIGQ9Im0zIDExIDE4LTV2MTJMMyAxNHYtM3oiLz48cGF0aCBkPSJNMTEuNiAxNi44YTMgMyAwIDEgMS01LjgtMS42Ii8+PC9zdmc+');
     --callout-icon-leaf: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWxlYWYtaWNvbiBsdWNpZGUtbGVhZiI+PHBhdGggZD0iTTExIDIwQTcgNyAwIDAgMSA5LjggNi4xQzE1LjUgNSAxNyA0LjQ4IDE5IDJjMSAyIDIgNC4xOCAyIDggMCA1LjUtNC43OCAxMC0xMCAxMFoiLz48cGF0aCBkPSJNMiAyMWMwLTMgMS44NS01LjM2IDUuMDgtNkM5LjUgMTQuNTIgMTIgMTMgMTMgMTIiLz48L3N2Zz4=");
-
-    &[data-callout] {
-        --bg:none;
-    }
 
     &[data-callout="history"] {
         --color: rgb(190, 146, 7); 
@@ -21,29 +15,41 @@
 
     &[data-callout="definition"] {
         --color: #50C878;
-        --border: #62ad7b;
+        --border: #62ad7b44;
+        --bg: #62ad7b10;
         --callout-icon: var(--callout-icon-book-a);
     }
 
     &[data-callout="practice"] {
         --color: #076500;
-        --border: #076500;
+        --border: #07650044;
+        --bg: #07650010;
         --callout-icon: var(--callout-icon-thumbs-up);
     }
 
     &[data-callout="announcement"] {
         --color: #FF4500;
-        --border: #FF4500;
+        --border: #FF450044;
         --callout-icon: var(--callout-icon-megaphone);
+        --bg: #FF450010;
     }
 
     &[data-callout="update"] {
-        --color: rgb(118, 141, 33);
-        --border: rgb(118, 141, 33);
+        --color: #768D21;
+        --border: #768D2144;
+        --bg: #768D2110;
         --callout-icon: var(--callout-icon-leaf);
-    }
-    
+    } 
 }
+
+:root[saved-theme="dark"] {
+  .callout {
+    &[data-callout] {
+      --bg: none;
+    }
+  }
+}
+
 article a.internal,
 article a.external {
   background-color: transparent;
@@ -52,7 +58,6 @@ article a.external {
   color: var(--secondary);
 }
 
-/* Keep this specific blockquote/social row usable */
 blockquote a.external {
   display: inline-flex;
   align-items: center;
@@ -61,7 +66,6 @@ blockquote a.external {
   padding: 0;
 }
 
-/* Show your actual social SVGs */
 blockquote a.external > svg:not(.external-icon) {
   display: inline-block !important;
   width: 1.25rem;
@@ -71,7 +75,6 @@ blockquote a.external > svg:not(.external-icon) {
   vertical-align: middle;
 }
 
-/* Hide only Quartz's tiny external-link arrow icon */
 blockquote a.external .external-icon{
   display: none !important;
 }
@@ -97,7 +100,6 @@ a.external .external-icon{
   }
 }
 
-/* Homepage sidebar image */
 body[data-slug="index"] .right.sidebar::before,
 body[data-slug=""] .right.sidebar::before {
   content: "";
@@ -110,11 +112,12 @@ body[data-slug=""] .right.sidebar::before {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 body[data-slug="index"] .right.sidebar::after,
 body[data-slug=""] .right.sidebar::after {
-  content: "welcome";
+  content: "🐶";
   display: block;
   max-width: 12rem;
   margin: 0;
@@ -124,7 +127,6 @@ body[data-slug=""] .right.sidebar::after {
   color: var(--darkgray);
 }
 
-/* Make the homepage right sidebar scroll with the page */
 body[data-slug="index"] .right.sidebar,
 body[data-slug=""] .right.sidebar {
   position: static !important;
@@ -167,31 +169,16 @@ body[data-slug=""] .right.sidebar {
   display: none !important;
 }
 
-// .page-links {
-//   display: flex;
-//   flex-wrap: wrap;
-//   align-items: center;
-//   gap: 0.35rem;
-//   margin-top: -0.25rem;
-//   margin-bottom: 1.5rem;
-//   font-size: 0.9rem;
-//   color: var(--gray);
-// }
-//
 .page-links a {
   color: var(--tertiary) !important;
   background: transparent;
   padding: 0;
   text-decoration: none;
 }
-//
+
 .page-links a:hover {
   text-decoration: underline;
 }
-//
-// .page-links span {
-//   color: var(--gray);
-// }
 
 .content-meta{
   margin-bottom: 0;
@@ -199,12 +186,32 @@ body[data-slug=""] .right.sidebar {
 
 .tags {
   margin-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  align-items: center;
+  padding: 0;
+  list-style: none;
 }
 
 .tags li {
   font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
 }
+
 .tags li a {
-  background-color: transparent;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.tags li:not(:last-child)::after {
+  content: "//";
+  color: var(--tertiary);
+  margin: 0 0.35rem;
+  font-size: 0.9rem;
 }
 

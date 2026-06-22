@@ -5,8 +5,7 @@ tags:
 - arrays
 - hashmaps
 - leetcode
-date created: "2026-04-20"
-date modified: "2026-04-20"
+created: 20 June 2026
 draft: false
 title: Array and Hashing
 ---
@@ -26,7 +25,6 @@ Anything that involves _repetition_, _keeping track_, _counts_, _copying_, gener
 Checking for duplicates
 
 ```py
-
 hashmaps = set()
 
 for num in nums:
@@ -34,14 +32,12 @@ for num in nums:
         return True
     hashmaps.add(num)
 
-
 return False
 ```
 
 You can modify the code above to keep track of the frequency of each element
 
 ```py
-
 hashmap = {}
 for num in nums:
     if num in hashmaps:

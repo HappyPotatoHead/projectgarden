@@ -4,6 +4,7 @@ aliases: []
 tags:
 - machine_learning
 - data_science
+created: 4 June 2026
 draft: false
 title: PIMA Diabetes Analysis
 ---

@@ -6,10 +6,12 @@ draft: false
 title: Where Ideas Grow
 ---
 
-<div class="page-links">
-    <a href="https://www.linkedin.com/in/jimmy-ding/" target="_blank" rel="noopener noreferrer"> linkedin </a>
+<div class = "page-links" >
+    <a href = "https://www.linkedin.com/in/jimmy-ding/" target="_blank" rel="noopener noreferrer"> linkedin </a>
     <a href = "https://github.com/HappyPotatoHead" target="_blank" rel="noopener noreferrer"> github </a>
     <a href = "https://www.instagram.com/jmmyd_/" target="_blank" rel="noopener noreferrer">instagram</a>
+    <a href = "https://www.instagram.com/jmmyd_/" target="_blank" rel="noopener noreferrer">instagram</a>
+    <a href = "mailto:jimmydingjk@gmail.com" >gmail</a>
 </div>
 
 <!-- <a href="https://www.linkedin.com/in/jimmy-ding/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin-icon lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a> -->
@@ -28,16 +30,13 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 
 > [!announcement]- Updates
 > I am currently learning [rust](https://rust-lang.org)!
->
 > Check out what I made while learning rust!
->
 > [mediadl - a rust-based yt-dlp wrapper](https://github.com/HappyPotatoHead/mediadl)
->
 > Added a bunch of things: [[Cross-Dataset Generalisation|here]] and [[Resources|here]] to name a few
 >
 > See the full changes at [[Logs]]
 
-### Selected Work
+### selected Work
 
 > the big trees
 
@@ -47,7 +46,7 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
   - [audio-dl](https://github.com/HappyPotatoHead/audio-dl) is now a public archive
 - [[Cardiovascular Risk Analysis]] - ML pipeline, feature engineering, evaluation
 
-### Fun && Artistic Projects
+### fun && artistic projects
 
 > small, strange flowers and mushrooms
 
@@ -55,14 +54,14 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 - [[something about letting go]] - there's something about letting go
 - [[Jane Doe]] - to whom it may concern
 
-### Side Quests
+### side quests
 
 > small trails we can follow
 
 - [[Self-Hosting]] - Exploring Linux, Docker, home servers, data ownership
 - [[How To - Set Up Arch Linux|How To: Set Up Arch Linux]]
 
-### Notes and Resources
+### notes and resources
 
 > seeds, clippings, and other things worth sharing
 
@@ -70,8 +69,6 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 - [[Project Ideas|Project Ideas / Brainstorming]]
 - [[Resources]]
 - [nvim configuration](https://github.com/HappyPotatoHead/nvim-config)
-
-> migrating to quartz5..
 
 <!-- > [!QUOTE] Click me! -->
 <!---->

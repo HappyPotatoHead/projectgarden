@@ -1,8 +1,15 @@
 ---
-title: Stacking Data Augmentations - An Unorthodox Approach
+id: Cross-Dataset Generalisation
+aliases: []
+tags:
+- deep-learning
+- cnn
+- data-augmentations
+- plantdoc
+- plantvillage
+created: 1 June 2026
 draft: false
-tags: deep learning, cnn, data augmentations, plantdoc, plantvillage
-description:
+title: Stacking Data Augmentations - An Unorthodox Approach
 ---
 
 It has no real-world application, as no one really trains on dirty data and then test on clean data, but it is interesting to see the effects of data augmentations on the performance of CNN models.

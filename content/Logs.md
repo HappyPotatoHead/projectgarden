@@ -7,6 +7,14 @@ draft: false
 title: Logs
 ---
 
+# 22/06/2026
+
+- Changes:
+  - Upgraded to Quartz5
+  - Changes tags scss
+  - Changed [[index.md]]
+  - Added more content in [[Imposter Syndrome]]
+
 # 21/06/2026
 
 - Changes:

@@ -2,8 +2,7 @@
 id: index
 aliases: []
 tags: []
-date created: "2026-04-20"
-date modified: "2026-04-20"
+created: 20 April 2026
 title: Competitive Programming
 ---
 
