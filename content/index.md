@@ -10,7 +10,6 @@ title: Where Ideas Grow
     <a href = "https://www.linkedin.com/in/jimmy-ding/" target="_blank" rel="noopener noreferrer"> linkedin </a>
     <a href = "https://github.com/HappyPotatoHead" target="_blank" rel="noopener noreferrer"> github </a>
     <a href = "https://www.instagram.com/jmmyd_/" target="_blank" rel="noopener noreferrer">instagram</a>
-    <a href = "https://www.instagram.com/jmmyd_/" target="_blank" rel="noopener noreferrer">instagram</a>
     <a href = "mailto:jimmydingjk@gmail.com" >gmail</a>
 </div>
 
