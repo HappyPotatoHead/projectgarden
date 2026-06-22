@@ -35,7 +35,7 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 >
 > See the full changes at [[Logs]]
 
-### selected Work
+### selected work
 
 > the big trees
 
