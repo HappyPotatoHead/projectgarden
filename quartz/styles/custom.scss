@@ -48,6 +48,10 @@
       --bg: none;
     }
   }
+  body[data-slug="index"] .right.sidebar::before,
+  body[data-slug=""] .right.sidebar::before {
+    box-shadow: rgba(255, 255, 255, 0.06) 0px 10px 20px, rgba(255, 255, 255, 0.14) 0px 6px 6px;
+  }
 }
 
 article a.internal,
@@ -114,6 +118,8 @@ body[data-slug=""] .right.sidebar::before {
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+
+
 
 body[data-slug="index"] .right.sidebar::after,
 body[data-slug=""] .right.sidebar::after {
