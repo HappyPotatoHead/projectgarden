@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: "🥔"
+  pageTitle: 🥔
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -42,7 +42,8 @@ configuration:
         highlight: "#cecdc3"
         textHighlight: "#878580"
 plugins:
-  # transformers
+  - source: github:HappyPotatoHead/quartz5-clickable-images
+    enabled: true
   - source: github:quartz-community/created-modified-date
     enabled: true
     options:
@@ -52,12 +53,6 @@ plugins:
         - git
         - filesystem
     order: 10
-  # - source: ./quartz/plugins/transformers/
-  #   enabled: true
-  #   options:
-  #     separator: " "
-  #     shouldExpandOnMouseOver: false
-  #   order: 15
   - source: github:quartz-community/syntax-highlighting
     enabled: true
     options:
@@ -286,6 +281,16 @@ plugins:
       darkMode: auto
       exportPadding: 20
     order: 50
+  - source: github:HappyPotatoHead/quartz5-clickable-images
+    enabled: true
+    options:
+      minScaleFactor: 1.5
+      maxScaleFactor: 3
+      borderRadius: 8px
+    order: 50
+    layout:
+      position: right
+      priority: 50
 layout:
   groups:
     toolbar:
@@ -303,7 +308,7 @@ layout:
       exclude:
         - reader-mode
       positions:
-        beforeBody:
+        beforeBody: null
         right: []
     tag:
       exclude:

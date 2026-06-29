@@ -36,6 +36,7 @@ title: What I Use
 
 - Redmi Pad Pro
 - Dell Latitude 3410
+- Redmi Note 10s as an e-reader
 
 # Software
 
