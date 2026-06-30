@@ -54,6 +54,10 @@
     opacity: 0.75;
 }
 
+.page-listing {
+    background-color: var(--light);
+}
+
 @media #{$desktop}{
     .explorer,
     .page-footer,
@@ -129,6 +133,10 @@
             padding-right: 1.0rem;
             padding-top: 1.0rem;
         }
+        
+        .page-listing {
+            padding: 0 1.0rem;
+    }
     }
     .left.sidebar {
         padding-left: 0.5rem;
