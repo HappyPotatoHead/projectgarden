@@ -7,6 +7,18 @@ draft: false
 title: Logs
 ---
 
+# 30/06/2026
+
+- New:
+  - [Quartz5 image zooming thing](https://github.com/HappyPotatoHead/quartz5-clickable-images)
+- Changes:
+  - Appearance changes
+    - Hovering effect
+    - Box effect
+    - Size changes
+- Note:
+  - _I should put more content_
+
 # 22/06/2026
 
 - Changes:

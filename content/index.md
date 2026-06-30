@@ -29,10 +29,11 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 > If you just want the projects: [pinned](https://pinned.surge.sh)
 
 > [!announcement]- Updates
-> I am currently learning [rust](https://rust-lang.org)!
-> Check out what I made while learning rust!
-> [mediadl - a rust-based yt-dlp wrapper](https://github.com/HappyPotatoHead/mediadl)
-> Added a bunch of things: [[Cross-Dataset Generalisation|here]] and [[Resources|here]] to name a few
+>
+> migrated a quartz4 plugin to quartz5; see [here](https://github.com/HappyPotatoHead/quartz5-clickable-images)
+>
+> still learning [rust](https://rust-lang.org)!
+> Check out what I made while learning rust [here (mediadl)](https://github.com/HappyPotatoHead/mediadl)
 >
 > See the full changes at [[Logs]]
 
@@ -69,6 +70,10 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 - [[Project Ideas|Project Ideas / Brainstorming]]
 - [[Resources]]
 - [nvim configuration](https://github.com/HappyPotatoHead/nvim-config)
+
+### miscellaneous
+
+- [quartz5 image zooming thing](https://github.com/HappyPotatoHead/quartz5-clickable-images)
 
 <!-- > [!QUOTE] Click me! -->
 <!---->
