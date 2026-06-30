@@ -1,13 +1,14 @@
 ---
-title: Ricing Linux
-draft: false
+id: Ricing Linux
+aliases: []
 tags:
-  - linux
-  - ricing
-  - frieren
-  - fern
-  - i3wm
-description:
+- linux
+- ricing
+- frieren
+- fern
+- i3wm
+draft: false
+title: Ricing Linux
 ---
 
 # Fedora KDE
