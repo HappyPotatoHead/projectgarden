@@ -50,11 +50,12 @@
     } 
 }
 
-.explorer .explorer-ul .content li a,
+// .explorer .explorer-ul .content li a,
+.explorer .explorer-ul li a,
 .toc .toc-content li a {
     transition: color 0.1s ease-in;
 }
-.explorer .explorer-ul .content li a:hover{
+.explorer .explorer-ul li a:hover{
     color: var(--tertiary);
 }
 .toc .toc-content li a:hover {
