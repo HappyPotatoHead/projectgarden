@@ -291,6 +291,17 @@ plugins:
     layout:
       position: right
       priority: 50
+  - source: github:HappyPotatoHead/quartz5-drawer
+    enabled: true
+    options:
+      collapseByDefault: false
+    order: 50
+    layout:
+      position: left
+      priority: 50
+      display: mobile-only
+      condition: not-index
+
 layout:
   groups:
     toolbar:

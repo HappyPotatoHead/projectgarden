@@ -213,8 +213,14 @@
     "quartz5-clickable-images": {
       "source": "github:HappyPotatoHead/quartz5-clickable-images",
       "resolved": "https://github.com/HappyPotatoHead/quartz5-clickable-images.git",
-      "commit": "aa0885a1ee14229e414016d6676cd6ea39b9615e",
-      "installedAt": "2026-06-29T08:49:53.746Z"
+      "commit": "2791c885d1dee46b78aca6a9da54ad865498149f",
+      "installedAt": "2026-07-01T04:05:11.524Z"
+    },
+    "quartz5-drawer": {
+      "source": "github:HappyPotatoHead/quartz5-drawer",
+      "resolved": "https://github.com/HappyPotatoHead/quartz5-drawer.git",
+      "commit": "3598ee67e7414ae358bd1d0eb735166d85c35630",
+      "installedAt": "2026-07-01T08:12:36.214Z"
     },
     "reader-mode": {
       "source": "github:quartz-community/reader-mode",
