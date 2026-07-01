@@ -219,8 +219,8 @@
     "quartz5-drawer": {
       "source": "github:HappyPotatoHead/quartz5-drawer",
       "resolved": "https://github.com/HappyPotatoHead/quartz5-drawer.git",
-      "commit": "3598ee67e7414ae358bd1d0eb735166d85c35630",
-      "installedAt": "2026-07-01T08:12:36.214Z"
+      "commit": "f324597427c7ca5ec445a98928e28dbd6062d1f5",
+      "installedAt": "2026-07-01T08:26:39.687Z"
     },
     "reader-mode": {
       "source": "github:quartz-community/reader-mode",
