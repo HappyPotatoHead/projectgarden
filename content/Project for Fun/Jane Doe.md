@@ -1,9 +1,12 @@
 ---
-title: Jane Doe
-draft: false
-tags:
+id: Jane Doe
+aliases: []
+tags: []
 description: 100 love letters
+draft: false
+title: Jane Doe
 ---
+
 100 unsent letters
 
 1. [hello: goodbye](https://janedoe.surge.sh/posts/hello_goodbye.html)
@@ -106,3 +109,4 @@ description: 100 love letters
 98. [conversation](https://janedoe.surge.sh/posts/conversation.html)
 99. [ourselves](https://janedoe.surge.sh/posts/ourselves.html)
 100. [selfish](https://janedoe.surge.sh/posts/selfish.html)
+

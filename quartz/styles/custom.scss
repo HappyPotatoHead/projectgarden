@@ -222,6 +222,15 @@ blockquote a.external .external-icon{
     display: none !important;
 }
 
+a.external, a.internal {
+    transition: color 0.2s ease-in;
+}
+
+a.external:hover, 
+a.internal:hover {
+    color: var(--tertiary);
+}
+
 a.external .external-icon{
     display: none !important;
 }
@@ -321,7 +330,7 @@ body[data-slug=""] .right.sidebar {
     padding: 0;
     text-decoration: none;
     border-bottom: 1px solid transparent;
-    transition: border-bottom-color 0.5s ease-in-out;
+    transition: border-bottom-color 0.2s ease-in-out;
 }
 
 .page-links a:hover {

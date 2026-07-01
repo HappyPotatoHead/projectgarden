@@ -30,7 +30,7 @@ This digital garden showcases my work, experiments, and ideas. I mainly focus on
 
 > [!announcement]- Updates
 >
-> migrated a quartz4 plugin to quartz5; see [here](https://github.com/HappyPotatoHead/quartz5-clickable-images)
+> migrated a quartz4 plugin to quartz5; see [here](https://github.com/HappyPotatoHead/quartz5-clickable-images) and [here](https://github.com/HappyPotatoHead/quartz5-drawer)
 >
 > still learning [rust](https://rust-lang.org)!
 > Check out what I made while learning rust [here (mediadl)](https://github.com/HappyPotatoHead/mediadl)
