@@ -17,9 +17,9 @@ I'm actually driving Fedora KDE on my main desktop now! It's not as _riceable_ a
 
 I've also updated the [dotfiles](https://github.com/HappyPotatoHead/dotfiles) used on my Arch laptop. Check it out!
 
-![[desktop.png]]
+![[desktop.png|looks boring]]
 
-![[fedora_nvim.png]]
+![[fedora_nvim.png|this took me forever]]
 
 # Hyprland
 
@@ -27,13 +27,13 @@ I've also updated the [dotfiles](https://github.com/HappyPotatoHead/dotfiles) us
 
 > I am also really bad at designing
 
-![[homepage.png]]
+![[homepage.png|too black tbh]]
 
-![[launcher_menu.png]]
+![[launcher_menu.png|there's supposed to be an image]]
 
-![[power_menu.png]]
+![[power_menu.png|the image is gone for some reason]]
 
-![[chasing_clout.png]]
+![[chasing_clout.png|im more comfortable now - 1st July 2026]]
 
 # How it's made
 

@@ -157,6 +157,13 @@
 }
 
 :root[saved-theme="dark"] {
+    body {
+        background-image:
+            linear-gradient(color-mix(in srgb, var(--secondary) 25%, transparent) 1px, transparent 1px),
+            linear-gradient(90deg, color-mix(in srgb, var(--secondary) 25%, transparent) 1px, transparent 1px);
+        background-size: 32px 32px;
+        background-position: center;
+    }
     .callout {
         &[data-callout] {
             --bg: none;
@@ -355,12 +362,10 @@ body[data-slug=""] .right.sidebar {
     margin: 0 0.35rem;
     font-size: 0.9rem;
 }
-
-body {
-    background-image:
-        linear-gradient(color-mix(in srgb, var(--lightgray) 45%, transparent) 1px, transparent 1px),
-        linear-gradient(90deg, color-mix(in srgb, var(--lightgray) 45%, transparent) 1px, transparent 1px);
-    background-size: 32px 32px;
-    background-position: center;
-}
-
+    body {
+        background-image:
+            linear-gradient(color-mix(in srgb, var(--lightgray) 45%, transparent) 1px, transparent 1px),
+            linear-gradient(90deg, color-mix(in srgb, var(--lightgray) 45%, transparent) 1px, transparent 1px);
+        background-size: 32px 32px;
+        background-position: center;
+    }

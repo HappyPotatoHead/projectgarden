@@ -58,17 +58,17 @@ Yes, the same augmentations will be applied, but the augmentations applied were 
 
 Rant aside, we have to look at the result of the data augmentation before proceeding further. _Please note that I am cherry-picking the result for the sake of examples_
 
-| Example One          | Example Two          |
-| -------------------- | -------------------- |
-| ![[example_one.png]] | ![[example_two.png]] |
+| Example One                                           | Example Two                                  |
+| ----------------------------------------------------- | -------------------------------------------- |
+| ![[example_one.png\|the hand really went "poof" huh]] | ![[example_two.png\|hand went "poof" again]] |
 
 Both examples here show two instances where the data augmentation ($1 \times$) is effective. The noise (hands and pots) are effectively removed from the images. Now, imagine stacking this multiple times; it may completely distort the image, not only removing non-plant morphology, but also the leaves themselves.
 
 Obviously there are cases where the data augmentation missed the [mark](https://knowyourmeme.com/memes/think-mark/):
 
-| Failed                 |
-| ---------------------- |
-| ![[example_three.png]] |
+| Failed                                  |
+| --------------------------------------- |
+| ![[example_three.png\|damn, it failed]] |
 
 The random cropping missed the berry, and the fingers are still in the image. Cases such as this is where compounding the augmentation may assist in removing noises.
 
@@ -107,7 +107,7 @@ I was entirely wrong. Well, it could be that the augmentation factors are still 
 
 > As you go on, keep this quote by Ronald Coase in mind, _If you torture the data long enough, it will confess_.
 
-![[results_graph.png]]
+![[results_graph.png\|pretty lines on graph]]
 
 <span style='font-size: 1.5em; font-weight:1000;'>Observation 1</span>
 

@@ -7,6 +7,15 @@ draft: false
 title: Logs
 ---
 
+# 01/07/2026
+
+- New:
+  - [toc for mobile](https://github.com/HappyPotatoHead/quartz5-drawer)
+    - _i should change the name_
+    - not a replacement, so you still need the default one
+- Changes:
+  - Grid colours change for dark mode
+
 # 30/06/2026
 
 - New:
