@@ -2,11 +2,11 @@
 id: Ricing Linux
 aliases: []
 tags:
-- linux
-- ricing
-- frieren
-- fern
-- i3wm
+    - linux
+    - ricing
+    - frieren
+    - fern
+    - i3wm
 draft: false
 title: Ricing Linux
 ---
@@ -23,7 +23,11 @@ I've also updated the [dotfiles](https://github.com/HappyPotatoHead/dotfiles) us
 
 # Hyprland
 
-# First Rice
+## Current Rice
+
+> Update soon! But, it's so much more cohesive now!
+
+## First Rice
 
 > I am also really bad at designing
 
@@ -35,7 +39,7 @@ I've also updated the [dotfiles](https://github.com/HappyPotatoHead/dotfiles) us
 
 ![[chasing_clout.png|im more comfortable now - 1st July 2026]]
 
-# How it's made
+### How it's made
 
 - Distro: i use arch btw
 - WM: [hyprland](https://hypr.land/)

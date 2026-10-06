@@ -33,6 +33,7 @@ title: What I Use
 - [8BitDo Ultimate 2c](https://www.8bitdo.com/ultimate-2c-wireless-controller/)
 - [HUION HS64](https://www.huion.com/products/hs64)
 - [B.O.W vertical mouse](https://www.bow.cn/en/products/bow-md190lchongdiansanmurentigongxuechuizhishubiaowuxianlanyabijibenjingyinnvshengzhongxiaoshoulishi.html)
+- [ATK Dragonfly R1](https://www.atk.store/products/vxe-dragonfly-r1-series-wireless-mouse)
 
 ## Accessories
 

@@ -265,6 +265,8 @@ plugins:
               - description
               - tags
               - aliases
+              - created
+              - modified
           excludedProperties: []
           hidePropertiesView: true
           delimiters: ---

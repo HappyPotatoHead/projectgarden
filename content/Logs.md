@@ -7,6 +7,12 @@ draft: false
 title: Logs
 ---
 
+# 06/10/2026
+
+- Minor updates
+- Finished reading Red Rising part 1
+- Added tooltip
+
 # 07/09/2026
 
 - Finally fixed the width problem

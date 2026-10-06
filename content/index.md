@@ -25,12 +25,19 @@ This digital garden showcases my work, experiments, and ideas.
 
 > [!announcement] Updates
 >
-> Learning how to use n8n and opencode effectively!
-> \- 6th September 2026
+> Still learning how to use n8n and opencode effectively!
+>
+> Trying to find a project that is unique and worth doing is difficult, hence my slow updates.
+>
+> I would love to pump out projects, but I want to avoid them being a "run-of-the-mill" API wrapper. BUT, if you want to check out my silly ideas, head over to [[Project Ideas | my project ideas]]
+>
+> I also added tooltips on hover! You can <span class = "tooltip"> hover over words with dotted lines <span class = "tooltiptext"> _Now my own thoughts aren't plaguing your reading experience unsolicited!_</span> </span> for more information.
+>
+> \- 6th October 2026
 >
 > see the full changes at [[Logs]]
 
-> press the cat to return here!
+> press the <span class = "tooltip">cat<span class = "tooltiptext"> _if it renders for you, otherwise, it's the icon on the top left_ </span> </span> to return here!
 
 ### selected work
 

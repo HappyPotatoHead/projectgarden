@@ -2,10 +2,10 @@
 id: Offline Signature Verification
 aliases: []
 tags:
-- deep-metric-learning
-- cnn
-- loss-function
-- python
+    - deep-metric-learning
+    - cnn
+    - loss-function
+    - python
 created: 18 June 2025
 draft: false
 title: Offline Signature Verification
