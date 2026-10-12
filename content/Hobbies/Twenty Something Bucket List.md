@@ -12,12 +12,12 @@ title: twenty something
 >
 > - [x] Digital Detox
 > - [x] Archiving
-> - [ ] Present at a Conference
+> - [!] Present at a Conference
 > - [ ] Astrophotography
 > - [ ] View the Northern Lights
->   - 20th March 2028
+>     - 20th March 2028
 > - [ ] View the Southern Lights
->   - 22nd October 2030
+>     - 22nd October 2030
 > - [ ] Trekking
 > - [x] Learn a New Language
 > - [x] Cooking

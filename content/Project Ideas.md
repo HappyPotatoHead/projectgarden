@@ -10,6 +10,8 @@ title: Project Ideas
 
 # Minecraft and n8n
 
+> I implement [[Minecraft RAG |SOME version]] of it.
+
 Because sometimes I don't want to spend hours at the cobblestone generator
 
 > [n8n](https://n8n.io/)

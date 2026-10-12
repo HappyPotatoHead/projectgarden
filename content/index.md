@@ -9,7 +9,7 @@ title: Where Ideas Grow
 <div class = "page-links" >
     <a href = "https://www.linkedin.com/in/jimmy-ding/" target="_blank" rel="noopener noreferrer"> linkedin </a>
     <a href = "https://github.com/HappyPotatoHead" target="_blank" rel="noopener noreferrer"> github </a>
-    <a href = "assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume</a>
+    <!--<a href = "assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume</a>-->
     <a href = "mailto:jimmydingjk@gmail.com" >gmail</a>
 </div>
 
@@ -21,17 +21,19 @@ title: Where Ideas Grow
 
 <span style="font-size:1.25rem">Welcome!</span>
 
-This digital garden showcases my work, experiments, and ideas.
+This digital garden showcases my work, experiments, and ideas. This site is basically my CV.
 
-> [!announcement] Updates
->
-> Still learning how to use n8n and opencode effectively!
+> [!announcement]- Updates
 >
 > Trying to find a project that is unique and worth doing is difficult, hence my slow updates.
 >
 > I would love to pump out projects, but I want to avoid them being a "run-of-the-mill" API wrapper. BUT, if you want to check out my silly ideas, head over to [[Project Ideas | my project ideas]]
 >
+> But, I've also made [[Minecraft RAG]] < currently ongoing, but mostly functional
+>
 > I also added tooltips on hover! You can <span class = "tooltip"> hover over words with dotted lines <span class = "tooltiptext"> _Now my own thoughts aren't plaguing your reading experience unsolicited!_</span> </span> for more information.
+>
+> Still learning how to use <span class = "tooltip"> n8n <span class = "tooltiptext"> well, this is anticlimatic </span> </span> and <span class = "tooltip"> opencode <span class = "tooltiptext"> highly underrated </span> </span> effectively!
 >
 > \- 6th October 2026
 >
@@ -43,6 +45,7 @@ This digital garden showcases my work, experiments, and ideas.
 
 > the big trees ✨✨
 
+- [[Minecraft RAG]] - There was an attempt at RAG ⏳
 - [[Offline Signature Verification|offline signature verification]] - DL research, Deep metric learning, PyTorch
 - [[Cross-Dataset Generalisation|cross-dataset generalisation]] - DL research, data augmentation, cross-dataset generalisation, PyTorch
 - [mediadl](https://github.com/HappyPotatoHead/mediadl) - Streamline media archiving
