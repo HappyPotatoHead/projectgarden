@@ -55,12 +55,6 @@
       "commit": "6db40c2891b722ba62f6cfb85f483d82d0096610",
       "installedAt": "2026-11-15T08:29:55.986Z"
     },
-    "content-index": {
-      "source": "github:quartz-community/content-index",
-      "resolved": "https://github.com/quartz-community/content-index.git",
-      "commit": "a940cc613ddde460d8a6a5f1f8856a8f6a82d29e",
-      "installedAt": "2026-11-15T08:29:56.051Z"
-    },
     "content-meta": {
       "source": "github:quartz-community/content-meta",
       "resolved": "https://github.com/quartz-community/content-meta.git",
@@ -72,12 +66,6 @@
       "resolved": "https://github.com/quartz-community/content-page.git",
       "commit": "9342e2dcf168609592713135d68257525daa8572",
       "installedAt": "2026-11-15T08:29:56.069Z"
-    },
-    "crawl-links": {
-      "source": "github:quartz-community/crawl-links",
-      "resolved": "https://github.com/quartz-community/crawl-links.git",
-      "commit": "fd65d23b5c8855029aea185445a1cfef70690952",
-      "installedAt": "2026-11-15T08:29:56.076Z"
     },
     "created-modified-date": {
       "source": "github:quartz-community/created-modified-date",
@@ -150,12 +138,6 @@
       "resolved": "https://github.com/quartz-community/graph.git",
       "commit": "52db5936a4887b47b4a2a3a760a8597248615983",
       "installedAt": "2026-11-15T08:29:58.117Z"
-    },
-    "hard-line-breaks": {
-      "source": "github:quartz-community/hard-line-breaks",
-      "resolved": "https://github.com/quartz-community/hard-line-breaks.git",
-      "commit": "8c14ad4ffea416baefcd2e2abdd5c41334846556",
-      "installedAt": "2026-11-15T08:29:58.077Z"
     },
     "latex": {
       "source": "github:quartz-community/latex",
@@ -233,12 +215,6 @@
       "resolved": "https://github.com/quartz-community/recent-notes.git",
       "commit": "3ae3c0df92f2a5240461299711ff81c6f36dc8b8",
       "installedAt": "2026-11-15T08:29:59.248Z"
-    },
-    "remove-draft": {
-      "source": "github:quartz-community/remove-draft",
-      "resolved": "https://github.com/quartz-community/remove-draft.git",
-      "commit": "5f7c1f209a9efa42c67b34e3e931a8b1f016a085",
-      "installedAt": "2026-11-15T08:29:59.843Z"
     },
     "roam": {
       "source": "github:quartz-community/roam",

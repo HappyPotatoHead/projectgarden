@@ -3,7 +3,7 @@ id: Imposter Syndrome
 aliases: []
 tags: []
 draft: false
-title: Imposter Syndrome
+title: imposter syndrome
 ---
 
 I feel like that imposter syndrome isn't talked about enough, despite its prevalence and the damage it can cause.

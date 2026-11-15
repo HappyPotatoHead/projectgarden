@@ -2,16 +2,16 @@
 id: NextCloud
 aliases: []
 tags:
-- self-hosting,
-- Nextcloud,
-- docker
+    - self-hosting,
+    - Nextcloud,
+    - docker
 draft: false
-title: Nextcloud
+title: nextcloud
 ---
 
 ![[nextcloud_logo.jpg|250]]
 
-# What I Used
+# what i used
 
 One major change I made was replacing Google Drive with Nextcloud. Initially, I wanted to use OpenMediaVault on my laptop to host a NAS and build Nextcloud on top of it, but I discovered that OpenMediaVault is an operating system rather than just software and the two serve completely different purposes. Setting OpenMediaVault up would have required dual booting or virtualisation, and since I still use the laptop as a mobile workstation, it felt like I would be placing unnecessary strain on the machine.
 
@@ -22,7 +22,7 @@ Instead, I opted for Docker to host Nextcloud.
 > [!INFO] Future
 > My long-term plan is to set up a dedicated workstation to host OMV
 
-# How I Set it Up
+# how i set it up
 
 Setting up Nextcloud, or really any application, in Docker is, surprisingly, really simple.
 
@@ -35,7 +35,7 @@ Wanting to learn more about Docker and its container ecosystem, I decided that t
 
 I initially skipped the section on setting up reverse proxy in the [guide](https://hostman.com/tutorials/how-to-install-Nextcloud-with-docker/) I followed, because I thought it would require spending cold, hard cash, not realising that [[Tailscale]] provides both DNS name and TLS certificates completely **free**.
 
-# Results
+# results
 
 After some tinkering with Nextcloud's settings, these are the results,
 
@@ -50,7 +50,7 @@ Nextcloud also offers a mobile client,
 
 Personally, uploading from mobile to Nextcloud is also much more user-friendly and intuitive compared to Google Drive.
 
-# Updates
+# updates
 
 ## 19/10/2025
 

@@ -7,6 +7,10 @@ draft: false
 title: Logs
 ---
 
+# 15/11/2026
+
+- Finished Red Rising part 2
+
 # 12/10/2026
 
 - Added [[Minecraft RAG]]

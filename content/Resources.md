@@ -1,12 +1,12 @@
 ---
-title: Resources
+title: resources
 draft: false
 tags:
     - resources
 description:
 ---
 
-# Data Structure and Algorithm
+# data structure and algorithm
 
 <div class ="card-grid">
 
@@ -25,7 +25,7 @@ description:
 
 </div>
 
-# Data Science
+# data science
 
 <div class ="card-grid">
 
@@ -35,7 +35,7 @@ description:
 
 </div>
 
-# Front End Web Development
+# front end web development
 
 <div class = "card-grid" >
 
@@ -48,9 +48,9 @@ description:
 
 </div>
 
-# Programming Languages
+# programming languages
 
-## C++
+## c++
 
 <div class = "card-grid">
 
@@ -63,7 +63,7 @@ description:
 
 </div>
 
-## Python
+## python
 
 <div class = "card-grid">
 
@@ -76,7 +76,7 @@ description:
 
 </div>
 
-# Game Development
+# game development
 
 <div class = "card-grid">
 
@@ -89,12 +89,12 @@ description:
 
 </div>
 
-# Machine Learning, Deep Learning, and Artificial Intelligence
+# machine learning, deep learning, and artificial intelligence
 
 > some of these books may be old, so read with caution!
 > I would share these books, but I would get into legal trouble
 
-## Still holds up well
+## still holds up well
 
 <div class = "reading-grid">
 
@@ -113,7 +113,7 @@ description:
 
 </div>
 
-## Outdated
+## outdated
 
 > Some of the concepts still hold up
 
@@ -131,7 +131,7 @@ description:
 
 </div>
 
-# Development Freebies
+# development freebies
 
 <div class = "card-grid">
 
@@ -140,9 +140,9 @@ description:
 
 </div>
 
-# AI
+# ai
 
-## AI agents and workspaces
+## ai agents and workspaces
 
 > It goes without saying, please do not give any of these administrative access
 
@@ -164,9 +164,9 @@ description:
 
 </div>
 
-# Self-Hosting
+# self-hosting
 
-## Connectivity
+## connectivity
 
 > All of these are free
 
@@ -184,7 +184,7 @@ description:
 
 </div>
 
-## Multimedia
+## multimedia
 
 <div class = "card-grid">
 
@@ -200,7 +200,7 @@ description:
 
 </div>
 
-## Files and Folders
+## files and folders
 
 <div class = "card-grid">
 
@@ -216,13 +216,13 @@ description:
 
 </div>
 
-# Converters
+# converters
 
 <div class = "card-grid">
 
 - ![[mediadl_tui.png|please please please please check it out]]
   **mediadl**
-    Shameless self-advertisement
+            Shameless self-advertisement
   [it's written in rust!](https://github.com/HappyPotatoHead/mediadl)
 - **Cobalt**
   web-based converter
@@ -233,7 +233,7 @@ description:
 
 </div>
 
-# Notes and Documents
+# notes and documents
 
 <div class = "card-grid">
 
@@ -255,7 +255,7 @@ description:
 
 </div>
 
-# Photos/Drawings
+# photos/drawings
 
 <div class = "card-grid">
 
@@ -268,7 +268,7 @@ description:
 
 </div>
 
-# Videos and Audio
+# videos and audio
 
 <div class = "card-grid">
 
@@ -284,7 +284,7 @@ description:
 
 </div>
 
-# Miscellaneous
+# miscellaneous
 
 <div class = "card-grid">
 

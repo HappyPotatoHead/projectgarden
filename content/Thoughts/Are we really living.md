@@ -2,7 +2,7 @@
 id: Are we really living
 aliases: []
 tags: []
-title: Who are we living for?
+title: who are we living for?
 ---
 
 > [!quote]

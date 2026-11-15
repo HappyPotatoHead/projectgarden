@@ -3,14 +3,14 @@ id: What I Use
 aliases: []
 tags: []
 draft: false
-title: What I Use
+title: what i use
 ---
 
-# Workstation
+# workstation
 
-## Specifications
+## specifications
 
-### Hardware
+### hardware
 
 - Processors: i7-14700K
 - Memory: 32 GiB RAM
@@ -18,12 +18,12 @@ title: What I Use
 - Graphics (2): Integrated GPU
 - Motherboard: Gigabyte Z790 UD AX
 
-### Software
+### software
 
 - Operating System: [Fedora 44](https://fedoraproject.org/)
 - Desktop Environment: [KDE Plasma](https://kde.org/plasma-desktop/)
 
-## Peripherals
+## peripherals
 
 - [Xiaomi Monitor A24i](https://www.mi.com/global/product/xiaomi-monitor-a24i/)
 - [Aula F75 Keyboard](https://aulakeyboard.com/product/aula-f75/)
@@ -35,25 +35,25 @@ title: What I Use
 - [B.O.W vertical mouse](https://www.bow.cn/en/products/bow-md190lchongdiansanmurentigongxuechuizhishubiaowuxianlanyabijibenjingyinnvshengzhongxiaoshoulishi.html)
 - [ATK Dragonfly R1](https://www.atk.store/products/vxe-dragonfly-r1-series-wireless-mouse)
 
-## Accessories
+## accessories
 
 - [Random black deskmat](https://shopee.com.my/Large-Mouse-Pad-with-Stitched-Edge-Anti-Slip-Mouse-Mat-3mm-Rubber-Base-Thicken-Mousepad-Desk-Mat-90cm-100cm-120cm-140cm-i.969116254.23737288608)
 - Random monitor stand
 
-# On The Go
+# on the go
 
 - [xteink x4](https://www.xteink.com/products/xteink-x4)
 - [Dell Latitude 3410](https://www.dell.com/en-us/shop/dell-laptops/latitude-3410-laptop/spd/latitude-14-3410-laptop)
 
-# Software
+# software
 
-## Note Taking
+## note taking
 
 > i just use vscode now
 
 - [Obsidian](https://obsidian.md/)
 
-## Programming
+## programming
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Zed](https://zed.dev/)
@@ -61,23 +61,23 @@ title: What I Use
 - [kickstarter](https://github.com/nvim-lua/kickstart.nvim)
 - [Docker](https://www.docker.com/)
 
-## Creative
+## creative
 
-### Drawing and Image editing
+### drawing and image editing
 
 - [Krita](https://krita.org/en/)
 - [Gimp](https://www.gimp.org/)
 - [InkScape](https://inkscape.org/)
 
-### Video and Audio editing
+### video and audio editing
 
 - [ShotCut](https://www.shotcut.org/)
 - [OBS](https://obsproject.com/)
 - [Audacity](https://www.audacityteam.org/)
 
-# Entertainment
+# entertainment
 
-## Music
+## music
 
 - [Symphonium](https://www.symfonium.app/)
 - [cmus](https://cmus.github.io/)

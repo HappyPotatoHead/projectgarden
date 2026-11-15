@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-    pageTitle: ᓚᘏᗢ
+    pageTitle: 🎄
     pageTitleSuffix: ""
     enableSPA: true
     enablePopovers: true
@@ -17,7 +17,7 @@ configuration:
         fontOrigin: googleFonts
         cdnCaching: true
         typography:
-            header: Fraunces
+            header: Bricolage Grotesque
             body: DM Sans
             code: JetBrains Mono
         colors:
@@ -41,9 +41,14 @@ configuration:
                 tertiary: "#92BFDB"
                 highlight: "#cecdc3"
                 textHighlight: "#878580"
+    links:
+        markdownLinkResolution: shortest
+        externalLinkIcon: false
+        openLinksInNewTab: true
+    contentIndex:
+        enableSiteMap: true
+        enableRSS: true
 plugins:
-    - source: github:HappyPotatoHead/quartz5-clickable-images
-      enabled: true
     - source: github:quartz-community/created-modified-date
       enabled: true
       options:
@@ -88,13 +93,6 @@ plugins:
           priority: 30
           display: desktop-only
           condition: not-index
-    - source: github:quartz-community/crawl-links
-      enabled: true
-      options:
-          markdownLinkResolution: shortest
-          externalLinkIcon: false
-          openLinksInNewTab: true
-      order: 60
     - source: github:quartz-community/description
       enabled: true
       order: 70
@@ -106,9 +104,6 @@ plugins:
     - source: github:quartz-community/citations
       enabled: false
       order: 85
-    - source: github:quartz-community/hard-line-breaks
-      enabled: true
-      order: 90
     - source: github:quartz-community/ox-hugo
       enabled: false
       order: 91
@@ -118,12 +113,10 @@ plugins:
     - source: github:quartz-community/fonts
       enabled: true
       options:
-          h1: '"Fraunces"'
-          h2: '"Source Serif 4"'
+          h1: '"Bricolage Grotesque"'
+          h2: '"DM Sans"'
           body: '"DM Sans"'
           code: '"JetBrains Mono"'
-    - source: github:quartz-community/remove-draft
-      enabled: true
     - source: github:quartz-community/explicit-publish
       enabled: false
     - source: github:quartz-community/unlisted-pages
@@ -145,11 +138,6 @@ plugins:
           display: all
     - source: github:quartz-community/alias-redirects
       enabled: true
-    - source: github:quartz-community/content-index
-      enabled: true
-      options:
-          enableSiteMap: true
-          enableRSS: true
     - source: github:quartz-community/favicon
       enabled: true
     - source: github:quartz-community/og-image
@@ -269,8 +257,6 @@ plugins:
               - modified
           excludedProperties: []
           hidePropertiesView: true
-          delimiters: ---
-          language: yaml
       order: 5
       layout:
           position: beforeBody
@@ -297,9 +283,6 @@ plugins:
           maxScaleFactor: 3
           borderRadius: 8px
       order: 50
-      layout:
-          position: right
-          priority: 50
     - source: github:HappyPotatoHead/quartz5-drawer
       enabled: true
       options:
@@ -328,7 +311,6 @@ layout:
             exclude:
                 - reader-mode
             positions:
-                beforeBody: null
                 right: []
         tag:
             exclude:

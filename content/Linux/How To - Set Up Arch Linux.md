@@ -1,23 +1,26 @@
 ---
-title: How To - Set Up Arch Linux
+title: how to - set up arch linux
 draft: false
 tags:
-  - linux
-  - arch-linux
+    - linux
+    - arch-linux
 description:
 ---
+
+> This is a bit outdated, I think
+
 > Official guide: [Arch Linux installation guide](https://wiki.archlinux.org/title/Installation_guide)
 
 These are the steps that I had taken when installing Arch Linux on my Intel laptop!
 
-# Start Here
+# start here
 
-## Console Keymap
+## console keymap
 
-Start by setting up console keyboard layout. This command lists all the available keyboard maps. 
+Start by setting up console keyboard layout. This command lists all the available keyboard maps.
 
 ```bash
-ls /usr/share/kbd/keymaps/**/*.map.gz 
+ls /usr/share/kbd/keymaps/**/*.map.gz
 ```
 
 ```plaintext
@@ -38,10 +41,10 @@ ls /usr/share/kbd/keymaps/**/*.map.gz
 This may be confusing to look at, so we can filter them using `grep`.
 
 ```bash
-ls /usr/share/kbd/keymaps/**/*.map.gz | grep <layout> 
+ls /usr/share/kbd/keymaps/**/*.map.gz | grep <layout>
 ```
 
-BUT, this may still look really confusing. So, for a much user-friendly view, use  `localectl list-keymaps`. Again, you can use `grep` to look for the desired layout.
+BUT, this may still look really confusing. So, for a much user-friendly view, use `localectl list-keymaps`. Again, you can use `grep` to look for the desired layout.
 
 ```bash
 localectl list-keymaps | grep us
@@ -75,9 +78,9 @@ I'm sticking with U.S. QWERTY so it looks like this for me,
 loadkeys us
 ```
 
-Keep in mind that the value should be just the name without the path and extension. 
+Keep in mind that the value should be just the name without the path and extension.
 
-## Internet Connection
+## internet connection
 
 Ping Arch Linux to see if you have Internet connection
 
@@ -85,9 +88,9 @@ Ping Arch Linux to see if you have Internet connection
 ping -c 4 archlinux.org
 ```
 
-## System Clock
+## system clock
 
-Check if the Network Time Protocol (NTP) is alive and active, and the validity of time. 
+Check if the Network Time Protocol (NTP) is alive and active, and the validity of time.
 
 ```bash
 timedatectl
@@ -103,10 +106,10 @@ System clock synchronized: yes
           RTC in local TZ: no
 ```
 
->[!IMPORTANT]- Why?
->This is important to ensure that there is no issue with logs, certificates, or scheduled tasks. It's a protocol designed to synchronise the clocks of computers over a network. 
+> [!IMPORTANT]- Why?
+> This is important to ensure that there is no issue with logs, certificates, or scheduled tasks. It's a protocol designed to synchronise the clocks of computers over a network.
 
-If the protocol is **NOT** active, use either command. 
+If the protocol is **NOT** active, use either command.
 
 ```bash
 timedatectl set-ntp true
@@ -114,9 +117,9 @@ timedatectl set-ntp true
 systemctl enable systemd-timesyncd.service
 ```
 
-# Disks
+# disks
 
-## Partitioning
+## partitioning
 
 It's a good practice to separate the bootloader and start-up files. Generally, `512MB` for EFI is enough. (You can go with 200MB if storage is scarce)
 
@@ -136,16 +139,16 @@ You can also list drives and partitions with `lsblk-l`
 # I have already partition the disks
 
 NAME      MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
-sda         8:0    0 931.5G  0 disk 
+sda         8:0    0 931.5G  0 disk
 sda1        8:1    0   750G  0 part /mnt/nextcloud
 sda2        8:2    0 181.5G  0 part /mnt/music
-nvme0n1   259:0    0 238.5G  0 disk 
+nvme0n1   259:0    0 238.5G  0 disk
 nvme0n1p1 259:1    0   512M  0 part /efi
 nvme0n1p2 259:2    0   238G  0 part /home
                                     /
 ```
 
-It is much easier and less of a headache to use `cfdisk` to perform partitioning (TUI wrapper). BUT, if you still want to make your life difficult, 
+It is much easier and less of a headache to use `cfdisk` to perform partitioning (TUI wrapper). BUT, if you still want to make your life difficult,
 
 ```bash
 # Invoke the drive for partitioning
@@ -154,7 +157,7 @@ fdisk <drive name>
 #fdisk /dev/nvme0n1
 ```
 
-Create the first partition 
+Create the first partition
 
 ```bash
 Command (m for help): g
@@ -174,7 +177,7 @@ Command (m for help): n
 Partition number (1-128, default 1): ENTER
 First sector: ENTER
 Last sector: ENTER # Uses the remaining spaces
-Command (m for help): p # Prints partition table 
+Command (m for help): p # Prints partition table
 
 # Check if the partition is right
 
@@ -185,11 +188,11 @@ Command (m for help): w
 Command (m for help): q
 ```
 
-If you have additional disks (e.g. external HDDs and SSDs), you can repeat these steps, but without the commands to change the type to EFI. 
+If you have additional disks (e.g. external HDDs and SSDs), you can repeat these steps, but without the commands to change the type to EFI.
 
-## Formatting
+## formatting
 
-EFI partition requires `fat` for it to work properly. 
+EFI partition requires `fat` for it to work properly.
 
 ```bash
 mkfs.fat -F 32 <partition name>
@@ -213,11 +216,11 @@ mount <partition name> /mnt
 # mount /dev/nvme0n1p2 /mnt
 ```
 
-## Disk Mounting
+## disk mounting
 
-> These are done with the assumption that `btrfs` file system is used. 
+> These are done with the assumption that `btrfs` file system is used.
 
-Creating  sub-volumes in `btrfs` allows snapshots, rollbacks, and flexible volume management without the need for separate partitions. 
+Creating sub-volumes in `btrfs` allows snapshots, rollbacks, and flexible volume management without the need for separate partitions.
 
 ```bash
 # Root filesystem
@@ -226,16 +229,17 @@ btrfs subvolume create /mnt/@
 # User home directory
 btrfs subvolume create /mnt/@home
 
-# You can add more subvolumes if needed. 
+# You can add more subvolumes if needed.
 ```
 
 For compression, we will use `zstd`.
 
->[!INFO]- Why?
->Compressing those sub-volumes let us: 
->1. Save disk space
->2. Improve performance
->3. Reduce write amplification
+> [!INFO]- Why?
+> Compressing those sub-volumes let us:
+>
+> 1.  Save disk space
+> 2.  Improve performance
+> 3.  Reduce write amplification
 
 ```bash
 umount /mnt
@@ -255,9 +259,9 @@ mount <partition name> /mnt/efi
 # mount /dev/nvme0n1p1/ /mnt/efi
 ```
 
-# Package Installation
+# package installation
 
-Arch Linux's official documentation provides a comprehensive [list of applications](https://wiki.archlinux.org/title/List_of_applications) that you should definitely checkout. However, since we're still installing, there's really no need to install **every** essential applications yet. 
+Arch Linux's official documentation provides a comprehensive [list of applications](https://wiki.archlinux.org/title/List_of_applications) that you should definitely checkout. However, since we're still installing, there's really no need to install **every** essential applications yet.
 
 These are the packages that I installed:
 
@@ -290,7 +294,7 @@ pacstrap -K /mnt <packages>
 
 # `fstab`
 
-This fetches the disk mounting points and instructs the system to mount the disks automatically. 
+This fetches the disk mounting points and instructs the system to mount the disks automatically.
 
 ```bash
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -299,13 +303,13 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 ```
 
-# Context Switch
+# context switch
 
 Access the new system with `arch-chroot /mnt`
 
-# Time Zone
+# time zone
 
-The next thing to do is setting up out local time zone. To find the correct time zone information, use `ls /usr/share/zoneinfo`. This will give us a list of time zones to pick from. 
+The next thing to do is setting up out local time zone. To find the correct time zone information, use `ls /usr/share/zoneinfo`. This will give us a list of time zones to pick from.
 
 ```bash
 ls /usr/share/zoneinfo
@@ -355,9 +359,9 @@ Once the time zone is selected, sync the system time to the hardware clock
 hwclock --systohc
 ```
 
-# Localisation
+# localisation
 
-The next thing to do is to configure our system's region and language. Uncomment entries in `/etc/locale.gen`  according to your locale. You have to uncomment those lines before generating locales.
+The next thing to do is to configure our system's region and language. Uncomment entries in `/etc/locale.gen` according to your locale. You have to uncomment those lines before generating locales.
 
 Locales are generally named as such: `\[_territory][.codeset][@modifier]`
 
@@ -367,12 +371,13 @@ Since I installed `vim`, I will be using that to edit the file.
 vim /etc/locale.gen
 ```
 
-Since I'm in Malaysia, I enabled: 
+Since I'm in Malaysia, I enabled:
+
 1. `en_US.utf8`
 2. `ms_MY.utf8`
 3. `zh_CN.utf8`
 
-Once the desired entries have been enabled, we can generate the locales. 
+Once the desired entries have been enabled, we can generate the locales.
 
 ```bash
 locale-gen
@@ -399,7 +404,7 @@ To make the console keymap permanent across multiple tty sessions, we can make a
 KEYMAP=us
 ```
 
-# Host
+# host
 
 Now we create a hostname for you to go by. We achieve this by creating and editing `/etc/hostname`. The hostname should be in the first line.
 
@@ -408,13 +413,14 @@ touch /etc/hostname
 nvim /etc/hostname
 ```
 
-One other important thing to do is creating a `/etc/hosts` file.  This is necessary because it allows hostnames to be resolved locally instead of relying on DNS. 
+One other important thing to do is creating a `/etc/hosts` file. This is necessary because it allows hostnames to be resolved locally instead of relying on DNS.
 
->[!INFO]- Why it matters
->1. This is faster and avoids over-dependence on network connectivity.
->2. Entries in `/etc/hosts` takes priority over DNS lookups, meaning a hostname can be forced to resolve to a specific IP address, even if DNS says otherwise.
->3. If DNS servers are unavailable or misconfigured, `/etc/hosts` ensures localhost still resolves correctly.
->4. You can block or redirect unwanted domains by mapping them to a loopback IP.
+> [!INFO]- Why it matters
+>
+> 1.  This is faster and avoids over-dependence on network connectivity.
+> 2.  Entries in `/etc/hosts` takes priority over DNS lookups, meaning a hostname can be forced to resolve to a specific IP address, even if DNS says otherwise.
+> 3.  If DNS servers are unavailable or misconfigured, `/etc/hosts` ensures localhost still resolves correctly.
+> 4.  You can block or redirect unwanted domains by mapping them to a loopback IP.
 
 Simply do,
 
@@ -424,9 +430,9 @@ Simply do,
 127.0.1.1 <hostname> # the one set earlier
 ```
 
-# Root
+# root
 
-Use `passwd` to set-up root and add a new user. 
+Use `passwd` to set-up root and add a new user.
 
 ```bash
 passwd
@@ -435,10 +441,10 @@ useradd -mG wheel <root_name>
 passwd <root_name>
 ```
 
-- `m` creates the home directory 
-- `G` adds the user to the `wheel` group (administration group) 
+- `m` creates the home directory
+- `G` adds the user to the `wheel` group (administration group)
 
-# Boot Loader
+# boot loader
 
 You can select your choice of bootloader [here](https://wiki.archlinux.org/title/Arch_boot_process#Boot_loader). I decided to with [`grub`](https://wiki.archlinux.org/title/GRUB#Installation).
 
@@ -452,19 +458,19 @@ Generate `grub` configuration file with,
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-> I do not recommend writing your own grub configuration file unless you genuinely know what you're doing. 
+> I do not recommend writing your own grub configuration file unless you genuinely know what you're doing.
 
-# Finalising
+# finalising
 
-Enable network manager before rebooting. 
+Enable network manager before rebooting.
 
 ```bash
 systemctl enable NetworkManager
 ```
 
-Simply exit the chroot environment with `exit` or `ctrl+d`. Follow this up by unmounting all the partitions using `umount -R /mnt`. Doing this lets you find *busy* partitions.
+Simply exit the chroot environment with `exit` or `ctrl+d`. Follow this up by unmounting all the partitions using `umount -R /mnt`. Doing this lets you find _busy_ partitions.
 
-Reboot the system, unplug the installation media, and now you have an Arch Linux device! 
+Reboot the system, unplug the installation media, and now you have an Arch Linux device!
 
 ```bash
 reboot
@@ -478,11 +484,11 @@ timedatectl set-ntp true
 
 The remaining chapters are optional, but highly recommended.
 
-# Snapshots
+# snapshots
 
 Remember that we installed [[How To - Set Up Arch Linux#^f4acd3|`timeshift`]]?
 
-Normally, every time the tool takes a system snapshot, we would have to regenerate the grub configuration manually; however, this can be avoided with a neat tool called `grub-btrfs`, which automatically updates the grub boot entries. 
+Normally, every time the tool takes a system snapshot, we would have to regenerate the grub configuration manually; however, this can be avoided with a neat tool called `grub-btrfs`, which automatically updates the grub boot entries.
 
 This line will let you edit `grub-btrfs`; since I'm using `timeshift`, the value of `ExecStasrt` will be `/usr/bin/grub-btrfsd --syslog --timeshift-auto`. If you decided to use any other snapshot tools, refer to [this](https://github.com/Antynea/grub-btrfs)
 
@@ -490,7 +496,7 @@ This line will let you edit `grub-btrfs`; since I'm using `timeshift`, the value
 sudo systemctl edit --full grub-btrfsd
 ```
 
-# Arch User Repository
+# arch user repository
 
 One of the great features of Arch Linux is the vast user repository. But, to access the user repository, `yay` has to first be installed.
 
@@ -501,17 +507,17 @@ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/ya
 yay -S timeshift-autosnap
 ```
 
-# Final Finalising
+# final finalising
 
-Simply `reboot` and voilà, you're now using Arch Linux! You can keep messing up your laptop or pc until you have to reinstall. 
+Simply `reboot` and voilà, you're now using Arch Linux! You can keep messing up your laptop or pc until you have to reinstall.
 
 Don't forget to occasionally run `sudo pacman -Syu` to update your packages!
 
-# Video Drivers
+# video drivers
 
-If you want to use Arch Linux on a graphical environment, you would have to install video drivers. Since my laptop only has Intel iGPU, this section only covers the packages needed for my case. If you have NVIDIA GPUs, I recommend referring to this [site](https://wiki.archlinux.org/title/NVIDIA) for more information. 
+If you want to use Arch Linux on a graphical environment, you would have to install video drivers. Since my laptop only has Intel iGPU, this section only covers the packages needed for my case. If you have NVIDIA GPUs, I recommend referring to this [site](https://wiki.archlinux.org/title/NVIDIA) for more information.
 
-For backward compatibility, I decided to add 32bit support. However, for this to work, we have to first edit `/etc/pacman.conf` and uncomment the `[multilib]` section. 
+For backward compatibility, I decided to add 32bit support. However, for this to work, we have to first edit `/etc/pacman.conf` and uncomment the `[multilib]` section.
 
 ```bash
 yay
@@ -519,9 +525,9 @@ yay
 sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel xorg-server intel-media-driver
 ```
 
-For AMD laptops or pcs, installation looks almost identical; just replace `intel` with `radeon`. I highly recommend reading [this](https://wiki.archlinux.org/title/AMDGPU) first though. 
+For AMD laptops or pcs, installation looks almost identical; just replace `intel` with `radeon`. I highly recommend reading [this](https://wiki.archlinux.org/title/AMDGPU) first though.
 
-# Setting up a graphical environment
+# setting up a graphical environment
 
 I installed **Hyprland**. You can check out their [master tutorial](https://wiki.hypr.land/Getting-Started/Master-Tutorial/)
 
@@ -538,5 +544,5 @@ pacman -S --needed hyprland hyprlock hyprpaper rofi waybar dolphin kitty
 | `waybar`    | Status bar                                         |
 | `dolphin`   | File manager                                       |
 | `kitty`     | Terminal emulator                                  |
- 
+
 If you're looking for inspiration on customising your device, check out [this subreddit](https://www.reddit.com/r/unixporn/) or my [dotfiles](https://github.com/HappyPotatoHead/dotfiles?tab=readme-ov-file).

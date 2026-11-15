@@ -3,12 +3,12 @@ id: Project Ideas
 aliases: []
 tags: []
 draft: false
-title: Project Ideas
+title: project ideas
 ---
 
 > _Someone validate my ideas pls_
 
-# Minecraft and n8n
+# minecraft and n8n
 
 > I implement [[Minecraft RAG |SOME version]] of it.
 
@@ -16,26 +16,26 @@ Because sometimes I don't want to spend hours at the cobblestone generator
 
 > [n8n](https://n8n.io/)
 
-# Posture Analysis with VLM - July 2026
+# posture analysis with vlm - july 2026
 
 > Stole it from my friend
 
 A dystopian-esque software to moniter if their children are studying with a VLM.
 
-# mediadl - June 2026
+# mediadl - june 2026
 
 It's a `yt-dlp` wrapper written in Rust.
 
 Served in both CLI and TUI.
 
-# Offline Budget Planner - some time ago
+# offline budget planner - some time ago
 
 _"It sounds really boring."_
 It is. But hear me out.
 
 This is an **_offline_ budget planner** that combines a semantic model with a machine learning model to help you understand and manage your money. Since it's offline, there's no data leak and everything is local.
 
-## **Semantic Model**
+## **semantic model**
 
 > Learns from your words.
 
@@ -48,7 +48,7 @@ It analyses your text entries to understand your habits, priorities, and emotion
 
 It listens to your thoughts, understands your emotional relationship with money, and helps you build healthier habits.
 
-## Machine Learning Model
+## machine learning model
 
 > Learn from your numbers
 
